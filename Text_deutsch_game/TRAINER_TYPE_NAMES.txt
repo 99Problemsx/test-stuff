@@ -1,0 +1,134 @@
+﻿# To localize this text for a particular language, please
+# translate every second line of this file.
+#-------------------------------
+[TRAINER_TYPE_NAMES]
+Old Man
+Old Man
+Poké Dude
+Poké Dude
+Backpacker
+Backpacker
+Poké Fan
+Poké Fan
+Preschooler
+Preschooler
+Nursery Aide
+Nursery Aide
+School Kid
+School Kid
+Rich Boy
+Rich Boy
+Socialite
+Socialite
+Parasol Lady
+Parasol Lady
+Clerk
+Clerk
+Janitor
+Janitor
+Maid
+Maid
+Baker
+Baker
+Waiter
+Waiter
+Waitress
+Waitress
+Doctor
+Doctor
+Nurse
+Nurse
+Worker
+Worker
+Depot Agent
+Depot Agent
+Pilot
+Pilot
+Police Man
+Police Man
+Hooligans
+Hooligans
+Guitarist
+Guitarist
+Musician
+Musician
+Dancer
+Dancer
+Artist
+Artist
+Harlequin
+Harlequin
+Cyclist
+Cyclist
+Smasher
+Smasher
+Striker
+Striker
+Infielder
+Infielder
+Hoopster
+Hoopster
+Linebacker
+Linebacker
+Backers
+Backers
+Veteran
+Veteran
+Rocket Admin
+Rocket Admin
+Team Galactic
+Team Galactic
+Galactic Boss
+Galactic Boss
+Team Plasma
+Team Plasma
+Plasma Boss
+Plasma Boss
+Shadow Triad
+Shadow Triad
+Gym Leaders
+Gym Leaders
+Tower Tycoon
+Tower Tycoon
+Factory Head
+Factory Head
+Arcade Star
+Arcade Star
+Castle Valet
+Castle Valet
+Hall Matron
+Hall Matron
+Subway Boss
+Subway Boss
+Boss Trainer
+Boss Trainer
+Mo-Cap Actor
+Mo-Cap Actor
+Masked Man
+Masked Man
+Mecha Cop
+Mecha Cop
+Magical Maid
+Magical Maid
+Magic Queen
+Magic Queen
+Invader
+Invader
+Haunted Kid
+Haunted Kid
+Haunted Man
+Haunted Man
+Giantess
+Giantess
+Plush
+Plush
+Statue
+Statue
+Transporter
+Transporter
+Battleship
+Battleship
+UFO
+UFO
+Red Fog
+Red Fog

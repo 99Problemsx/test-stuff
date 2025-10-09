@@ -1,0 +1,449 @@
+# Comprehensive Test Suite for Map 22
+# Tests: Pokemon sprites, NPCs, trainers, wild battles, items, healing
+
+MAP: 22
+
+# ============================================
+# POKEMON SPRITE TESTS
+# ============================================
+
+# Test 1: Legendary Bird - Articuno
+EVENT: Articuno Test, X: 5, Y: 5
+GRAPHIC: ARTICUNO
+TRIGGER: Action
+CONDITIONAL: SELF_SWITCH A == OFF
+  TEXT: A wild Articuno appears!
+  SCRIPT: WildBattle.start(:ARTICUNO, 50)
+  CONDITIONAL: VARIABLE 1 == 1
+    TEXT: You caught Articuno!
+    SELF_SWITCH: A, ON
+  CONDITIONAL: ELSE
+    CONDITIONAL: VARIABLE 1 == 2
+      TEXT: Articuno fainted!
+      SELF_SWITCH: A, ON
+    CONDITIONAL: ELSE
+      TEXT: Articuno flew away...
+CONDITIONAL: ELSE
+  TEXT: Articuno is gone.
+
+# Test 2: Heavy Pokemon - Snorlax
+EVENT: Snorlax Test, X: 10, Y: 5
+GRAPHIC: SNORLAX
+TRIGGER: Action
+CONDITIONAL: SELF_SWITCH A == OFF
+  TEXT: A sleeping Snorlax blocks the way!
+  SCRIPT: WildBattle.start(:SNORLAX, 50)
+  CONDITIONAL: VARIABLE 1 == 1
+    TEXT: You caught Snorlax!
+    SELF_SWITCH: A, ON
+  CONDITIONAL: VARIABLE 1 == 2
+    TEXT: Snorlax fainted!
+    SELF_SWITCH: A, ON
+  CONDITIONAL: VARIABLE 1 == 3
+    TEXT: Snorlax is still sleeping...
+CONDITIONAL: SELF_SWITCH A == ON
+  TEXT: The path is clear.
+
+# Test 3: Fire Starter - Charizard
+EVENT: Charizard Test, X: 15, Y: 5
+GRAPHIC: CHARIZARD
+TRIGGER: Action
+CONDITIONAL: SELF_SWITCH A == OFF
+  TEXT: A wild Charizard roars!
+  SCRIPT: WildBattle.start(:CHARIZARD, 50)
+  SELF_SWITCH: A, ON
+CONDITIONAL: ELSE
+  TEXT: Charizard flew away.
+
+# Test 4: Electric Mouse - Pikachu
+EVENT: Pikachu Test, X: 20, Y: 5
+GRAPHIC: PIKACHU
+TRIGGER: Action
+CONDITIONAL: SELF_SWITCH A == OFF
+  TEXT: Pika pika!
+  SCRIPT: WildBattle.start(:PIKACHU, 25)
+  SELF_SWITCH: A, ON
+CONDITIONAL: ELSE
+  TEXT: Pikachu ran away.
+
+# Test 5: Legendary Dog - Suicune
+EVENT: Suicune Test, X: 25, Y: 5
+GRAPHIC: SUICUNE
+TRIGGER: Action
+TEXT: A majestic Suicune appears!
+SCRIPT: WildBattle.start(:SUICUNE, 60)
+
+# ============================================
+# NPC SPRITE TESTS
+# ============================================
+
+# Test 6: Basic NPC
+EVENT: NPC Test 1, X: 5, Y: 10
+GRAPHIC: NPC 01
+TRIGGER: Action
+TEXT: Hello! I'm a test NPC.
+TEXT: The Pokemon sprites should animate!
+
+# Test 7: Shop Clerk
+EVENT: Shop Clerk Test, X: 10, Y: 10
+GRAPHIC: NPC 02
+TRIGGER: Action
+TEXT: Welcome to my shop!
+CHOICE: Buy items| Sell items| Leave
+CONDITIONAL: CHOICE == 1
+  SCRIPT: pbPokemonMart([
+  SCRIPT:   :POTION,
+  SCRIPT:   :POKEBALL,
+  SCRIPT:   :ANTIDOTE
+  SCRIPT: ])
+CONDITIONAL: CHOICE == 2
+  SCRIPT: pbPokemonMart([])
+  TEXT: (Shop opens - player can choose Buy or Sell)
+CONDITIONAL: CHOICE == 3
+  TEXT: Come back soon!
+
+# Test 8: Item Giver NPC
+EVENT: Gift Giver Test, X: 15, Y: 10
+GRAPHIC: NPC 03
+TRIGGER: Action
+CONDITIONAL: SELF_SWITCH A == OFF
+  TEXT: Here's a gift for you!
+  ITEM: POTION, 5
+  ITEM: POKEBALL, 3
+  SELF_SWITCH: A, ON
+CONDITIONAL: ELSE
+  TEXT: Hope the items help!
+
+# Test 9: Pokemon Giver
+EVENT: Pokemon Breeder Test, X: 20, Y: 10
+GRAPHIC: NPC 04
+TRIGGER: Action
+CONDITIONAL: SELF_SWITCH A == OFF
+  TEXT: I have a special Pokemon for you!
+  CHOICE: Take Bulbasaur| Take Charmander| No thanks
+  CONDITIONAL: CHOICE == 1
+    POKEMON: BULBASAUR, 5
+    TEXT: Take good care of Bulbasaur!
+    SELF_SWITCH: A, ON
+  CONDITIONAL: CHOICE == 2
+    POKEMON: CHARMANDER, 5
+    TEXT: Take good care of Charmander!
+    SELF_SWITCH: A, ON
+  CONDITIONAL: CHOICE == 3
+    TEXT: Come back if you change your mind!
+CONDITIONAL: ELSE
+  TEXT: How's your Pokemon doing?
+
+# Test 10: Pokemon Center Nurse
+EVENT: Nurse Test, X: 25, Y: 10
+GRAPHIC: NPC 11
+TRIGGER: Action
+TEXT: Welcome! Shall I heal your Pokemon?
+CHOICE: Yes please| No thanks
+CONDITIONAL: CHOICE == 1
+  TEXT: I'll heal them right away!
+  FADEOUT
+  WAIT: 10
+  RECOVER_ALL
+  WAIT: 20
+  FADEIN
+  TEXT: Your Pokemon are fully healed!
+CONDITIONAL: CHOICE == 2
+  TEXT: Come back anytime!
+
+# ============================================
+# TRAINER BATTLE TESTS
+# ============================================
+
+# Test 11: Bug Catcher Trainer
+EVENT: Trainer Test 1, X: 5, Y: 15
+GRAPHIC: trainer_BUGCATCHER
+TRIGGER: Line of Sight
+CONDITIONAL: SELF_SWITCH A == OFF
+  TEXT: I found you!
+  SCRIPT: TrainerBattle.start(:BUGCATCHER, "Joey", "I lost!")
+  CONDITIONAL: VARIABLE 1 == 1
+    TEXT: You're really strong!
+    MONEY: 500
+    SELF_SWITCH: A, ON
+CONDITIONAL: ELSE
+  TEXT: That was a great battle!
+
+# Test 12: Youngster Trainer
+EVENT: Trainer Test 2, X: 10, Y: 15
+GRAPHIC: trainer_YOUNGSTER
+TRIGGER: Action
+CONDITIONAL: SELF_SWITCH A == OFF
+  TEXT: Want to battle?
+  SCRIPT: TrainerBattle.start(:YOUNGSTER, "Tommy", "Aww man!")
+  CONDITIONAL: VARIABLE 1 == 1
+    ITEM: POTION, 2
+    SELF_SWITCH: A, ON
+CONDITIONAL: ELSE
+  TEXT: Let's battle again sometime!
+
+# Test 13: Lass Trainer
+EVENT: Trainer Test 3, X: 15, Y: 15
+GRAPHIC: trainer_LASS
+TRIGGER: Action
+CONDITIONAL: SELF_SWITCH A == OFF
+  TEXT: Let's have a Pokemon battle!
+  SCRIPT: TrainerBattle.start(:LASS, "Amy", "You win!")
+  SELF_SWITCH: A, ON
+CONDITIONAL: ELSE
+  TEXT: Your Pokemon are so cute!
+
+# ============================================
+# SWITCH & VARIABLE TESTS
+# ============================================
+
+# Test 14: Switch Test
+EVENT: Switch Test, X: 5, Y: 20
+GRAPHIC: NPC 18
+TRIGGER: Action
+TEXT: This tests switches.
+CONDITIONAL: SWITCH 50 == OFF
+  TEXT: Switch 50 is OFF. Turning it ON!
+  SWITCH: 50, ON
+CONDITIONAL: ELSE
+  TEXT: Switch 50 is ON. Turning it OFF!
+  SWITCH: 50, OFF
+
+# Test 15: Variable Test
+EVENT: Variable Test, X: 10, Y: 20
+GRAPHIC: NPC 19
+TRIGGER: Action
+TEXT: Current variable 10 value: [VAR:10]
+CHOICE: +1| +10| Reset to 0
+CONDITIONAL: CHOICE == 1
+  VARIABLE: 10, +1
+  TEXT: Added 1! New value: [VAR:10]
+CONDITIONAL: CHOICE == 2
+  VARIABLE: 10, +10
+  TEXT: Added 10! New value: [VAR:10]
+CONDITIONAL: CHOICE == 3
+  VARIABLE: 10, 0
+  TEXT: Reset to 0!
+
+# Test 16: Money Test
+EVENT: Money Test, X: 15, Y: 20
+GRAPHIC: NPC 03
+TRIGGER: Action
+TEXT: Money test!
+CHOICE: Get 1000| Get 5000| Lose 500
+CONDITIONAL: CHOICE == 1
+  MONEY: 1000
+  TEXT: You received 1000 money!
+CONDITIONAL: CHOICE == 2
+  MONEY: 5000
+  TEXT: You received 5000 money!
+CONDITIONAL: CHOICE == 3
+  CONDITIONAL: MONEY >= 500
+    MONEY: -500
+    TEXT: You lost 500 money!
+  CONDITIONAL: ELSE
+    TEXT: You don't have enough money!
+
+# ============================================
+# WEATHER & EFFECTS TESTS
+# ============================================
+
+# Test 17: Weather Control
+EVENT: Weather Test, X: 5, Y: 25
+GRAPHIC: NPC 09
+TRIGGER: Action
+TEXT: Change the weather!
+CHOICE: Rain| Snow| Clear
+CONDITIONAL: CHOICE == 1
+  SCRIPT: $game_screen.weather(:Rain, 9, 0)
+  TEXT: It's raining!
+CONDITIONAL: CHOICE == 2
+  SCRIPT: $game_screen.weather(:Snow, 9, 0)
+  TEXT: It's snowing!
+CONDITIONAL: CHOICE == 3
+  SCRIPT: $game_screen.weather(:None, 0, 0)
+  TEXT: Weather cleared!
+
+# Test 18: Screen Effects
+EVENT: Screen Effects Test, X: 10, Y: 25
+GRAPHIC: NPC 20
+TRIGGER: Action
+TEXT: Testing screen effects!
+FADEOUT
+WAIT: 20
+TEXT: Fade out complete!
+FADEIN
+WAIT: 10
+TEXT: Fade in complete!
+
+# Test 19: Sound Test
+EVENT: Sound Test, X: 15, Y: 25
+GRAPHIC: NPC 21
+TRIGGER: Action
+TEXT: Testing sounds!
+CHOICE: Battle| Warp| Door
+CONDITIONAL: CHOICE == 1
+  PLAY_SE: Battle ball drop
+  TEXT: Battle sound played!
+CONDITIONAL: CHOICE == 2
+  PLAY_SE: Warp
+  TEXT: Warp sound played!
+CONDITIONAL: CHOICE == 3
+  PLAY_SE: Door exit
+  TEXT: Door sound played!
+
+# ============================================
+# MOVE ROUTE TESTS
+# ============================================
+
+# Test 20: Walking NPC (Random)
+EVENT: Walker Test 1, X: 5, Y: 30
+GRAPHIC: NPC 05
+TRIGGER: Action
+MOVE_TYPE: Random
+MOVE_SPEED: 3
+TEXT: I walk around randomly!
+
+# Test 21: Walking NPC (Approach Player)
+EVENT: Walker Test 2, X: 10, Y: 30
+GRAPHIC: NPC 06
+TRIGGER: Action
+MOVE_TYPE: Approach
+MOVE_SPEED: 4
+TEXT: I come towards you!
+
+# Test 22: Walking NPC (Custom Route)
+EVENT: Walker Test 3, X: 15, Y: 30
+GRAPHIC: NPC 07
+TRIGGER: Action
+MOVE_TYPE: Custom
+MOVE_ROUTE: Down, Down, Right, Right, Up, Up, Left, Left
+TEXT: I follow a pattern!
+
+# ============================================
+# CONDITIONAL LOGIC TESTS
+# ============================================
+
+# Test 23: Complex Conditionals
+EVENT: Conditional Test, X: 5, Y: 35
+GRAPHIC: NPC 12
+TRIGGER: Action
+TEXT: Testing nested conditionals!
+CONDITIONAL: SWITCH 50 == ON
+  TEXT: Switch 50 is ON!
+  CONDITIONAL: VARIABLE 10 >= 5
+    TEXT: And Variable 10 is >= 5!
+    TEXT: Both conditions met!
+  CONDITIONAL: ELSE
+    TEXT: But Variable 10 is < 5.
+CONDITIONAL: ELSE
+  TEXT: Switch 50 is OFF!
+  TEXT: First condition not met.
+
+# Test 24: Self Switch Chain
+EVENT: Self Switch Test, X: 10, Y: 35
+GRAPHIC: NPC 13
+TRIGGER: Action
+CONDITIONAL: SELF_SWITCH A == OFF
+  TEXT: This is state A (first click)
+  SELF_SWITCH: A, ON
+CONDITIONAL: SELF_SWITCH B == OFF
+  TEXT: This is state B (second click)
+  SELF_SWITCH: B, ON
+CONDITIONAL: SELF_SWITCH C == OFF
+  TEXT: This is state C (third click)
+  SELF_SWITCH: C, ON
+CONDITIONAL: ELSE
+  TEXT: This is state D (reset)
+  SELF_SWITCH: A, OFF
+  SELF_SWITCH: B, OFF
+  SELF_SWITCH: C, OFF
+
+# Test 25: Choice Branching
+EVENT: Choice Test, X: 15, Y: 35
+GRAPHIC: NPC 14
+TRIGGER: Action
+TEXT: Make a choice!
+CHOICE: Option A| Option B| Option C
+CONDITIONAL: CHOICE == 1
+  TEXT: You chose Option A!
+  CHOICE: Sub A1| Sub A2
+  CONDITIONAL: CHOICE == 1
+    TEXT: You chose A1!
+  CONDITIONAL: CHOICE == 2
+    TEXT: You chose A2!
+CONDITIONAL: CHOICE == 2
+  TEXT: You chose Option B!
+CONDITIONAL: CHOICE == 3
+  TEXT: You chose Option C!
+
+# ============================================
+# SPECIAL FEATURES
+# ============================================
+
+# Test 26: TM Giver
+EVENT: TM Test, X: 5, Y: 40
+GRAPHIC: NPC 15
+TRIGGER: Action
+CONDITIONAL: SELF_SWITCH A == OFF
+  TEXT: Here's a TM for you!
+  ITEM: TM24
+  TEXT: Teach Thunderbolt to your Pokemon!
+  SELF_SWITCH: A, ON
+CONDITIONAL: ELSE
+  TEXT: TM24 contains Thunderbolt!
+
+# Test 27: Berry Giver
+EVENT: Berry Test, X: 10, Y: 40
+GRAPHIC: NPC 08
+TRIGGER: Action
+CONDITIONAL: SELF_SWITCH A == OFF
+  TEXT: Have some berries!
+  ITEM: ORANBERRY, 3
+  ITEM: SITRUSBERRY, 2
+  TEXT: Plant them and watch them grow!
+  SELF_SWITCH: A, ON
+CONDITIONAL: ELSE
+  TEXT: I hope your berries are growing well!
+
+# Test 28: Move Tutor
+EVENT: Move Tutor Test, X: 15, Y: 40
+GRAPHIC: NPC 06
+TRIGGER: Action
+TEXT: I can teach your Pokemon moves!
+SCRIPT: pbChoosePokemon(1, 3)
+CONDITIONAL: VARIABLE 1 >= 0
+  TEXT: I'll teach Thunderbolt!
+  SCRIPT: pbLearnMove($player.party[$game_variables[1]], :THUNDERBOLT)
+CONDITIONAL: ELSE
+  TEXT: Come back with a Pokemon!
+
+# Test 29: Debug Test Team
+EVENT: Test Team Giver, X: 5, Y: 45
+GRAPHIC: NPC 16
+TRIGGER: Action
+TEXT: Want a test team?
+CHOICE: Yes| No
+CONDITIONAL: CHOICE == 1
+  POKEMON: PIKACHU, 25
+  POKEMON: CHARIZARD, 36
+  POKEMON: BLASTOISE, 36
+  TEXT: Here's your test team!
+CONDITIONAL: CHOICE == 2
+  TEXT: Come back if you need one!
+
+# Test 30: Teleporter Test
+EVENT: Teleporter Test, X: 10, Y: 45
+GRAPHIC: NPC 20
+TRIGGER: Player Touch
+TEXT: Teleporting to Map 1!
+FADEOUT
+WAIT: 10
+PLAY_SE: Warp
+WARP: 1, 10, 10
+WAIT: 10
+FADEIN
+
+# ============================================
+# END OF TESTS
+# ============================================

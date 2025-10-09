@@ -1,0 +1,36 @@
+﻿# To localize this text for a particular language, please
+# translate every second line of this file.
+#-------------------------------
+[Map002]
+\bThese doors are examples of good, solid door events.
+\bThese doors are examples of good, solid door events.
+\bWhen the player goes outside, be sure to transfer the player onto the door rather than next to it. It looks better that way.
+\bWhen the player goes outside, be sure to transfer the player onto the door rather than next to it.  It looks better that way.
+Basic Raid
+Basic Raid
+Basic Raid Partner
+Basic Raid Partner
+Basic Random
+Basic Random
+Mode
+Mode
+Level
+Level
+Nothing
+Nothing
+1
+1
+2
+2
+3
+3
++
++
+-
+-
+Ditto
+Ditto
+Normal
+Normal
+Test
+Test

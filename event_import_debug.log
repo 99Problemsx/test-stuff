@@ -1,0 +1,551 @@
+=== Event Import Debug Log ===
+Working Dir: C:/Users/Marcel Weidenauer/Documents/GitHub/Backup_Clean_2025-10-03_23-49
+    Parsing line: GRAPHIC: NPC 01
+    Parsing line: TRIGGER: Action
+    Parsing line: CONDITIONAL: SELF_SWITCH A == OFF
+    Parsing line: TEXT: Hello! Here's a gift for you!
+    Parsing line: ITEM: POTION, 5
+    Parsing line: TEXT: Take good care of these Potions!
+    Parsing line: SELF_SWITCH: A, ON
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: I hope those Potions are useful!
+    Parsing line: GRAPHIC: NPC 02
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: Welcome to our shop!
+    Parsing line: CHOICE: Buy items| Sell items| No thanks
+    Parsing line: CONDITIONAL: CHOICE == 1
+    Parsing line: SCRIPT: pbPokemonMart([
+    Parsing line: SCRIPT:   :POTION,
+    Parsing line: SCRIPT:   :POKEBALL,
+    Parsing line: SCRIPT:   :GREATBALL,
+    Parsing line: SCRIPT:   :REPEL
+    Parsing line: SCRIPT: ])
+    Parsing line: CONDITIONAL: CHOICE == 2
+    Parsing line: SCRIPT: pbPokemonMart([], true)
+    Parsing line: CONDITIONAL: CHOICE == 3
+    Parsing line: TEXT: Come back anytime!
+    Parsing line: GRAPHIC: NPC 03
+    Parsing line: TRIGGER: Action
+    Parsing line: CONDITIONAL: SELF_SWITCH A == OFF
+    Parsing line: TEXT: You look like a promising trainer!
+    Parsing line: TEXT: Here's some money to help you!
+    Parsing line: MONEY: 5000
+    WARNING: Unrecognized command: MONEY: 5000
+    Parsing line: TEXT: Use it wisely!
+    Parsing line: SELF_SWITCH: A, ON
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: Spend your money wisely!
+    Parsing line: GRAPHIC: NPC 04
+    Parsing line: TRIGGER: Action
+    Parsing line: CONDITIONAL: SELF_SWITCH A == OFF
+    Parsing line: TEXT: I breed Pokemon! Would you like one?
+    Parsing line: CHOICE: Yes please!| No thanks
+    Parsing line: CONDITIONAL: CHOICE == 1
+    Parsing line: TEXT: Which one would you like?
+    Parsing line: CHOICE: Bulbasaur| Charmander| Squirtle| Pikachu
+    Parsing line: CONDITIONAL: CHOICE == 1
+    Parsing line: POKEMON: BULBASAUR, 5
+    Parsing line: TEXT: Bulbasaur is all yours!
+    Parsing line: SELF_SWITCH: A, ON
+    Parsing line: CONDITIONAL: CHOICE == 2
+    Parsing line: POKEMON: CHARMANDER, 5
+    Parsing line: TEXT: Charmander is all yours!
+    Parsing line: SELF_SWITCH: A, ON
+    Parsing line: CONDITIONAL: CHOICE == 3
+    Parsing line: POKEMON: SQUIRTLE, 5
+    Parsing line: TEXT: Squirtle is all yours!
+    Parsing line: SELF_SWITCH: A, ON
+    Parsing line: CONDITIONAL: CHOICE == 4
+    Parsing line: POKEMON: PIKACHU, 5
+    Parsing line: TEXT: Pikachu is all yours!
+    Parsing line: SELF_SWITCH: A, ON
+    Parsing line: CONDITIONAL: CHOICE == 2
+    Parsing line: TEXT: Okay, come back if you change your mind!
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: Take good care of your Pokemon!
+    Parsing line: GRAPHIC: YOUNGSTER
+    Parsing line: TRIGGER: Line of Sight
+    Parsing line: CONDITIONAL: SELF_SWITCH A == OFF
+    Parsing line: TEXT: Hey! Let's battle!
+    Parsing line: SCRIPT: pbTrainerBattle(:YOUNGSTER, "Timmy", "You're too strong!", false, 0, true)
+    Parsing line: CONDITIONAL: VARIABLE 1 == 1
+    Parsing line: TEXT: Wow, you're amazing!
+    Parsing line: MONEY: 500
+    WARNING: Unrecognized command: MONEY: 500
+    Parsing line: SELF_SWITCH: A, ON
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: Haha! Better luck next time!
+    Parsing line: GRAPHIC: TWINS
+    Parsing line: TRIGGER: Action
+    Parsing line: CONDITIONAL: SELF_SWITCH A == OFF
+    Parsing line: TEXT: We're the twin trainers!
+    Parsing line: TEXT: Can you beat both of us?
+    Parsing line: SCRIPT: pbTrainerBattle(:TWINS, "Amy & May", "We lost together!", true, 0, true)
+    Parsing line: CONDITIONAL: VARIABLE 1 == 1
+    Parsing line: TEXT: You're incredibly strong!
+    Parsing line: ITEM: RARECANDY, 2
+    Parsing line: SELF_SWITCH: A, ON
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: That was a great battle!
+    Parsing line: GRAPHIC: SNORLAX
+    Parsing line: TRIGGER: Action
+    Parsing line: CONDITIONAL: SELF_SWITCH A == OFF
+    Parsing line: TEXT: A sleeping Snorlax blocks the way!
+    Parsing line: SCRIPT: pbWildBattle(:SNORLAX, 50)
+    Parsing line: CONDITIONAL: VARIABLE 1 == 1
+    Parsing line: TEXT: You caught Snorlax!
+    Parsing line: SELF_SWITCH: A, ON
+    Parsing line: CONDITIONAL: VARIABLE 1 == 2
+    Parsing line: TEXT: Snorlax fainted!
+    Parsing line: SELF_SWITCH: A, ON
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: Snorlax is still sleeping...
+    Parsing line: GRAPHIC: ARTICUNO
+    Parsing line: TRIGGER: Action
+    Parsing line: CONDITIONAL: SELF_SWITCH A == OFF
+    Parsing line: TEXT: A legendary Pokemon appears!
+    Parsing line: FADEOUT
+    Parsing line: WAIT: 20
+    Parsing line: PLAY_SE: Battle recall
+    Parsing line: WAIT: 30
+    Parsing line: FADEIN
+    Parsing line: TEXT: Articuno spreads its majestic wings!
+    Parsing line: SCRIPT: pbWildBattle(:ARTICUNO, 70)
+    Parsing line: CONDITIONAL: VARIABLE 1 == 1
+    Parsing line: TEXT: You caught the legendary Articuno!
+    Parsing line: SELF_SWITCH: A, ON
+    Parsing line: CONDITIONAL: VARIABLE 1 == 2
+    Parsing line: TEXT: Articuno flew away...
+    Parsing line: SELF_SWITCH: A, ON
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: Articuno waits for you...
+    Parsing line: GRAPHIC: NPC 05
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: I have rare TMs for sale!
+    Parsing line: CHOICE: TM Thunderbolt (3000)| TM Ice Beam (3000)| TM Flamethrower (3000)| Cancel
+    Parsing line: CONDITIONAL: CHOICE == 1
+    Parsing line: CONDITIONAL: MONEY >= 3000
+    Parsing line: MONEY: -3000
+    WARNING: Unrecognized command: MONEY: -3000
+    Parsing line: ITEM: TM24
+    Parsing line: TEXT: Enjoy your Thunderbolt TM!
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: You don't have enough money!
+    Parsing line: CONDITIONAL: CHOICE == 2
+    Parsing line: CONDITIONAL: MONEY >= 3000
+    Parsing line: MONEY: -3000
+    WARNING: Unrecognized command: MONEY: -3000
+    Parsing line: ITEM: TM13
+    Parsing line: TEXT: Enjoy your Ice Beam TM!
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: You don't have enough money!
+    Parsing line: CONDITIONAL: CHOICE == 3
+    Parsing line: CONDITIONAL: MONEY >= 3000
+    Parsing line: MONEY: -3000
+    WARNING: Unrecognized command: MONEY: -3000
+    Parsing line: ITEM: TM35
+    Parsing line: TEXT: Enjoy your Flamethrower TM!
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: You don't have enough money!
+    Parsing line: CONDITIONAL: CHOICE == 4
+    Parsing line: TEXT: Come back anytime!
+    Parsing line: GRAPHIC: NPC 06
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: I can teach your Pokemon special moves!
+    Parsing line: CHOICE: Teach move| Never mind
+    Parsing line: CONDITIONAL: CHOICE == 1
+    Parsing line: TEXT: Which Pokemon should learn the move?
+    Parsing line: SCRIPT: pbChoosePokemon(1, 3)
+    Parsing line: CONDITIONAL: VARIABLE 1 >= 0
+    Parsing line: TEXT: I'll teach Thunderbolt!
+    Parsing line: SCRIPT: pbLearnMove($player.party[$game_variables[1]], :THUNDERBOLT)
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: Come back anytime!
+    Parsing line: CONDITIONAL: CHOICE == 2
+    Parsing line: TEXT: See you later!
+    Parsing line: GRAPHIC: NPC 07
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: I can help train your Pokemon's stats!
+    Parsing line: CHOICE: Attack training| Defense training| Speed training| Cancel
+    Parsing line: CONDITIONAL: CHOICE == 1
+    Parsing line: SCRIPT: pbChoosePokemon(1, 3)
+    Parsing line: CONDITIONAL: VARIABLE 1 >= 0
+    Parsing line: TEXT: Boosting Attack EVs!
+    Parsing line: SCRIPT: $player.party[$game_variables[1]].ev[:ATTACK] += 10
+    Parsing line: TEXT: Training complete!
+    Parsing line: CONDITIONAL: CHOICE == 2
+    Parsing line: SCRIPT: pbChoosePokemon(1, 3)
+    Parsing line: CONDITIONAL: VARIABLE 1 >= 0
+    Parsing line: TEXT: Boosting Defense EVs!
+    Parsing line: SCRIPT: $player.party[$game_variables[1]].ev[:DEFENSE] += 10
+    Parsing line: TEXT: Training complete!
+    Parsing line: CONDITIONAL: CHOICE == 3
+    Parsing line: SCRIPT: pbChoosePokemon(1, 3)
+    Parsing line: CONDITIONAL: VARIABLE 1 >= 0
+    Parsing line: TEXT: Boosting Speed EVs!
+    Parsing line: SCRIPT: $player.party[$game_variables[1]].ev[:SPEED] += 10
+    Parsing line: TEXT: Training complete!
+    Parsing line: CONDITIONAL: CHOICE == 4
+    Parsing line: TEXT: Keep training hard!
+    Parsing line: GRAPHIC: NPC 08
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: I love growing berries!
+    Parsing line: TEXT: Here are some to get you started!
+    Parsing line: CONDITIONAL: SELF_SWITCH A == OFF
+    Parsing line: ITEM: ORANBERRY, 5
+    Parsing line: ITEM: SITRUSBERRY, 3
+    Parsing line: ITEM: LUMBERRY, 2
+    Parsing line: TEXT: Plant them and watch them grow!
+    Parsing line: SELF_SWITCH: A, ON
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: How are your berries growing?
+    Parsing line: GRAPHIC: NPC 09
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: Weather Control System v2.0
+    Parsing line: CHOICE: Rain| Sun| Snow| Sandstorm| Fog| Clear| Cancel
+    Parsing line: CONDITIONAL: CHOICE == 1
+    Parsing line: SCRIPT: $game_screen.weather(:Rain, 9, 0)
+    Parsing line: TEXT: Weather set to RAIN
+    Parsing line: CONDITIONAL: CHOICE == 2
+    Parsing line: SCRIPT: $game_screen.weather(:None, 0, 0)
+    Parsing line: TEXT: Weather set to SUNNY
+    Parsing line: CONDITIONAL: CHOICE == 3
+    Parsing line: SCRIPT: $game_screen.weather(:Snow, 9, 0)
+    Parsing line: TEXT: Weather set to SNOW
+    Parsing line: CONDITIONAL: CHOICE == 4
+    Parsing line: SCRIPT: $game_screen.weather(:Sandstorm, 9, 0)
+    Parsing line: TEXT: Weather set to SANDSTORM
+    Parsing line: CONDITIONAL: CHOICE == 5
+    Parsing line: SCRIPT: $game_screen.weather(:Blizzard, 9, 0)
+    Parsing line: TEXT: Weather set to FOG
+    Parsing line: CONDITIONAL: CHOICE == 6
+    Parsing line: SCRIPT: $game_screen.weather(:None, 0, 0)
+    Parsing line: TEXT: Weather cleared
+    Parsing line: CONDITIONAL: CHOICE == 7
+    Parsing line: TEXT: System offline
+    Parsing line: GRAPHIC: NPC 10
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: I control the flow of time!
+    Parsing line: CHOICE: Morning| Day| Evening| Night| Cancel
+    Parsing line: CONDITIONAL: CHOICE == 1
+    Parsing line: SCRIPT: pbSetTime(7, 0)
+    Parsing line: TEXT: It's now morning!
+    Parsing line: CONDITIONAL: CHOICE == 2
+    Parsing line: SCRIPT: pbSetTime(12, 0)
+    Parsing line: TEXT: It's now midday!
+    Parsing line: CONDITIONAL: CHOICE == 3
+    Parsing line: SCRIPT: pbSetTime(18, 0)
+    Parsing line: TEXT: It's now evening!
+    Parsing line: CONDITIONAL: CHOICE == 4
+    Parsing line: SCRIPT: pbSetTime(22, 0)
+    Parsing line: TEXT: It's now night!
+    Parsing line: CONDITIONAL: CHOICE == 5
+    Parsing line: TEXT: Time flows normally...
+    Parsing line: GRAPHIC: SWITCH
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: You pressed the red switch!
+    Parsing line: SWITCH: 10, ON
+    Parsing line: PLAY_SE: Door exit
+    Parsing line: GRAPHIC: SWITCH
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: You pressed the blue switch!
+    Parsing line: SWITCH: 11, ON
+    Parsing line: PLAY_SE: Door exit
+    Parsing line: GRAPHIC: SWITCH
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: You pressed the green switch!
+    Parsing line: SWITCH: 12, ON
+    Parsing line: PLAY_SE: Door exit
+    Parsing line: GRAPHIC: DOOR
+    Parsing line: TRIGGER: Action
+    Parsing line: CONDITIONAL: SWITCH 10 == ON
+    Parsing line: CONDITIONAL: SWITCH 11 == ON
+    Parsing line: CONDITIONAL: SWITCH 12 == ON
+    Parsing line: TEXT: All switches activated!
+    Parsing line: PLAY_SE: Door exit
+    Parsing line: TEXT: The door opens!
+    Parsing line: SELF_SWITCH: A, ON
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: The door won't budge...
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: The door won't budge...
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: The door won't budge...
+    Parsing line: GRAPHIC: NPC 11
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: Welcome to the Pokemon Center!
+    Parsing line: TEXT: Shall I heal your Pokemon?
+    Parsing line: CHOICE: Yes please| No thanks
+    Parsing line: CONDITIONAL: CHOICE == 1
+    Parsing line: TEXT: I'll heal your Pokemon right away!
+    Parsing line: FADEOUT
+    Parsing line: WAIT: 10
+    Parsing line: RECOVER_ALL
+    Parsing line: WAIT: 20
+    Parsing line: FADEIN
+    Parsing line: TEXT: Your Pokemon are fighting fit!
+    Parsing line: TEXT: We hope to see you again!
+    Parsing line: CONDITIONAL: CHOICE == 2
+    Parsing line: TEXT: Please come again!
+    Parsing line: GRAPHIC: NPC 12
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: I'm the Name Rater!
+    Parsing line: TEXT: Want me to rate your Pokemon's nickname?
+    Parsing line: CHOICE: Yes| No
+    Parsing line: CONDITIONAL: CHOICE == 1
+    Parsing line: SCRIPT: pbChoosePokemon(1, 3)
+    Parsing line: CONDITIONAL: VARIABLE 1 >= 0
+    Parsing line: SCRIPT: pbNicknameBox($player.party[$game_variables[1]])
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: Come back anytime!
+    Parsing line: CONDITIONAL: CHOICE == 2
+    Parsing line: TEXT: Come back if you change your mind!
+    Parsing line: GRAPHIC: NPC 13
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: I run the Pokemon Daycare!
+    Parsing line: TEXT: Would you like to leave a Pokemon?
+    Parsing line: CHOICE: Leave Pokemon| Withdraw Pokemon| No thanks
+    Parsing line: CONDITIONAL: CHOICE == 1
+    Parsing line: SCRIPT: pbChoosePokemon(1, 3)
+    Parsing line: CONDITIONAL: VARIABLE 1 >= 0
+    Parsing line: TEXT: I'll take good care of your Pokemon!
+    Parsing line: SCRIPT: pbDaycareDeposit($game_variables[1])
+    Parsing line: CONDITIONAL: CHOICE == 2
+    Parsing line: TEXT: Let me get your Pokemon!
+    Parsing line: SCRIPT: pbDaycareGetDeposited
+    Parsing line: CONDITIONAL: CHOICE == 3
+    Parsing line: TEXT: Come back anytime!
+    Parsing line: GRAPHIC: NPC 14
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: I can judge your Pokemon's potential!
+    Parsing line: SCRIPT: pbChoosePokemon(1, 3)
+    Parsing line: CONDITIONAL: VARIABLE 1 >= 0
+    Parsing line: TEXT: Let me check...
+    Parsing line: WAIT: 20
+    Parsing line: SCRIPT: pokemon = $player.party[$game_variables[1]]
+    Parsing line: SCRIPT: total_iv = pokemon.iv[:HP] + pokemon.iv[:ATTACK] + pokemon.iv[:DEFENSE] + pokemon.iv[:SPECIAL_ATTACK] + pokemon.iv[:SPECIAL_DEFENSE] + pokemon.iv[:SPEED]
+    Parsing line: CONDITIONAL: VARIABLE 2 >= 180
+    Parsing line: TEXT: This Pokemon has outstanding potential!
+    Parsing line: CONDITIONAL: VARIABLE 2 >= 150
+    Parsing line: TEXT: This Pokemon has great potential!
+    Parsing line: CONDITIONAL: VARIABLE 2 >= 120
+    Parsing line: TEXT: This Pokemon has decent potential!
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: This Pokemon has average potential!
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: Come back with a Pokemon to check!
+    Parsing line: GRAPHIC: WARP
+    Parsing line: TRIGGER: Player Touch
+    Parsing line: TEXT: Teleporting...
+    Parsing line: FADEOUT
+    Parsing line: WAIT: 10
+    Parsing line: PLAY_SE: Warp
+    Parsing line: WARP: 1, 10, 10
+    WARNING: Unrecognized command: WARP: 1, 10, 10
+    Parsing line: WAIT: 10
+    Parsing line: FADEIN
+    Parsing line: GRAPHIC: SIGN
+    Parsing line: TRIGGER: Action
+    Parsing line: CONDITIONAL: SELF_SWITCH A == OFF
+    Parsing line: TEXT: You discovered a new Fly location!
+    Parsing line: PLAY_SE: Mining reveal
+    Parsing line: SCRIPT: pbSetMetadata(33, :FlyLocation, [10, 30])
+    Parsing line: TEXT: You can now Fly here!
+    Parsing line: SELF_SWITCH: A, ON
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: This is a Fly point.
+    Parsing line: GRAPHIC: NPC 15
+    Parsing line: TRIGGER: Action
+    Parsing line: CONDITIONAL: SWITCH 100 == OFF
+    Parsing line: TEXT: I have a quest for you!
+    Parsing line: TEXT: Defeat 5 wild Pokemon and return to me.
+    Parsing line: CHOICE: Accept quest| Maybe later
+    Parsing line: CONDITIONAL: CHOICE == 1
+    Parsing line: TEXT: Great! Good luck!
+    Parsing line: SWITCH: 100, ON
+    Parsing line: VARIABLE: 100, 0
+    Parsing line: CONDITIONAL: CHOICE == 2
+    Parsing line: TEXT: Come back when you're ready!
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: CONDITIONAL: VARIABLE 100 >= 5
+    Parsing line: TEXT: You did it! Here's your reward!
+    Parsing line: MONEY: 10000
+    WARNING: Unrecognized command: MONEY: 10000
+    Parsing line: ITEM: RARECANDY, 3
+    Parsing line: SWITCH: 100, OFF
+    Parsing line: TEXT: Thanks for your help!
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: Keep going! You've defeated [VAR:100]/5 Pokemon.
+    Parsing line: GRAPHIC: NONE
+    Parsing line: TRIGGER: Autorun
+    Parsing line: CONDITIONAL: SWITCH 100 == ON
+    Parsing line: SCRIPT: if $game_temp.last_battle_record && $game_temp.last_battle_record[:wild]
+    Parsing line: VARIABLE: 100, + 1
+    Parsing line: SCRIPT: end
+    Parsing line: GRAPHIC: WARP
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: A powerful energy emanates from this den!
+    Parsing line: CHOICE: Enter the den| Leave
+    Parsing line: CONDITIONAL: CHOICE == 1
+    Parsing line: TEXT: A wild Dynamax Pokemon appears!
+    Parsing line: SCRIPT: pbWildBattle(:CHARIZARD, 60, true)
+    Parsing line: CONDITIONAL: CHOICE == 2
+    Parsing line: TEXT: You step back...
+    Parsing line: GRAPHIC: CRYSTAL
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: A mysterious crystal glows brightly!
+    Parsing line: CHOICE: Touch the crystal| Leave it alone
+    Parsing line: CONDITIONAL: CHOICE == 1
+    Parsing line: TEXT: The crystal shatters!
+    Parsing line: TEXT: A powerful Pokemon emerges!
+    Parsing line: SCRIPT: pbRaidBattle(:TYRANITAR, 70)
+    Parsing line: CONDITIONAL: CHOICE == 2
+    Parsing line: TEXT: You walk away...
+    Parsing line: GRAPHIC: NPC 16
+    Parsing line: TRIGGER: Action
+    Parsing line: CONDITIONAL: SELF_SWITCH A == OFF
+    Parsing line: TEXT: I've been studying Terastallization!
+    Parsing line: TEXT: Here, take this Tera Orb!
+    Parsing line: ITEM: TERAORB
+    Parsing line: TEXT: Use it to Terastallize in battle!
+    Parsing line: SELF_SWITCH: A, ON
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: Terastallization is amazing!
+    Parsing line: GRAPHIC: NPC 17
+    Parsing line: TRIGGER: Action
+    Parsing line: CONDITIONAL: SELF_SWITCH A == OFF
+    Parsing line: TEXT: You have potential, young trainer!
+    Parsing line: TEXT: Take this Z-Power Ring!
+    Parsing line: ITEM: ZPOWERRING
+    Parsing line: TEXT: Use it to unleash Z-Moves!
+    Parsing line: SELF_SWITCH: A, ON
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: Show me your Z-Power!
+    Parsing line: GRAPHIC: NPC 18
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: Debug: Set Variables
+    Parsing line: CHOICE: Var 1 = 100| Var 2 = 200| Var 3 = 300| Reset All
+    Parsing line: CONDITIONAL: CHOICE == 1
+    Parsing line: VARIABLE: 1, 100
+    Parsing line: TEXT: Variable 1 set to 100
+    Parsing line: CONDITIONAL: CHOICE == 2
+    Parsing line: VARIABLE: 2, 200
+    Parsing line: TEXT: Variable 2 set to 200
+    Parsing line: CONDITIONAL: CHOICE == 3
+    Parsing line: VARIABLE: 3, 300
+    Parsing line: TEXT: Variable 3 set to 300
+    Parsing line: CONDITIONAL: CHOICE == 4
+    Parsing line: VARIABLE: 1, 0
+    Parsing line: VARIABLE: 2, 0
+    Parsing line: VARIABLE: 3, 0
+    Parsing line: TEXT: All variables reset
+    Parsing line: GRAPHIC: NPC 19
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: Debug: Toggle Switches
+    Parsing line: CHOICE: Switch 50| Switch 51| Switch 52| All OFF
+    Parsing line: CONDITIONAL: CHOICE == 1
+    Parsing line: CONDITIONAL: SWITCH 50 == ON
+    Parsing line: SWITCH: 50, OFF
+    Parsing line: TEXT: Switch 50 is now OFF
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: SWITCH: 50, ON
+    Parsing line: TEXT: Switch 50 is now ON
+    Parsing line: CONDITIONAL: CHOICE == 2
+    Parsing line: CONDITIONAL: SWITCH 51 == ON
+    Parsing line: SWITCH: 51, OFF
+    Parsing line: TEXT: Switch 51 is now OFF
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: SWITCH: 51, ON
+    Parsing line: TEXT: Switch 51 is now ON
+    Parsing line: CONDITIONAL: CHOICE == 3
+    Parsing line: CONDITIONAL: SWITCH 52 == ON
+    Parsing line: SWITCH: 52, OFF
+    Parsing line: TEXT: Switch 52 is now OFF
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: SWITCH: 52, ON
+    Parsing line: TEXT: Switch 52 is now ON
+    Parsing line: CONDITIONAL: CHOICE == 4
+    Parsing line: SWITCH: 50, OFF
+    Parsing line: SWITCH: 51, OFF
+    Parsing line: SWITCH: 52, OFF
+    Parsing line: TEXT: All switches OFF
+    Parsing line: GRAPHIC: NPC 20
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: Want a full test team?
+    Parsing line: CHOICE: Yes| No
+    Parsing line: CONDITIONAL: CHOICE == 1
+    Parsing line: POKEMON: PIKACHU, 50
+    Parsing line: POKEMON: CHARIZARD, 50
+    Parsing line: POKEMON: BLASTOISE, 50
+    Parsing line: POKEMON: VENUSAUR, 50
+    Parsing line: POKEMON: MEWTWO, 70
+    Parsing line: POKEMON: RAYQUAZA, 70
+    Parsing line: TEXT: Enjoy your test team!
+    Parsing line: CONDITIONAL: CHOICE == 2
+    Parsing line: TEXT: Maybe later!
+    Parsing line: GRAPHIC: NPC 04
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: Hello traveler! I need your help.
+    Parsing line: TEXT: Can you find my lost Pokemon?
+    Parsing line: CHOICE: Yes I'll help!| Not right now
+    Parsing line: CONDITIONAL: CHOICE == 1
+    Parsing line: TEXT: Thank you so much!
+    Parsing line: TEXT: I think I saw it near the tall grass.
+    Parsing line: SWITCH: 50, ON
+    Parsing line: SELF_SWITCH: A, ON
+    Parsing line: CONDITIONAL: CHOICE == 2
+    Parsing line: TEXT: Oh... please come back if you change your mind.
+    Parsing line: GRAPHIC: NPC 05
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: I can help manage your Pokemon!
+    Parsing line: CHOICE: Add Pokemon| Remove Pokemon| Heal Party| Cancel
+    Parsing line: CONDITIONAL: CHOICE == 1
+    Parsing line: TEXT: Here, take this Pokemon!
+    Parsing line: POKEMON: PIKACHU, 25
+    Parsing line: TEXT: Enjoy your new Pikachu!
+    Parsing line: CONDITIONAL: CHOICE == 2
+    Parsing line: TEXT: Which Pokemon should I take?
+    Parsing line: SCRIPT: pbChoosePokemon(1,3)
+    Parsing line: CONDITIONAL: VARIABLE 1 >= 0
+    Parsing line: SCRIPT: $player.party.delete_at($game_variables[1])
+    Parsing line: TEXT: All done!
+    Parsing line: CONDITIONAL: ELSE
+    Parsing line: TEXT: Cancelled.
+    Parsing line: CONDITIONAL: CHOICE == 3
+    Parsing line: TEXT: Healing your party now!
+    Parsing line: RECOVER_ALL
+    Parsing line: TEXT: All healed up!
+    Parsing line: CONDITIONAL: CHOICE == 4
+    Parsing line: TEXT: See you later!
+    Parsing line: GRAPHIC: NPC 06
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: Welcome to the Healing Station.
+    Parsing line: TEXT: Let me heal your Pokemon!
+    Parsing line: FADEOUT
+    Parsing line: WAIT: 10
+    Parsing line: PLAY_SE: Pkmn heal
+    Parsing line: WAIT: 20
+    Parsing line: RECOVER_ALL
+    Parsing line: WAIT: 10
+    Parsing line: FADEIN
+    Parsing line: TEXT: Your Pokemon are fully healed!
+    Parsing line: GRAPHIC: NPC 07
+    Parsing line: TRIGGER: Action
+    Parsing line: TEXT: This ancient stone controls the weather.
+    Parsing line: TEXT: What weather do you want?
+    Parsing line: CHOICE: Make it rain| Make it sunny| Make it snow| Cancel
+    Parsing line: CONDITIONAL: CHOICE == 1
+    Parsing line: TEXT: The sky darkens...
+    Parsing line: SCRIPT: $game_screen.weather(:Rain, 9, 0)
+    Parsing line: TEXT: It's raining!
+    Parsing line: CONDITIONAL: CHOICE == 2
+    Parsing line: TEXT: The clouds part...
+    Parsing line: SCRIPT: $game_screen.weather(:None, 0, 0)
+    Parsing line: TEXT: The sun is shining!
+    Parsing line: CONDITIONAL: CHOICE == 3
+    Parsing line: TEXT: A cold wind blows...
+    Parsing line: SCRIPT: $game_screen.weather(:Snow, 9, 0)
+    Parsing line: TEXT: It's snowing!
+    Parsing line: CONDITIONAL: CHOICE == 4
+    Parsing line: TEXT: The weather remains unchanged.
+=== Import Complete: 37 events ===

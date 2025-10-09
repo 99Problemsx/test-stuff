@@ -1,0 +1,50 @@
+# Map Layout File Example
+# Filename format: mapXXX.map (e.g., map022.map for Map 22)
+# Place in EventImporter/ folder
+
+# Map configuration
+MAP: 22
+SIZE: 20x15
+TILESET: 1
+
+# Custom tile definitions (optional)
+# Format: TILE: SYMBOL = layer1:ID, layer2:ID, layer3:ID
+TILE: H = layer1:100, layer2:200, layer3:0
+TILE: X = layer1:150, layer2:0, layer3:0
+
+# Tile Symbol Legend:
+# . = Empty/Grass base
+# g = Grass
+# G = Tall grass
+# w = Water
+# W = Deep water
+# t = Tree
+# T = Big tree
+# p = Path/dirt
+# P = Paved path
+# r = Rock/mountain
+# R = Big rock
+# s = Sand
+# f = Flower
+# # = Wall/impassable
+# ~ = Water edge
+# ^ = Sign
+# * = Special tile
+
+# Layout (each character = 1 tile)
+LAYOUT:
+####################
+#gggggggggggggggggg#
+#gggGGGGGGGGGGggggg#
+#gggGGGGGGGGGGggggg#
+#gggGGGGGGGGGGggggg#
+#ggggggppppgggggggg#
+#gggggpPPPPpggggggg#
+#gggggpPPPPpggggggg#
+#gggggppppppggggggg#
+#ggggggggggggg~~~ww#
+#ggggggggggggg~~~ww#
+#gggtttgggggggg~~ww#
+#gggtttgggggggggggg#
+#gggggggggggggggggg#
+####################

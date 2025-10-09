@@ -1,0 +1,92 @@
+﻿# To localize this text for a particular language, please
+# translate every second line of this file.
+#-------------------------------
+[Map004]
+This ball contains a Pokémon caught by the Professor.
+This ball contains a Pokémon caught by the Professor.
+\bOak: So, you want Charmander, the fire Pokémon?
+\bOak: So, you want Charmander, the fire Pokémon?
+\bOak: Choose carefully!
+\bOak: Choose carefully!
+Game Variable 7 should store 1 if the player chose the Grass starter, 2 if they chose the Fire starter, and 3 if they chose the Water starter.
+Game Variable 7 should store 1 if the player chose the Grass starter, 2 if they chose the Fire starter, and 3 if they chose the Water starter.
+This information can be used later in the game, e.g. to determine which Pokémon the rival uses, and to detect when the player has chosen a starter at all.
+This information can be used later in the game, e.g.  to determine which Pokémon the rival uses, and to detect when the player has chosen a starter at all.
+\bOak: So, you want Squirtle, the water Pokémon?
+\bOak: So, you want Squirtle, the water Pokémon?
+\PN received a Pokédex!
+\PN received a Pokédex!
+You already have a Pokédex.
+You already have a Pokédex.
+\bOak: You should battle with your Pokémon to make it strong.
+\bOak: You should battle with your Pokémon to make it strong.
+\bOak: If you register me in your Pokégear, you can call me any time to rate your Pokédex completion.
+\bOak: If you register me in your Pokégear, you can call me any time to rate your Pokédex completion.
+\bOak: Please let me know how you get on!
+\bOak: Please let me know how you get on!
+\bOak: Oh, okay. Let me know if you change your mind.
+\bOak: Oh, okay. Let me know if you change your mind.
+\bOak: Well, which one do you want?
+\bOak: Well, which one do you want?
+\bI can control your Pokédex access. What do you want me to do?
+\bI can control your Pokédex access. What do you want me to do?
+\bWhat about it?
+\bWhat about it?
+\bThe Kanto Dex was unlocked.
+\bThe Kanto Dex was unlocked.
+\bThe Kanto Dex was locked.
+\bThe Kanto Dex was locked.
+\bThe Johto Dex was unlocked.
+\bThe Johto Dex was unlocked.
+\bThe Johto Dex was locked.
+\bThe Johto Dex was locked.
+\bThe National Dex was unlocked.
+\bThe National Dex was unlocked.
+\bThe National Dex was locked.
+\bThe National Dex was locked.
+\bOak: Wait, don't leave yet!
+\bOak: Wait, don't leave yet!
+\bOak: Here, take one of these rare Pokémon.
+\bOak: Here, take one of these rare Pokémon.
+\bOak: Ah, you made your choice!
+\bOak: Ah, you made your choice!
+\bOak: Bulbasaur, an excellent choice!
+\bOak: Bulbasaur, an excellent choice!
+\bOak: Charmander, an excellent choice!
+\bOak: Charmander, an excellent choice!
+\bOak: Squirtle, an excellent choice!
+\bOak: Squirtle, an excellent choice!
+\bOak: If I had a grandson, he would probably want his own Pokémon around now...
+\bOak: If I had a grandson, he would probably want his own Pokémon around now...
+\bOak: So, you want Bulbasaur, the grass Pokémon?
+\bOak: So, you want Bulbasaur, the grass Pokémon?
+The event next to the Professor contains the autorun commands.
+The event next to the Professor contains the autorun commands.
+There are two times it does something: when the player first enters the map, and when the player has chosen a starter.
+There are two times it does something: when the player first enters the map, and when the player has chosen a starter.
+The second time is on a higher page number. Page numbers go in order of first to last cutscene, including pages for pauses between them if relevant.
+The second time is on a higher page number. Page numbers go in order of first to last cutscene, including pages for pauses between them if relevant.
+Yes
+Yes
+No
+No
+Kanto Dex access
+Kanto Dex access
+Johto Dex access
+Johto Dex access
+National Dex access
+National Dex access
+Exit
+Exit
+Unlock Kanto Dex
+Unlock Kanto Dex
+Lock Kanto Dex
+Lock Kanto Dex
+Unlock Johto Dex
+Unlock Johto Dex
+Lock Johto Dex
+Lock Johto Dex
+Unlock National Dex
+Unlock National Dex
+Lock National Dex
+Lock National Dex

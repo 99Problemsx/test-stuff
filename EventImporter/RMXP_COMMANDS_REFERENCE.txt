@@ -1,0 +1,399 @@
+# ============================================================================
+# RPG MAKER XP EVENT COMMAND REFERENCE
+# Complete list of all Event Commands extracted from Pokemon Essentials
+# ============================================================================
+
+# STRUCTURE: RPG::EventCommand.new(code, indent, [parameters])
+# - code: Command ID number
+# - indent: Indentation level (0 = root, 1 = inside conditional, etc.)
+# - parameters: Array of command-specific parameters
+
+# ============================================================================
+# BASIC STRUCTURE
+# ============================================================================
+
+0     # Empty/End Command - Marks end of command list or branch
+      # Parameters: []
+      # Usage: list.push(RPG::EventCommand.new(0, indent, []))
+
+# ============================================================================
+# TEXT & MESSAGES
+# ============================================================================
+
+101   # Show Text (first line)
+      # Parameters: [text]
+      # Usage: RPG::EventCommand.new(101, 0, ["Hello world!"])
+
+401   # Show Text (continuation line)
+      # Parameters: [text]
+      # Usage: RPG::EventCommand.new(401, 0, ["Second line"])
+
+102   # Show Choices
+      # Parameters: [choices_array, cancel_type, choice_positions]
+      # cancel_type: 0=disallow, 1-4=choice index, 5=branch
+      # Usage: RPG::EventCommand.new(102, 0, [["Yes", "No"], 0, [0, 1, 2, 3]])
+
+402   # When [Choice]
+      # Parameters: [choice_index, choice_text]
+      # Usage: RPG::EventCommand.new(402, 0, [0, "Yes"])
+      # Must be followed by commands at indent+1, then code 0
+
+404   # Branch End (for choices)
+      # Parameters: []
+      # Usage: RPG::EventCommand.new(404, 0, [])
+
+108   # Comment (first line)
+      # Parameters: [comment_text]
+      # Usage: RPG::EventCommand.new(108, 0, ["This is a comment"])
+
+408   # Comment (continuation line)
+      # Parameters: [comment_text]
+      # Usage: RPG::EventCommand.new(408, 0, ["More comment"])
+
+# ============================================================================
+# CONDITIONAL BRANCHES
+# ============================================================================
+
+111   # Conditional Branch
+      # Parameters: [type, param1, param2, ...]
+      # Types:
+      #   0 = Switch: [0, switch_id, 0] where 0=ON, 1=OFF
+      #   1 = Variable: [1, var_id, operator, value]
+      #       operator: 0==, 1>=, 2<=, 3>, 4<, 5!=
+      #   2 = Self Switch: [2, "A"/"B"/"C"/"D", 0] where 0=ON, 1=OFF
+      #   3 = Timer: [3, seconds, operator]
+      #   4 = Actor: [4, actor_id, ...]
+      #   5 = Enemy: [5, troop_index, ...]
+      #   6 = Character: [6, character_id, direction]
+      #   7 = Gold: [7, amount, operator]
+      #   8 = Item: [8, item_id]
+      #   9 = Weapon: [9, weapon_id]
+      #   10 = Armor: [10, armor_id]
+      #   11 = Button: [11, button_id]
+      #   12 = Script: [12, script_string]
+      # CRITICAL: Self Switch type is 2, NOT 10!
+      # Usage: RPG::EventCommand.new(111, 0, [12, "$game_switches[5]"])
+
+411   # Else
+      # Parameters: []
+      # CRITICAL: Must be at indent-1 from the IF branch!
+      # Must be preceded by code 0 at same indent as IF content
+      # Usage: 
+      #   RPG::EventCommand.new(111, 0, [0, 5, 0])  # IF
+      #   RPG::EventCommand.new(..., 1, [...])      # Commands inside IF
+      #   RPG::EventCommand.new(0, 1, [])           # Empty at indent 1
+      #   RPG::EventCommand.new(411, 0, [])         # ELSE at indent 0
+
+412   # Branch End
+      # Parameters: []
+      # CRITICAL: Must be at indent-1 from the IF branch!
+      # Usage: RPG::EventCommand.new(412, 0, [])
+
+# ============================================================================
+# FLOW CONTROL
+# ============================================================================
+
+115   # Exit Event Processing
+      # Parameters: []
+      # Stops the current event immediately
+      # Usage: RPG::EventCommand.new(115, 0, [])
+
+106   # Wait
+      # Parameters: [frames]
+      # 1 second = 20 frames
+      # Usage: RPG::EventCommand.new(106, 0, [20])  # Wait 1 second
+
+# ============================================================================
+# SWITCHES & VARIABLES
+# ============================================================================
+
+121   # Control Switches
+      # Parameters: [start_id, end_id, value]
+      # value: 0=ON, 1=OFF
+      # Usage: RPG::EventCommand.new(121, 0, [5, 5, 0])  # Turn switch 5 ON
+
+122   # Control Variables
+      # Parameters: [start_id, end_id, operation, operand_type, operand]
+      # operation: 0=Set, 1=Add, 2=Sub, 3=Mul, 4=Div, 5=Mod
+      # operand_type: 0=constant, 1=variable, 2=random, 3=item, 4=actor, ...
+      # Usage: RPG::EventCommand.new(122, 0, [10, 10, 0, 0, 5])  # Set var 10 to 5
+
+123   # Control Self Switch
+      # Parameters: [switch_letter, value]
+      # switch_letter: "A", "B", "C", or "D"
+      # value: 0=ON, 1=OFF
+      # Usage: RPG::EventCommand.new(123, 0, ["A", 0])  # Turn self switch A ON
+
+# ============================================================================
+# SCREEN EFFECTS
+# ============================================================================
+
+221   # Prepare for Transition (Fadeout)
+      # Parameters: []
+      # Usage: RPG::EventCommand.new(221, 0, [])
+
+222   # Execute Transition (Fadein)
+      # Parameters: [transition_name]
+      # transition_name: "" for default
+      # Usage: RPG::EventCommand.new(222, 0, [""])
+
+223   # Change Screen Color Tone
+      # Parameters: [tone_object, duration]
+      # tone: Tone.new(red, green, blue, gray) where -255 to 255
+      # duration: frames
+      # Usage: RPG::EventCommand.new(223, 0, [Tone.new(-255, -255, -255), 6])
+
+224   # Screen Flash
+      # Parameters: [color_object, duration]
+      # Usage: RPG::EventCommand.new(224, 0, [Color.new(255, 255, 255, 255), 20])
+
+225   # Screen Shake
+      # Parameters: [power, speed, duration]
+      # Usage: RPG::EventCommand.new(225, 0, [5, 5, 20])
+
+# ============================================================================
+# AUDIO
+# ============================================================================
+
+241   # Play BGM
+      # Parameters: [audio_file_object]
+      # Usage: RPG::EventCommand.new(241, 0, [RPG::AudioFile.new("Theme", 100, 100)])
+
+249   # Play ME (Music Effect)
+      # Parameters: [audio_file_object]
+      # Usage: RPG::EventCommand.new(249, 0, [RPG::AudioFile.new("Fanfare", 80, 100)])
+
+250   # Play SE (Sound Effect)
+      # Parameters: [audio_file_object]
+      # Usage: RPG::EventCommand.new(250, 0, [RPG::AudioFile.new("Door exit", 80, 100)])
+
+# ============================================================================
+# CHARACTER & MOVEMENT
+# ============================================================================
+
+201   # Transfer Player
+      # Parameters: [constant, map_id, x, y, direction, fade_type]
+      # constant: 0 for direct, 1 for variable-based
+      # direction: 2=Down, 4=Left, 6=Right, 8=Up
+      # fade_type: 0=Black, 1=White, 2=None
+      # Usage: RPG::EventCommand.new(201, 0, [0, 5, 10, 10, 2, 0])
+
+202   # Set Event Location
+      # Parameters: [event_id, type, x, y]
+      # type: 0=constant, 1=variable, 2=exchange with another event
+      # Usage: RPG::EventCommand.new(202, 0, [1, 0, 15, 20])
+
+208   # Change Transparent Flag
+      # Parameters: [transparent]
+      # transparent: 0=ON (invisible), 1=OFF (visible)
+      # Usage: RPG::EventCommand.new(208, 0, [0])
+
+209   # Set Move Route (first command)
+      # Parameters: [character_id, move_route_object]
+      # character_id: -1=player, 0=this event, >0=event ID
+      # Usage: RPG::EventCommand.new(209, 0, [-1, route])
+
+509   # Set Move Route (continuation)
+      # Parameters: [move_command]
+      # Usage: RPG::EventCommand.new(509, 0, [route.list[i]])
+
+210   # Wait for Move's Completion
+      # Parameters: []
+      # Usage: RPG::EventCommand.new(210, 0, [])
+
+# ============================================================================
+# PLAYER & PARTY
+# ============================================================================
+
+125   # Change Gold
+      # Parameters: [operation, operand_type, operand]
+      # operation: 0=Increase, 1=Decrease
+      # operand_type: 0=constant, 1=variable
+      # Usage: RPG::EventCommand.new(125, 0, [0, 0, 1000])  # Add 1000 gold
+
+126   # Change Items
+      # Parameters: [item_id, operation, operand_type, operand]
+      # operation: 0=Increase, 1=Decrease
+      # Usage: RPG::EventCommand.new(126, 0, [1, 0, 0, 5])  # Add 5 of item 1
+
+127   # Change Weapons
+      # Parameters: [weapon_id, operation, operand_type, operand]
+      # Usage: RPG::EventCommand.new(127, 0, [1, 0, 0, 1])
+
+128   # Change Armor
+      # Parameters: [armor_id, operation, operand_type, operand]
+      # Usage: RPG::EventCommand.new(128, 0, [1, 0, 0, 1])
+
+129   # Change Party Member
+      # Parameters: [actor_id, operation, initialize]
+      # operation: 0=Add, 1=Remove
+      # initialize: 0 or 1
+      # Usage: RPG::EventCommand.new(129, 0, [1, 0, 1])
+
+134   # Change Save Access
+      # Parameters: [disable]
+      # disable: 0=Enable, 1=Disable
+      # Usage: RPG::EventCommand.new(134, 0, [1])
+
+135   # Change Menu Access
+      # Parameters: [disable]
+      # disable: 0=Enable, 1=Disable
+      # Usage: RPG::EventCommand.new(135, 0, [1])
+
+136   # Change Encounter
+      # Parameters: [disable]
+      # disable: 0=Enable, 1=Disable
+      # Usage: RPG::EventCommand.new(136, 0, [1])
+
+314   # Recover All
+      # Parameters: [actor_id]
+      # actor_id: 0=entire party, >0=specific actor
+      # Usage: RPG::EventCommand.new(314, 0, [0])
+
+# ============================================================================
+# SCRIPT
+# ============================================================================
+
+355   # Script (first line)
+      # Parameters: [script_text]
+      # Usage: RPG::EventCommand.new(355, 0, ["pbMessage('Hello')"])
+
+655   # Script (continuation line)
+      # Parameters: [script_text]
+      # Usage: RPG::EventCommand.new(655, 0, ["  more code"])
+
+# ============================================================================
+# CRITICAL PATTERNS FOR PROPER EVENT STRUCTURE
+# ============================================================================
+
+# PATTERN 1: Simple Conditional
+# ----------------------------
+# RPG::EventCommand.new(111, 0, [0, 5, 0])      # IF Switch 5 is ON
+# RPG::EventCommand.new(101, 1, ["Inside IF"])  # Content at indent 1
+# RPG::EventCommand.new(0, 1, [])               # Empty at indent 1
+# RPG::EventCommand.new(412, 0, [])             # End Branch at indent 0
+
+# PATTERN 2: Conditional with ELSE
+# ---------------------------------
+# RPG::EventCommand.new(111, 0, [0, 5, 0])       # IF Switch 5 is ON
+# RPG::EventCommand.new(101, 1, ["Inside IF"])   # Content at indent 1
+# RPG::EventCommand.new(0, 1, [])                # Empty at indent 1
+# RPG::EventCommand.new(411, 0, [])              # ELSE at indent 0
+# RPG::EventCommand.new(101, 1, ["Inside ELSE"]) # Content at indent 1
+# RPG::EventCommand.new(0, 1, [])                # Empty at indent 1
+# RPG::EventCommand.new(412, 0, [])              # End Branch at indent 0
+
+# PATTERN 3: Nested Conditionals (IF-ELSEIF-ELSE simulation)
+# ----------------------------------------------------------
+# RPG::EventCommand.new(111, 0, [1, 1, 0, 1])    # IF Variable 1 == 1
+# RPG::EventCommand.new(101, 1, ["Value is 1"])  # Content
+# RPG::EventCommand.new(0, 1, [])                # Empty at indent 1
+# RPG::EventCommand.new(411, 0, [])              # ELSE at indent 0
+#   RPG::EventCommand.new(111, 1, [1, 1, 0, 2])  # Nested IF Variable 1 == 2
+#   RPG::EventCommand.new(101, 2, ["Value is 2"])# Content at indent 2
+#   RPG::EventCommand.new(0, 2, [])              # Empty at indent 2
+#   RPG::EventCommand.new(411, 1, [])            # Nested ELSE at indent 1
+#   RPG::EventCommand.new(101, 2, ["Other"])     # Content at indent 2
+#   RPG::EventCommand.new(0, 2, [])              # Empty at indent 2
+#   RPG::EventCommand.new(412, 1, [])            # Nested End at indent 1
+# RPG::EventCommand.new(0, 1, [])                # Empty at indent 1
+# RPG::EventCommand.new(412, 0, [])              # Main End at indent 0
+
+# PATTERN 4: Choice Structure
+# ---------------------------
+# RPG::EventCommand.new(102, 0, [["Yes", "No"], 0, [0, 1, 2, 3]])  # Show Choices
+# RPG::EventCommand.new(402, 0, [0, "Yes"])     # When choice 0
+# RPG::EventCommand.new(101, 1, ["You said yes"]) # Content
+# RPG::EventCommand.new(0, 1, [])               # Empty
+# RPG::EventCommand.new(402, 0, [1, "No"])      # When choice 1
+# RPG::EventCommand.new(101, 1, ["You said no"]) # Content
+# RPG::EventCommand.new(0, 1, [])               # Empty
+# RPG::EventCommand.new(404, 0, [])             # Branch End
+
+# PATTERN 5: Self Switch State Machine (requires multiple pages)
+# ---------------------------------------------------------------
+# PAGE 1: Self Switch A OFF
+# RPG::EventCommand.new(101, 0, ["First state"])
+# RPG::EventCommand.new(123, 0, ["A", 0])       # Turn self switch A ON
+# RPG::EventCommand.new(0, 0, [])
+#
+# PAGE 2: Condition = Self Switch A ON
+# RPG::EventCommand.new(101, 0, ["Second state"])
+# RPG::EventCommand.new(0, 0, [])
+
+# ============================================================================
+# COMMON MISTAKES TO AVOID
+# ============================================================================
+
+# WRONG: Self Switch as type 10
+# RPG::EventCommand.new(111, 0, [10, "A", 0])   # WRONG! Type 10 doesn't exist
+# CORRECT: Self Switch as type 2
+# RPG::EventCommand.new(111, 0, [2, "A", 0])    # CORRECT!
+
+# WRONG: Indent mismatch on ELSE/End Branch
+# RPG::EventCommand.new(111, 0, [...])
+# RPG::EventCommand.new(0, 1, [])
+# RPG::EventCommand.new(411, 1, [])              # WRONG! Should be indent 0
+# CORRECT:
+# RPG::EventCommand.new(111, 0, [...])
+# RPG::EventCommand.new(0, 1, [])
+# RPG::EventCommand.new(411, 0, [])              # CORRECT! Same as IF
+
+# WRONG: Missing empty command before ELSE
+# RPG::EventCommand.new(111, 0, [...])
+# RPG::EventCommand.new(101, 1, [...])
+# RPG::EventCommand.new(411, 0, [])              # WRONG! No code 0 before ELSE
+# CORRECT:
+# RPG::EventCommand.new(111, 0, [...])
+# RPG::EventCommand.new(101, 1, [...])
+# RPG::EventCommand.new(0, 1, [])                # CORRECT! Empty at indent 1
+# RPG::EventCommand.new(411, 0, [])
+
+# WRONG: Parallel conditionals in ELSE (all execute!)
+# RPG::EventCommand.new(411, 0, [])
+# RPG::EventCommand.new(111, 1, [1, 1, 0, 2])    # This checks variable
+# RPG::EventCommand.new(101, 2, ["Value 2"])
+# RPG::EventCommand.new(111, 1, [1, 1, 0, 3])    # This ALSO checks! Both run!
+# RPG::EventCommand.new(101, 2, ["Value 3"])
+# CORRECT: Nest conditionals
+# RPG::EventCommand.new(411, 0, [])
+# RPG::EventCommand.new(111, 1, [1, 1, 0, 2])    # First check
+# RPG::EventCommand.new(101, 2, ["Value 2"])
+# RPG::EventCommand.new(0, 2, [])
+# RPG::EventCommand.new(411, 1, [])              # ELSE for first check
+# RPG::EventCommand.new(111, 2, [1, 1, 0, 3])    # Second check (nested)
+# RPG::EventCommand.new(101, 3, ["Value 3"])
+# RPG::EventCommand.new(0, 3, [])
+# RPG::EventCommand.new(412, 2, [])              # End nested
+# RPG::EventCommand.new(0, 2, [])
+# RPG::EventCommand.new(412, 1, [])              # End first
+
+# ============================================================================
+# NOTES FROM DEBUGGING SESSION
+# ============================================================================
+
+# 1. Self Switch conditionals MUST use type 2, not type 10
+#    Type 10 doesn't exist in RMXP and shows as "Switch 0000"
+#
+# 2. ELSE (411) and Branch End (412) MUST be at indent-1 from their content
+#    They should be at the SAME indent level as the IF (111) command
+#
+# 3. Every branch (IF content, ELSE content, When choice) needs code 0
+#    at its indent level before closing with 411/412/404
+#
+# 4. Nested CONDITIONAL: ELSE creates nested IF statements with increasing indent
+#    Maximum 2 levels recommended for readability
+#
+# 5. Multiple CONDITIONAL statements at same level ALL EXECUTE
+#    They don't form ELSEIF chain automatically!
+#    Must use nested ELSE structure for mutually exclusive checks
+#
+# 6. Single-page events can't change behavior with self switches
+#    Need multiple pages with different conditions for state machines
+#
+# 7. Variable comparisons in conditionals: type 1, [var_id, operator, value]
+#    Operator: 0==, 1>=, 2<=, 3>, 4<, 5!=
+
+# ============================================================================
+# END OF REFERENCE
+# ============================================================================

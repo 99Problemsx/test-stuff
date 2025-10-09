@@ -1,0 +1,4 @@
+Name      = Partner Trainer Stack Overflow Fix
+Version   = 2.0
+Essentials= 21.1
+Credits   = Unknown

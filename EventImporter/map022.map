@@ -1,0 +1,62 @@
+# Map 22 Layout - Test Pokemon Area
+# This creates a simple outdoor testing area with grass, paths, and water
+# Designed to work with map022_test_pokemon.txt events
+
+MAP: 22
+SIZE: 35x50
+TILESET: 1
+
+# Layout - 35 tiles wide x 50 tiles tall
+# This map will automatically expand to fit all imported events
+LAYOUT:
+###################################
+#ggggggggggggggggggggggggggggggggg#
+#ggggggggggggggggggggggggggggggggg#
+#ggGGGGGgggggggggggggggggggGGGGGgg#
+#ggGGGGGgggggggggggggggggggGGGGGgg#
+#ggGGGGGgggggggggggggggggggGGGGGgg#
+#ggGGGGGgggggggggggggggggggGGGGGgg#
+#ggggggggggggggggggggggggggggggggg#
+#gggggppppppppppppppppppppppgggggg#
+#ggggpPPPPPPPPPPPPPPPPPPPPPpggggg#
+#ggggpPPPPPPPPPPPPPPPPPPPPPpggggg#
+#ggggpPPPPPPPPPPPPPPPPPPPPPpggggg#
+#ggggpPPPPPPPPPPPPPPPPPPPPPpggggg#
+#ggggpPPPPPPPPPPPPPPPPPPPPPpggggg#
+#ggggpPPPPPPPPPPPPPPPPPPPPPpggggg#
+#ggggpPPPPPPPPPPPPPPPPPPPPPpggggg#
+#ggggpPPPPPPPPPPPPPPPPPPPPPpggggg#
+#ggggpPPPPPPPPPPPPPPPPPPPPPpggggg#
+#ggggpPPPPPPPPPPPPPPPPPPPPPpggggg#
+#ggggpPPPPPPPPPPPPPPPPPPPPPpggggg#
+#ggggpPPPPPPPPPPPPPPPPPPPPPpggggg#
+#gggggppppppppppppppppppppppgggggg#
+#ggggggggggggggggggggggggggggggggg#
+#ggggggggggggggggggggggggggggggggg#
+#ggggggggggggggggggggggggggggggggg#
+#ggggggggggggggggggggggggggggggggg#
+#ggggggggggggggggggggggg~~~~wwwww#
+#ggggggggggggggggggggggg~~~~wwwww#
+#ggggggggggggggggggggggg~~~~wwwww#
+#gggttttgggggggggggggggg~~~~wwwww#
+#gggttttgggggggggggggggg~~~wwwwww#
+#gggttttggggggggggggggg~~~~wwwwww#
+#ggggggggggggggggggggggg~~~wwwwww#
+#ggggggggggggggggggggggggggggggggg#
+#ggggggggggggggggggggggggggggggggg#
+#ggggggggggggggggggggggggggggggggg#
+#ggggggggggggggggggggggggggggggggg#
+#ggggggggggggggggggggggggggggggggg#
+#ggggggggggggggggggggggggggggggggg#
+#ggggggggggggggggggggggggggggggggg#
+#ggggggggggggggggggggggggggggggggg#
+#ggggggggggggggggggggggggggggggggg#
+#ggggggggggggggggggggggggggggggggg#
+#ggggggggggggggggggggggggggggggggg#
+#ggggggggggggggggggggggggggggggggg#
+#ggggggggggggggggggggggggggggggggg#
+#ggggggggggggggggggggggggggggggggg#
+#ggggggggggggggggggggggggggggggggg#
+#ggggggggggggggggggggggggggggggggg#
+#ggggggggggggggggggggggggggggggggg#
+###################################

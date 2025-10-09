@@ -1,0 +1,6 @@
+Name      = Species Display
+Version   = 1.0
+Essentials= 21.1
+Website   = https://eeveeexpo.com/
+Credits   = NoNonever
+Optional  = [DBK] Animated Pokémon System

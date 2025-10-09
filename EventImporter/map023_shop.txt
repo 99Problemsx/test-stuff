@@ -1,0 +1,41 @@
+# Map 23 - Simple Poke Mart Events
+# Shop interior with clerk
+
+MAP: 23
+
+# Shop Clerk behind the counter
+EVENT: Shop Clerk
+X: 5
+Y: 5
+GRAPHIC: NPC 02
+TRIGGER: Action
+TEXT: Welcome to the Poke Mart!
+SCRIPT: pbPokemonMart([
+SCRIPT:   :POKEBALL,
+SCRIPT:   :GREATBALL,
+SCRIPT:   :ULTRABALL,
+SCRIPT:   :POTION,
+SCRIPT:   :SUPERPOTION,
+SCRIPT:   :HYPERPOTION,
+SCRIPT:   :FULLRESTORE,
+SCRIPT:   :REVIVE,
+SCRIPT:   :ANTIDOTE,
+SCRIPT:   :PARALYZEHEAL,
+SCRIPT:   :AWAKENING,
+SCRIPT:   :BURNHEAL,
+SCRIPT:   :ICEHEAL,
+SCRIPT:   :FULLHEAL,
+SCRIPT:   :REPEL,
+SCRIPT:   :SUPERREPEL,
+SCRIPT:   :MAXREPEL,
+SCRIPT:   :ESCAPEROPE
+SCRIPT: ])
+TEXT: Thank you! Please come again!
+
+# Exit warp at the door
+EVENT: Exit
+X: 5
+Y: 7
+GRAPHIC: 
+TRIGGER: Player Touch
+WARP: 1, 10, 10

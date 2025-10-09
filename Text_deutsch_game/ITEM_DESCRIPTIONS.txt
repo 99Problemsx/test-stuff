@@ -1,0 +1,316 @@
+﻿# To localize this text for a particular language, please
+# translate every second line of this file.
+#-------------------------------
+[ITEM_DESCRIPTIONS]
+When used, it restores any stat changes of a target Pokémon.
+When used, it restores any stat changes of a target Pokémon.
+When used, it activates the Ability of a target Pokémon.
+When used, it activates the Ability of a target Pokémon.
+When used, it causes a target Pokémon to use its held item.
+When used, it causes a target Pokémon to use its held item.
+When used, it causes a target Pokémon to drop its held item.
+When used, it causes a target Pokémon to drop its held item.
+A glassy black stone that produces a sharp cutting edge when split. It’s loved by a certain Pokémon.
+A glassy black stone that produces a sharp cutting edge when split. It’s loved by a certain Pokémon.
+A block of muddy material that is for fuel. It’s loved by a certain Pokémon.
+A block of muddy material that is for fuel. It’s loved by a certain Pokémon.
+A string exuding a mysterious energy of connection. It’s loved by certain Pokémon.
+A string exuding a mysterious energy of connection. It’s loved by certain Pokémon.
+When held by Dialga, this large, glowing gem wells with power and allows the Pokémon to change form.
+When held by Dialga, this large, glowing gem wells with power and allows the Pokémon to change form.
+When held by Palkia, this large, glowing orb wells with power and allows the Pokémon to change form.
+When held by Palkia, this large, glowing orb wells with power and allows the Pokémon to change form.
+A stone tablet to be held by a certain Pokémon. It the holder the power of every type there is.
+A stone tablet to be held by a certain Pokémon. It the holder the power of every type there is.
+An item to be held by a Pokémon. It is a stone tablet that boosts the power of Normal-type moves.
+An item to be held by a Pokémon. It is a stone tablet that boosts the power of Normal-type moves.
+A Berry that can be fed to a Pokémon to restore its PP.
+A Berry that can be fed to a Pokémon to restore its PP.
+When held by Giratina, this large, glowing gem wells with power and allows the Pokémon to change form.
+When held by Giratina, this large, glowing gem wells with power and allows the Pokémon to change form.
+A mysterious ball that can be thrown at wild Pokémon in order to catch them.
+A mysterious ball that can be thrown at wild Pokémon in order to catch them.
+A mysterious ball that provides a higher success catch rate than a standard Poké Ball.
+A mysterious ball that provides a higher success catch rate than a standard Poké Ball.
+A mysterious ball that provides an even higher success catch rate than a Great Ball does.
+A mysterious ball that provides an even higher success catch rate than a Great Ball does.
+A ball that flies fast and true ideal for catching nimble Pokémon or Pokémon that fly high in the air.
+A ball that flies fast and true ideal for catching nimble Pokémon or Pokémon that fly high in the air.
+An improvement on the original Feather Ball design. It has a higher success rate than the Feather Ball.
+An improvement on the original Feather Ball design. It has a higher success rate than the Feather Ball.
+The ultimate iteration of the Feather Ball. It has an even higher success rate than the Wing Ball does.
+The ultimate iteration of the Feather Ball. It has an even higher success rate than the Wing Ball does.
+A ball that is too heavy to throw, but it is highly effective to an unsuspecting Pokémon.
+A ball that is too heavy to throw, but it is highly effective to an unsuspecting Pokémon.
+An improvement on the original Heavy Ball design. It has a higher success rate than the Heavy Ball.
+An improvement on the original Heavy Ball design. It has a higher success rate than the Heavy Ball.
+The ultimate iteration of the Heavy Ball. It has an even higher success rate than the Leaden Ball does.
+The ultimate iteration of the Heavy Ball. It has an even higher success rate than the Leaden Ball does.
+An irreplicable Poké Ball that was once used to catch the frenzied Pokémon at the Temple of Sinnoh.
+An irreplicable Poké Ball that was once used to catch the frenzied Pokémon at the Temple of Sinnoh.
+A strange looking Poke Ball that arrived from the past Sinnoh.
+A strange looking Poke Ball that arrived from the past Sinnoh.
+A peculiar set of armor that can make a certain Pokémon evolve. Auspicious wishes live within it.
+A peculiar set of armor that can make a certain Pokémon evolve. Auspicious wishes live within it.
+A peculiar set of armor that can make a certain Pokémon evolve. Malicious will lurks within it.
+A peculiar set of armor that can make a certain Pokémon evolve. Malicious will lurks within it.
+A scroll that evolves certain Pokémon. Written on it are the true secrets of the path of darkness.
+A scroll that evolves certain Pokémon. Written on it are the true secrets of the path of darkness.
+A scroll that evolves certain Pokémon. Written on it are the true secrets of the path of water.
+A scroll that evolves certain Pokémon. Written on it are the true secrets of the path of water.
+A shard of what appears to be an old blade of some sort. It is held only by a head of certain Pokémon group.
+A shard of what appears to be an old blade of some sort. It is held only by a head of certain Pokémon group.
+An item to be held by Pokémon with certain Abilities. It boosts the strength of the Pokémon.
+An item to be held by Pokémon with certain Abilities. It boosts the strength of the Pokémon.
+An item to be held by a Pokémon. This shield protects the holder from having its Ability changed by others.
+An item to be held by a Pokémon. This shield protects the holder from having its Ability changed by others.
+An item to be held by a Pokémon. It protects the holder from having its stats lowered.
+An item to be held by a Pokémon. It protects the holder from having its stats lowered.
+An item to be held by a Pokémon. This herb will allow the holder to mirror an opponent's stat increases once.
+An item to be held by a Pokémon. This herb will allow the holder to mirror an opponent's stat increases once.
+An item to be held by a Pokémon. It boosts the holder's punching moves and prevents direct contact.
+An item to be held by a Pokémon. It boosts the holder's punching moves and prevents direct contact.
+An item to be held by a Pokémon. It conceals the holder, protecting it from move's additional effects.
+An item to be held by a Pokémon. It conceals the holder, protecting it from move's additional effects.
+An item to be held by a Pokémon. It ensures the holder's multistrike moves hit more times.
+An item to be held by a Pokémon. It ensures the holder's multistrike moves hit more times.
+An item that accidentally dropped by a Pokémon. It seems that Gimmighoul treasure and hoard these.
+An item that accidentally dropped by a Pokémon. It seems that Gimmighoul treasure and hoard these.
+A small and rare bamboo shoot. It's quite popular with a certain class of gourmands.
+A small and rare bamboo shoot. It's quite popular with a certain class of gourmands.
+A large and rare bamboo shoot. It's extremely popular with a certain class of gourmands.
+A large and rare bamboo shoot. It's extremely popular with a certain class of gourmands.
+The latest model of smartphone. A Rotom lives within it, and it can be used to run all sorts of handy apps.
+The latest model of smartphone. A Rotom lives within it, and it can be used to run all sorts of handy apps.
+A record of the Heath's expedition on the Great Crater of Paldea. It has the name "Sada" written on it.
+A record of the Heath's expedition on the Great Crater of Paldea. It has the name "Sada" written on it.
+A record of the Heath's expedition on the Great Crater of Paldea. It has the name "Turo" written on it.
+A record of the Heath's expedition on the Great Crater of Paldea. It has the name "Turo" written on it.
+A mochi cake with Berries kneaded into its dough. It increases base points for a Pokémon's HP stat.
+A mochi cake with Berries kneaded into its dough. It increases base points for a Pokémon's HP stat.
+A mochi cake with Berries kneaded into its dough. It increases base points for a Pokémon's Attack stat.
+A mochi cake with Berries kneaded into its dough. It increases base points for a Pokémon's Attack stat.
+A mochi cake with Berries kneaded into its dough. It increases base points for a Pokémon's Defense stat.
+A mochi cake with Berries kneaded into its dough. It increases base points for a Pokémon's Defense stat.
+A mochi cake with Berries kneaded into its dough. It increases base points for a Pokémon's Sp. Atk stat.
+A mochi cake with Berries kneaded into its dough. It increases base points for a Pokémon's Sp. Atk stat.
+A mochi cake with Berries kneaded into its dough. It increases base points for a Pokémon's Sp. Def stat.
+A mochi cake with Berries kneaded into its dough. It increases base points for a Pokémon's Sp. Def stat.
+A mochi cake with Berries kneaded into its dough. It increases base points for a Pokémon's Speed stat.
+A mochi cake with Berries kneaded into its dough. It increases base points for a Pokémon's Speed stat.
+A mochi cake with Berries kneaded into its dough. It causes a Pokémon to lose all its base points.
+A mochi cake with Berries kneaded into its dough. It causes a Pokémon to lose all its base points.
+An item to be held by a Pokémon. It boosts the power of the holder's Fairy-type moves.
+An item to be held by a Pokémon. It boosts the power of the holder's Fairy-type moves.
+A peculiar apple that can make a certain species of Pokémon evolve. It's exceptionally syrupy.
+A peculiar apple that can make a certain species of Pokémon evolve. It's exceptionally syrupy.
+A peculiar cracked teacup that can make a certain species of Pokémon evolve. It makes delicious tea.
+A peculiar cracked teacup that can make a certain species of Pokémon evolve. It makes delicious tea.
+A peculiar chipped teacup that can make a certain species of Pokémon evolve. It makes delicious tea.
+A peculiar chipped teacup that can make a certain species of Pokémon evolve. It makes delicious tea.
+A carved wooden mask to be held by Ogerpon. It allows Ogerpon to wield the Water type during battle.
+A carved wooden mask to be held by Ogerpon. It allows Ogerpon to wield the Water type during battle.
+A carved wooden mask to be held by Ogerpon. It allows Ogerpon to wield the Fire type during battle.
+A carved wooden mask to be held by Ogerpon. It allows Ogerpon to wield the Fire type during battle.
+A carved wooden mask to be held by Ogerpon. It allows Ogerpon to wield the Rock type during battle.
+A carved wooden mask to be held by Ogerpon. It allows Ogerpon to wield the Rock type during battle.
+A teal mask patterned after the face of an ogre. Dropped by Ogerpon after visiting the Festival of Masks.
+A teal mask patterned after the face of an ogre. Dropped by Ogerpon after visiting the Festival of Masks.
+A peculiar metal that can make certain species of Pokémon evolve. It is composed of many layers.
+A peculiar metal that can make certain species of Pokémon evolve. It is composed of many layers.
+A mysterious disk with an indigo shine to it, given by the Top Champion. It seems to be tied to Area Zero.
+A mysterious disk with an indigo shine to it, given by the Top Champion. It seems to be tied to Area Zero.
+A Pecha Berry of the highest quality. It's one of every a few years berry that carefully tended by an expert.
+A Pecha Berry of the highest quality. It's one of every a few years berry that carefully tended by an expert.
+A device that synchronizes your mind and feelings with your Pokémon's as one. It's still a prototype—hence.
+A device that synchronizes your mind and feelings with your Pokémon's as one. It's still a prototype—hence.
+A rock that fell to earth from space. It allows a certain species of Pokémon to change forms.
+A rock that fell to earth from space. It allows a certain species of Pokémon to change forms.
+A proof copy of the exploration notes, along with Briar's thoughts covering the Area Zero Underdepths.
+A proof copy of the exploration notes, along with Briar's thoughts covering the Area Zero Underdepths.
+A mystical charm that repels wild Pokémon when activated. Can be toggled on and off.
+A mystical charm that repels wild Pokémon when activated. Can be toggled on and off.
+This can be used to smash rocks.
+This can be used to smash rocks.
+This can be used to cut trees.
+This can be used to cut trees.
+This can be used on ice barriers to break at ease.
+This can be used on ice barriers to break at ease.
+Punch the tree to shake it.
+Punch the tree to shake it.
+It allows you spread a sweet essence around you.
+It allows you spread a sweet essence around you.
+This can be used to push big objects.
+This can be used to push big objects.
+This can be used to illuminate area.
+This can be used to illuminate area.
+A magic fan that can push fog away..
+A magic fan that can push fog away..
+This special flute can change the weather, by playing the right tunes.
+This special flute can change the weather, by playing the right tunes.
+A wizard used to own this.
+A wizard used to own this.
+This can be used to float on the water.
+This can be used to float on the water.
+It allows you breath under water.
+It allows you breath under water.
+Unique swimming gloves that allow the user to swim up a waterfall.
+Unique swimming gloves that allow the user to swim up a waterfall.
+Unique flippers that allow the user to gain enough speed to cross a whirlpool.
+Unique flippers that allow the user to gain enough speed to cross a whirlpool.
+A flying cloud that can only be ridden by those with a pure heart.
+A flying cloud that can only be ridden by those with a pure heart.
+It is a Shovel, it can dig holes. Used to belong to a great knight.
+It is a Shovel, it can dig holes. Used to belong to a great knight.
+This can be used to return to the last healing place.
+This can be used to return to the last healing place.
+This can be used to climb big ledges.
+This can be used to climb big ledges.
+This can be used to lift objects.
+This can be used to lift objects.
+This can be used to cross lava, How does it float?.
+This can be used to cross lava, How does it float?.
+Unique lava gloves that allow the user to travel up a lavafall.
+Unique lava gloves that allow the user to travel up a lavafall.
+Unique flippers that allow the user to gain enough speed to cross a lavaswhirl.
+Unique flippers that allow the user to gain enough speed to cross a lavaswhirl.
+A High-tech, heat resistant fishing rod. Can be use to fish for wild Pokémon.
+A High-tech, heat resistant fishing rod. Can be use to fish for wild Pokémon.
+A Special Piece the can reveal the .
+A Special Piece the can reveal the .
+Do you wanna build a secret base?.
+Do you wanna build a secret base?.
+Nifty goggles to protect eyes from desert sandstorms.
+Nifty goggles to protect eyes from desert sandstorms.
+A Music book to hold music sheets.
+A Music book to hold music sheets.
+A Music sheet with the song title Clearing.
+A Music sheet with the song title Clearing.
+A Music sheet with the song title Rainy.
+A Music sheet with the song title Rainy.
+A Music sheet with the song title Stormy.
+A Music sheet with the song title Stormy.
+A Music sheet with the song title Snowy.
+A Music sheet with the song title Snowy.
+A Music sheet with the song title Blizzard.
+A Music sheet with the song title Blizzard.
+A Music sheet with the song title Sandstorm.
+A Music sheet with the song title Sandstorm.
+A Music sheet with the song title Stormy Rain.
+A Music sheet with the song title Stormy Rain.
+A Music sheet with the song title Sunny.
+A Music sheet with the song title Sunny.
+A Music sheet with the song title Foggy.
+A Music sheet with the song title Foggy.
+Testing Bombs.
+Testing Bombs.
+A Wishing Star has been affixed to it. It lets out light that allows Pokémon to Dynamax when at a Power Spot.
+A Wishing Star has been affixed to it. It lets out light that allows Pokémon to Dynamax when at a Power Spot.
+A stone that radiates Dynamax energy. It can fully recharge your Dynamax Band in battle.
+A stone that radiates Dynamax energy. It can fully recharge your Dynamax Band in battle.
+Raises the Dynamax Level of a single Pokémon by one. A higher level means higher HP when Dynamaxed.
+Raises the Dynamax Level of a single Pokémon by one. A higher level means higher HP when Dynamaxed.
+Maxes out the Dynamax Level of a single Pokémon. A higher level means higher HP when Dynamaxed.
+Maxes out the Dynamax Level of a single Pokémon. A higher level means higher HP when Dynamaxed.
+A soup that packs a huge kick. Certain Pokémon that consume it may be given the ability to Gigantamax.
+A soup that packs a huge kick. Certain Pokémon that consume it may be given the ability to Gigantamax.
+Having one of these mysterious charms makes it more likely youâ€™ll encounter a PokÃ©mon with a mark.
+Having one of these mysterious charms makes it more likely youâ€™ll encounter a PokÃ©mon with a mark.
+A fertilizer for growing Berries. It causes strange, sudden mutations based on other Berries nearby.
+A fertilizer for growing Berries. It causes strange, sudden mutations based on other Berries nearby.
+A fertilizer for growing Berries. Berries that fall from nearby plants can take root in this mulch.
+A fertilizer for growing Berries. Berries that fall from nearby plants can take root in this mulch.
+A fertilizer for growing Berries. It increases the harvest without the need for particularly diligent care.
+A fertilizer for growing Berries. It increases the harvest without the need for particularly diligent care.
+A fertilizer for growing Berries. It makes the soil dry out faster.
+A fertilizer for growing Berries. It makes the soil dry out faster.
+A fertilizer for growing Berries. It increases the harvest, chance of mutations, and drying rate.
+A fertilizer for growing Berries. It increases the harvest, chance of mutations, and drying rate.
+A box containing a helping of a special type of bait. It can be used to lure wild Pokémon to a raid den.
+A box containing a helping of a special type of bait. It can be used to lure wild Pokémon to a raid den.
+An orb that holds the power to crystallize. When charged, it allows Pokémon to Terastallize.
+An orb that holds the power to crystallize. When charged, it allows Pokémon to Terastallize.
+On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+On rare occasions, these shards form when a Tera Pokémon falls in battle and its Tera Jewel shatters.
+A mostly in-tact Tera Jewel. Its awkward shape makes it hard to tell what Tera Type it may unlock.
+A mostly in-tact Tera Jewel. Its awkward shape makes it hard to tell what Tera Type it may unlock.
+A perfectly hexogonal Tera Jewel. Using this can unlock any Tera Type that the user desires.
+A perfectly hexogonal Tera Jewel. Using this can unlock any Tera Type that the user desires.
+A jewel glistening with Terastal energy. It can fully recharge your Tera Orb in battle.
+A jewel glistening with Terastal energy. It can fully recharge your Tera Orb in battle.
+A mysterious glimmering charm that increases the number of Tera Shards you receive from Tera Raid Battles.
+A mysterious glimmering charm that increases the number of Tera Shards you receive from Tera Raid Battles.
+A mysterious ring that enables Pokémon to use Z-Power if they are holding a compatible Z-Crystal.
+A mysterious ring that enables Pokémon to use Z-Power if they are holding a compatible Z-Crystal.
+A crystal brimming with Z-Power. It can fully recharge your Z-Ring in battle.
+A crystal brimming with Z-Power. It can fully recharge your Z-Ring in battle.
+It converts Z-Power into crystals that upgrade Normal-type moves to Normal-type Z-Moves.
+It converts Z-Power into crystals that upgrade Normal-type moves to Normal-type Z-Moves.
+It converts Z-Power into crystals that upgrade Fighting-type moves to Fighting-type Z-Moves.
+It converts Z-Power into crystals that upgrade Fighting-type moves to Fighting-type Z-Moves.
+It converts Z-Power into crystals that upgrade Flying-type moves to Flying-type Z-Moves.
+It converts Z-Power into crystals that upgrade Flying-type moves to Flying-type Z-Moves.
+It converts Z-Power into crystals that upgrade Poison-type moves to Poison-type Z-Moves.
+It converts Z-Power into crystals that upgrade Poison-type moves to Poison-type Z-Moves.
+It converts Z-Power into crystals that upgrade Ground-type moves to Ground-type Z-Moves.
+It converts Z-Power into crystals that upgrade Ground-type moves to Ground-type Z-Moves.
+It converts Z-Power into crystals that upgrade Rock-type moves to Rock-type Z-Moves.
+It converts Z-Power into crystals that upgrade Rock-type moves to Rock-type Z-Moves.
+It converts Z-Power into crystals that upgrade Bug-type moves to Bug-type Z-Moves.
+It converts Z-Power into crystals that upgrade Bug-type moves to Bug-type Z-Moves.
+It converts Z-Power into crystals that upgrade Ghost-type moves to Ghost-type Z-Moves.
+It converts Z-Power into crystals that upgrade Ghost-type moves to Ghost-type Z-Moves.
+It converts Z-Power into crystals that upgrade Steel-type moves to Steel-type Z-Moves.
+It converts Z-Power into crystals that upgrade Steel-type moves to Steel-type Z-Moves.
+It converts Z-Power into crystals that upgrade Fire-type moves to Fire-type Z-Moves.
+It converts Z-Power into crystals that upgrade Fire-type moves to Fire-type Z-Moves.
+It converts Z-Power into crystals that upgrade Water-type moves to Water-type Z-Moves.
+It converts Z-Power into crystals that upgrade Water-type moves to Water-type Z-Moves.
+It converts Z-Power into crystals that upgrade Grass-type moves to Grass-type Z-Moves.
+It converts Z-Power into crystals that upgrade Grass-type moves to Grass-type Z-Moves.
+It converts Z-Power into crystals that upgrade Electric-type moves to Electric-type Z-Moves.
+It converts Z-Power into crystals that upgrade Electric-type moves to Electric-type Z-Moves.
+It converts Z-Power into crystals that upgrade Psychic-type moves to Psychic-type Z-Moves.
+It converts Z-Power into crystals that upgrade Psychic-type moves to Psychic-type Z-Moves.
+It converts Z-Power into crystals that upgrade Ice-type moves to Ice-type Z-Moves.
+It converts Z-Power into crystals that upgrade Ice-type moves to Ice-type Z-Moves.
+It converts Z-Power into crystals that upgrade Dragon-type moves to Dragon-type Z-Moves.
+It converts Z-Power into crystals that upgrade Dragon-type moves to Dragon-type Z-Moves.
+It converts Z-Power into crystals that upgrade Dark-type moves to Dark-type Z-Moves.
+It converts Z-Power into crystals that upgrade Dark-type moves to Dark-type Z-Moves.
+It converts Z-Power into crystals that upgrade Fairy-type moves to Fairy-type Z-Moves.
+It converts Z-Power into crystals that upgrade Fairy-type moves to Fairy-type Z-Moves.
+It converts Z-Power into crystals that upgrade Pikachu's Volt Tackle to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Pikachu's Volt Tackle to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade a capped Pikachu's Thunderbolt to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade a capped Pikachu's Thunderbolt to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Alolan Raichu's Thunderbolt to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Alolan Raichu's Thunderbolt to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Eevee's Last Resort to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Eevee's Last Resort to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Snorlax's Giga Impact to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Snorlax's Giga Impact to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Mew's Psychic to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Mew's Psychic to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Decidueye's Spirit Shackle to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Decidueye's Spirit Shackle to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Incineroar's Darkest Lariat to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Incineroar's Darkest Lariat to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Primarina's Sparkling Aria to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Primarina's Sparkling Aria to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Lycanroc's Stone Edge to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Lycanroc's Stone Edge to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Mimikyu's Play Rough to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Mimikyu's Play Rough to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Kommo-o's Clanging Scales to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Kommo-o's Clanging Scales to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade the tapus' Nature's Madness to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade the tapus' Nature's Madness to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Solgaleo's Sunsteel Strike to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Solgaleo's Sunsteel Strike to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Lunala's Moongeist Beam to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Lunala's Moongeist Beam to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Marshadow's Spectral Thief to an exclusive Z-Move.
+It converts Z-Power into crystals that upgrade Marshadow's Spectral Thief to an exclusive Z-Move.
+It's a crystal that turns Necrozma fused with Solgaleo or Lunala into a new form.
+It's a crystal that turns Necrozma fused with Solgaleo or Lunala into a new form.

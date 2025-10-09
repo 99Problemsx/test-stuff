@@ -1,0 +1,34 @@
+# Map 23 Layout - Simple Poke Mart Interior
+# Using REAL tile IDs from Map 25 analysis (Indoor tileset)
+
+MAP: 23
+SIZE: 10x8
+TILESET: 5
+
+# Real tile mapping from Map 25 (Tileset 5 - Indoor)
+# Based on actual analysis of working shop map
+
+# Floor (passable) - most common tile in Map 25
+TILE: . = layer1:409, layer2:0, layer3:0
+
+# Counter/Furniture tiles
+TILE: C = layer1:426, layer2:0, layer3:0
+TILE: c = layer1:433, layer2:0, layer3:0
+
+# Wall tiles  
+TILE: # = layer1:416, layer2:0, layer3:0
+
+# Door (using floor tile, passable)
+TILE: D = layer1:409, layer2:0, layer3:0
+
+# Layout - Simple Poke Mart (10x8)
+LAYOUT:
+##########
+#........#
+#........#
+#........#
+#CCCCCC..#
+#cccccc..#
+#........#
+###DD#####
+

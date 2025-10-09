@@ -1,0 +1,340 @@
+﻿# To localize this text for a particular language, please
+# translate every second line of this file.
+#-------------------------------
+[ITEM_NAME_PLURALS]
+Black Augurites
+Black Augurites
+Peat Blocks
+Peat Blocks
+Linking Cords
+Linking Cords
+Adamant Crystals
+Adamant Crystals
+Lustrous Globes
+Lustrous Globes
+Legend Plates
+Legend Plates
+Blank Plates
+Blank Plates
+Hopo Berries
+Hopo Berries
+Griseous Cores
+Griseous Cores
+Feather Balls
+Feather Balls
+Wing Balls
+Wing Balls
+Jet Balls
+Jet Balls
+Leaden Balls
+Leaden Balls
+Gigaton Balls
+Gigaton Balls
+Origin Balls
+Origin Balls
+Strange Balls
+Strange Balls
+Auspicious Armors
+Auspicious Armors
+Malicious Armors
+Malicious Armors
+Scroll of Darkness
+Scroll of Darkness
+Scroll of Waters
+Scroll of Waters
+Leader's Crests
+Leader's Crests
+Booster Energies
+Booster Energies
+Ability Shields
+Ability Shields
+Clear Amulets
+Clear Amulets
+Mirror Herbs
+Mirror Herbs
+Punching Gloves
+Punching Gloves
+Covert Cloaks
+Covert Cloaks
+Loaded Dices
+Loaded Dices
+Gimmighoul Coins
+Gimmighoul Coins
+Tiny Bamboo Shoots
+Tiny Bamboo Shoots
+Big Bamboo Shoots
+Big Bamboo Shoots
+Rotom Phones
+Rotom Phones
+Scarlet Books
+Scarlet Books
+Violet Books
+Violet Books
+Health Mochi
+Health Mochi
+Muscle Mochi
+Muscle Mochi
+Resist Mochi
+Resist Mochi
+Genius Mochi
+Genius Mochi
+Clever Mochi
+Clever Mochi
+Swift Mochi
+Swift Mochi
+Fresh-Start Mochi
+Fresh-Start Mochi
+Fairy Feathers
+Fairy Feathers
+Syrupy Apples
+Syrupy Apples
+Unremarkable Teacups
+Unremarkable Teacups
+Masterpiece Teacups
+Masterpiece Teacups
+Wellspring Masks
+Wellspring Masks
+Hearthflame Masks
+Hearthflame Masks
+Cornerstone Masks
+Cornerstone Masks
+Teal Masks
+Teal Masks
+Metal Alloys
+Metal Alloys
+Indigo Disks
+Indigo Disks
+Mythical Pecha Berries
+Mythical Pecha Berries
+Synchro Machines
+Synchro Machines
+Meteorites
+Meteorites
+Briar's Books
+Briar's Books
+Repel Charms
+Repel Charms
+Hammers
+Hammers
+Axes
+Axes
+Ice Picks
+Ice Picks
+Essence Mixture
+Essence Mixture
+Strength Gauntlets
+Strength Gauntlets
+Lanterns
+Lanterns
+Magic Fans
+Magic Fans
+Ocarinas
+Ocarinas
+Harp of Ages
+Harp of Ages
+Lutes
+Lutes
+Cloaks of Kecleon
+Cloaks of Kecleon
+Life Buoy
+Life Buoy
+Scuba Gears
+Scuba Gears
+Swimming gloves
+Swimming gloves
+Flippers
+Flippers
+Nimbus
+Nimbus
+Used Shovels
+Used Shovels
+Disks of returning
+Disks of returning
+Climbing Gears
+Climbing Gears
+Power Grips
+Power Grips
+Obsidan Boat
+Obsidan Boat
+Lava gloves
+Lava gloves
+Lava Flippers
+Lava Flippers
+Speical Rod
+Speical Rod
+Magic Monocles
+Magic Monocles
+Secret Base Builders
+Secret Base Builders
+Go-Goggles
+Go-Goggles
+Music books
+Music books
+Clearings
+Clearings
+Rainy
+Rainy
+Stormy
+Stormy
+Snowy
+Snowy
+Blizzards
+Blizzards
+Sandstorms
+Sandstorms
+Stormy Rains
+Stormy Rains
+Sunnys
+Sunnys
+Foggy
+Foggy
+Bombs
+Bombs
+Dynamax Bands
+Dynamax Bands
+Wishing Stars
+Wishing Stars
+Dynamax Candies
+Dynamax Candies
+Dynamax Candies XL
+Dynamax Candies XL
+Max Soups
+Max Soups
+Mark Charms
+Mark Charms
+Surprise Mulch
+Surprise Mulch
+Allure Mulch
+Allure Mulch
+Rich Mulch
+Rich Mulch
+Boost Mulch
+Boost Mulch
+Amaze Mulch
+Amaze Mulch
+Raid Baits
+Raid Baits
+Tera Orbs
+Tera Orbs
+Normal Tera Shards
+Normal Tera Shards
+Fire Tera Shards
+Fire Tera Shards
+Water Tera Shards
+Water Tera Shards
+Electric Tera Shards
+Electric Tera Shards
+Grass Tera Shards
+Grass Tera Shards
+Ice Tera Shards
+Ice Tera Shards
+Fighting Tera Shards
+Fighting Tera Shards
+Poison Tera Shards
+Poison Tera Shards
+Ground Tera Shards
+Ground Tera Shards
+Flying Tera Shards
+Flying Tera Shards
+Psychic Tera Shards
+Psychic Tera Shards
+Bug Tera Shards
+Bug Tera Shards
+Rock Tera Shards
+Rock Tera Shards
+Ghost Tera Shards
+Ghost Tera Shards
+Dragon Tera Shards
+Dragon Tera Shards
+Dark Tera Shards
+Dark Tera Shards
+Steel Tera Shards
+Steel Tera Shards
+Fairy Tera Shards
+Fairy Tera Shards
+Stellar Tera Shards
+Stellar Tera Shards
+Mystery Tera Jewels
+Mystery Tera Jewels
+Master Tera Jewels
+Master Tera Jewels
+Radiant Tera Jewels
+Radiant Tera Jewels
+Glimmering Charms
+Glimmering Charms
+Z-Rings
+Z-Rings
+Z-Power Rings
+Z-Power Rings
+Z-Boosters
+Z-Boosters
+Normalium Z
+Normalium Z
+Fightinium Z
+Fightinium Z
+Flyinium Z
+Flyinium Z
+Poisonium Z
+Poisonium Z
+Groundium Z
+Groundium Z
+Rockium Z
+Rockium Z
+Buginium Z
+Buginium Z
+Ghostium Z
+Ghostium Z
+Steelium Z
+Steelium Z
+Firium Z
+Firium Z
+Waterium Z
+Waterium Z
+Grassium Z
+Grassium Z
+Electrium Z
+Electrium Z
+Psychium Z
+Psychium Z
+Icium Z
+Icium Z
+Dragonium Z
+Dragonium Z
+Darkinium Z
+Darkinium Z
+Fairium Z
+Fairium Z
+Pikanium Z
+Pikanium Z
+Pikashunium Z
+Pikashunium Z
+Aloraichium Z
+Aloraichium Z
+Eevium Z
+Eevium Z
+Snorlium Z
+Snorlium Z
+Mewnium Z
+Mewnium Z
+Decidium Z
+Decidium Z
+Incinium Z
+Incinium Z
+Primarium Z
+Primarium Z
+Lycanium Z
+Lycanium Z
+Mimikium Z
+Mimikium Z
+Kommonium Z
+Kommonium Z
+Tapunium Z
+Tapunium Z
+Solganium Z
+Solganium Z
+Lunalium Z
+Lunalium Z
+Marshadium Z
+Marshadium Z
+Ultranecrozium Z
+Ultranecrozium Z

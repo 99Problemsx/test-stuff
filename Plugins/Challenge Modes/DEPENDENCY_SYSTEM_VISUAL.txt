@@ -1,0 +1,114 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║              CHALLENGE MODES - DEPENDENCY SYSTEM STRUCTURE               ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+STEP 1: Define Rule in 000_Config.rb
+┌────────────────────────────────────────────────────────────────────────┐
+│  RULES = {                                                             │
+│    :YOUR_RULE => {                                                     │
+│      :name  => _INTL("Display Name"),                                 │
+│      :desc  => _INTL("What it does"),                                 │
+│      :order => 12                                                      │
+│    }                                                                   │
+│  }                                                                     │
+└────────────────────────────────────────────────────────────────────────┘
+
+STEP 2: Configure Dependencies in 002_Rule Select.rb
+┌────────────────────────────────────────────────────────────────────────┐
+│  Line ~71: Define dependency group                                     │
+│  ┌──────────────────────────────────────────────────────────────────┐ │
+│  │  catch_clauses  = [:SHINY_CLAUSE, :DUPS_CLAUSE, :GIFT_CLAUSE]   │ │
+│  │  your_dependent = [:YOUR_RULE]                                   │ │
+│  └──────────────────────────────────────────────────────────────────┘ │
+│                                                                        │
+│  Line ~149: Auto-remove when base is disabled                         │
+│  ┌──────────────────────────────────────────────────────────────────┐ │
+│  │  catch_clauses.each { |r| selected_rules.delete(r) }            │ │
+│  │    if rule == :ONE_CAPTURE                                       │ │
+│  │                                                                  │ │
+│  │  your_dependent.each { |r| selected_rules.delete(r) }           │ │
+│  │    if rule == :BASE_RULE                                         │ │
+│  └──────────────────────────────────────────────────────────────────┘ │
+│                                                                        │
+│  Line ~152: Check if rule can be enabled                              │
+│  ┌──────────────────────────────────────────────────────────────────┐ │
+│  │  elsif (selected_rules.include?(:ONE_CAPTURE) &&                │ │
+│  │         catch_clauses.include?(rule)) ||                         │ │
+│  │        (selected_rules.include?(:BASE_RULE) &&                   │ │
+│  │         your_dependent.include?(rule)) ||                        │ │
+│  │        !(catch_clauses + your_dependent +                        │ │
+│  │          [:GAME_OVER_WHITEOUT] + special_modes).include?(rule)  │ │
+│  └──────────────────────────────────────────────────────────────────┘ │
+└────────────────────────────────────────────────────────────────────────┘
+
+STEP 3: Implement Rule Logic (new .rb file)
+┌────────────────────────────────────────────────────────────────────────┐
+│  EventHandlers.add(:event_name, :your_rule_id,                        │
+│    proc { |params|                                                     │
+│      next if !$PokemonGlobal.challenge_rules.include?(:YOUR_RULE)     │
+│      # Your rule logic here                                            │
+│    }                                                                   │
+│  )                                                                     │
+└────────────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════
+
+CURRENT DEPENDENCY STRUCTURE:
+
+┌─────────────────┐
+│  :ONE_CAPTURE   │ ◄──── Base Rule (must be enabled first)
+└────────┬────────┘
+         │ requires
+         ├──► :SHINY_CLAUSE
+         ├──► :DUPS_CLAUSE
+         └──► :GIFT_CLAUSE
+
+┌─────────────────┐
+│  :PERMAFAINT    │ ◄──── Base Rule
+└────────┬────────┘
+         │ can enable
+         ├──► :GAME_OVER_WHITEOUT
+         └──► :LEVEL_CAP (example added)
+
+┌─────────────────┐
+│ :MONOTYPE_MODE  │ ◄──── Independent (no requirements)
+└─────────────────┘
+
+┌─────────────────┐
+│:RANDOMIZER_MODE │ ◄──── Independent (no requirements)
+└─────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════
+
+IN-GAME BEHAVIOR:
+
+❌ Player selects :SHINY_CLAUSE without :ONE_CAPTURE
+   → pbPlayBuzzerSE (error sound)
+   → Rule NOT enabled
+
+✓ Player selects :ONE_CAPTURE
+   → Rule enabled
+   → Now :SHINY_CLAUSE, :DUPS_CLAUSE, :GIFT_CLAUSE can be selected
+
+✓ Player deselects :ONE_CAPTURE
+   → :SHINY_CLAUSE, :DUPS_CLAUSE, :GIFT_CLAUSE automatically removed
+
+═══════════════════════════════════════════════════════════════════════════
+
+EXAMPLE: Add "No Healing Items" that requires "Permafaint"
+
+1. Add to 000_Config.rb:
+   :NO_HEALING => { :name => _INTL("No Healing Items"), ... }
+
+2. In 002_Rule Select.rb line ~71:
+   permafaint_dependent = [:LEVEL_CAP, :NO_HEALING]
+
+3. Auto-remove already configured (line ~149):
+   permafaint_dependent.each { |r| selected_rules.delete(r) }
+     if rule == :PERMAFAINT
+
+4. Dependency check already updated (line ~152):
+   (selected_rules.include?(:PERMAFAINT) &&
+    permafaint_dependent.include?(rule))
+
+═══════════════════════════════════════════════════════════════════════════
