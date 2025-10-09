@@ -27,7 +27,10 @@ jobs:
       
       - name: Generate Website
         run: |
-          mkdir -p _site
+          mkdir -p _site/docs
+          
+          # Konvertiere Wiki Markdown zu HTML
+          echo "Converting Wiki to HTML..."
           
           # Erstelle index.html
           cat > _site/index.html << 'EOF'
@@ -153,7 +156,36 @@ jobs:
                   <div class="content">
                       <div style="text-align: center; margin: 40px 0;">
                           <a href="https://github.com/99Problemsx/test-stuff/releases/latest" class="download-btn">📦 Latest Release</a>
-                          <a href="https://github.com/99Problemsx/test-stuff" class="download-btn">📚 Repository</a>
+                          <a href="https://github.com/99Problemsx/test-stuff" class="download-btn">� Repository</a>
+                          <a href="https://github.com/99Problemsx/test-stuff/blob/main/wiki/Home.md" class="download-btn">�📚 Documentation</a>
+                      </div>
+                      
+                      <h2 style="text-align: center; color: #667eea; margin: 40px 0;">📖 Quick Links</h2>
+                      
+                      <div class="features">
+                          <div class="feature">
+                              <h3>📥 Installation Guide</h3>
+                              <p>Step-by-step installation instructions</p>
+                              <a href="https://github.com/99Problemsx/test-stuff/blob/main/wiki/Installation-Guide.md" style="color: #667eea;">Read Guide →</a>
+                          </div>
+                          
+                          <div class="feature">
+                              <h3>❓ FAQ</h3>
+                              <p>Frequently asked questions and answers</p>
+                              <a href="https://github.com/99Problemsx/test-stuff/blob/main/wiki/FAQ.md" style="color: #667eea;">View FAQ →</a>
+                          </div>
+                          
+                          <div class="feature">
+                              <h3>🤖 CI/CD Pipeline</h3>
+                              <p>Complete automation documentation</p>
+                              <a href="https://github.com/99Problemsx/test-stuff/blob/main/wiki/CI-CD-Pipeline.md" style="color: #667eea;">Learn More →</a>
+                          </div>
+                          
+                          <div class="feature">
+                              <h3>🤝 Contributing</h3>
+                              <p>How to contribute to the project</p>
+                              <a href="https://github.com/99Problemsx/test-stuff/blob/main/CONTRIBUTING.md" style="color: #667eea;">Get Started →</a>
+                          </div>
                       </div>
                       
                       <div class="stats">
@@ -171,7 +203,7 @@ jobs:
                           </div>
                       </div>
                       
-                      <h2 style="text-align: center; color: #667eea; margin: 40px 0;">✨ Features</h2>
+                      <h2 style="text-align: center; color: #667eea; margin: 40px 0;">✨ Game Features</h2>
                       
                       <div class="features">
                           <div class="feature">
@@ -192,16 +224,6 @@ jobs:
                           <div class="feature">
                               <h3>🇩🇪 Deutsche Übersetzung</h3>
                               <p>Vollständige UTF-8 Unterstützung für deutsche Umlaute und Sonderzeichen.</p>
-                          </div>
-                          
-                          <div class="feature">
-                              <h3>🤖 GitHub Actions</h3>
-                              <p>14 automatische Workflows: Tests, Backups, Releases, Dokumentation, Notifications.</p>
-                          </div>
-                          
-                          <div class="feature">
-                              <h3>📊 Code Quality</h3>
-                              <p>Automatische Syntax-Checks, PBS-Validierung und Code-Quality-Reports.</p>
                           </div>
                       </div>
                       
