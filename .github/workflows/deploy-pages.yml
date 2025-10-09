@@ -1,0 +1,276 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Generate Website
+        run: |
+          mkdir -p _site
+          
+          # Erstelle index.html
+          cat > _site/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html lang="de">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Pokemon Essentials v21.1 - Custom Build</title>
+              <style>
+                  * { margin: 0; padding: 0; box-sizing: border-box; }
+                  body {
+                      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+                      line-height: 1.6;
+                      color: #333;
+                      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                      min-height: 100vh;
+                      padding: 20px;
+                  }
+                  .container {
+                      max-width: 1200px;
+                      margin: 0 auto;
+                      background: white;
+                      border-radius: 20px;
+                      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+                      overflow: hidden;
+                  }
+                  header {
+                      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                      color: white;
+                      padding: 60px 40px;
+                      text-align: center;
+                  }
+                  header h1 { font-size: 3em; margin-bottom: 10px; }
+                  header p { font-size: 1.2em; opacity: 0.9; }
+                  .content { padding: 40px; }
+                  .features {
+                      display: grid;
+                      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                      gap: 30px;
+                      margin: 40px 0;
+                  }
+                  .feature {
+                      padding: 30px;
+                      background: #f8f9fa;
+                      border-radius: 15px;
+                      transition: transform 0.3s, box-shadow 0.3s;
+                  }
+                  .feature:hover {
+                      transform: translateY(-5px);
+                      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                  }
+                  .feature h3 {
+                      color: #667eea;
+                      margin-bottom: 15px;
+                      font-size: 1.5em;
+                  }
+                  .stats {
+                      display: flex;
+                      justify-content: space-around;
+                      flex-wrap: wrap;
+                      margin: 40px 0;
+                      padding: 30px;
+                      background: #f8f9fa;
+                      border-radius: 15px;
+                  }
+                  .stat {
+                      text-align: center;
+                      padding: 20px;
+                  }
+                  .stat-value {
+                      font-size: 3em;
+                      font-weight: bold;
+                      color: #667eea;
+                  }
+                  .stat-label {
+                      color: #666;
+                      margin-top: 10px;
+                  }
+                  .download-btn {
+                      display: inline-block;
+                      padding: 15px 40px;
+                      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                      color: white;
+                      text-decoration: none;
+                      border-radius: 50px;
+                      font-size: 1.2em;
+                      font-weight: bold;
+                      transition: transform 0.3s, box-shadow 0.3s;
+                      margin: 10px;
+                  }
+                  .download-btn:hover {
+                      transform: scale(1.05);
+                      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+                  }
+                  .badges {
+                      display: flex;
+                      justify-content: center;
+                      flex-wrap: wrap;
+                      gap: 10px;
+                      margin: 20px 0;
+                  }
+                  footer {
+                      text-align: center;
+                      padding: 30px;
+                      background: #f8f9fa;
+                      color: #666;
+                  }
+              </style>
+          </head>
+          <body>
+              <div class="container">
+                  <header>
+                      <h1>🎮 Pokemon Essentials v21.1</h1>
+                      <p>Custom Build mit Deluxe Battle Kit & deutschen Übersetzungen</p>
+                      <div class="badges">
+                          <img src="https://github.com/99Problemsx/test-stuff/actions/workflows/ruby-syntax-check.yml/badge.svg" alt="Ruby Syntax">
+                          <img src="https://github.com/99Problemsx/test-stuff/actions/workflows/validate-pbs.yml/badge.svg" alt="PBS Validation">
+                          <img src="https://github.com/99Problemsx/test-stuff/actions/workflows/code-quality.yml/badge.svg" alt="Code Quality">
+                      </div>
+                  </header>
+                  
+                  <div class="content">
+                      <div style="text-align: center; margin: 40px 0;">
+                          <a href="https://github.com/99Problemsx/test-stuff/releases/latest" class="download-btn">📦 Latest Release</a>
+                          <a href="https://github.com/99Problemsx/test-stuff" class="download-btn">📚 Repository</a>
+                      </div>
+                      
+                      <div class="stats">
+                          <div class="stat">
+                              <div class="stat-value">v21.1</div>
+                              <div class="stat-label">Essentials Version</div>
+                          </div>
+                          <div class="stat">
+                              <div class="stat-value">1.0.4</div>
+                              <div class="stat-label">Hotfixes Version</div>
+                          </div>
+                          <div class="stat">
+                              <div class="stat-value">14</div>
+                              <div class="stat-label">Workflows</div>
+                          </div>
+                      </div>
+                      
+                      <h2 style="text-align: center; color: #667eea; margin: 40px 0;">✨ Features</h2>
+                      
+                      <div class="features">
+                          <div class="feature">
+                              <h3>🎯 Raid Battles</h3>
+                              <p>Vollständig funktionsfähige Raid Battles mit allen Hotfixes (v1.0.4). Inkl. Ditto-Fix und Custom Movesets.</p>
+                          </div>
+                          
+                          <div class="feature">
+                              <h3>⚡ Dynamax & Gigantamax</h3>
+                              <p>Deluxe Battle Kit mit Dynamax, Gigantamax, Z-Moves und Terastallization Support.</p>
+                          </div>
+                          
+                          <div class="feature">
+                              <h3>🔊 Sound Type</h3>
+                              <p>Custom Sound-Type Plugin mit vollständiger Battle-Integration und Type Chart.</p>
+                          </div>
+                          
+                          <div class="feature">
+                              <h3>🇩🇪 Deutsche Übersetzung</h3>
+                              <p>Vollständige UTF-8 Unterstützung für deutsche Umlaute und Sonderzeichen.</p>
+                          </div>
+                          
+                          <div class="feature">
+                              <h3>🤖 GitHub Actions</h3>
+                              <p>14 automatische Workflows: Tests, Backups, Releases, Dokumentation, Notifications.</p>
+                          </div>
+                          
+                          <div class="feature">
+                              <h3>📊 Code Quality</h3>
+                              <p>Automatische Syntax-Checks, PBS-Validierung und Code-Quality-Reports.</p>
+                          </div>
+                      </div>
+                      
+                      <h2 style="text-align: center; color: #667eea; margin: 40px 0;">🚀 Automatisierung</h2>
+                      
+                      <div style="background: #f8f9fa; padding: 30px; border-radius: 15px; margin: 20px 0;">
+                          <ul style="list-style: none; padding: 0;">
+                              <li style="padding: 10px; border-left: 4px solid #667eea; margin: 10px 0; padding-left: 20px;">
+                                  ✅ <strong>Automatische Releases</strong> - ZIP-Erstellung bei neuen Tags
+                              </li>
+                              <li style="padding: 10px; border-left: 4px solid #667eea; margin: 10px 0; padding-left: 20px;">
+                                  💾 <strong>Wöchentliche Backups</strong> - Jeden Sonntag automatisch
+                              </li>
+                              <li style="padding: 10px; border-left: 4px solid #667eea; margin: 10px 0; padding-left: 20px;">
+                                  📝 <strong>Auto-Changelog</strong> - Aus Commits generiert
+                              </li>
+                              <li style="padding: 10px; border-left: 4px solid #667eea; margin: 10px 0; padding-left: 20px;">
+                                  📊 <strong>Download Stats</strong> - Täglich aktualisiert
+                              </li>
+                              <li style="padding: 10px; border-left: 4px solid #667eea; margin: 10px 0; padding-left: 20px;">
+                                  🔍 <strong>Code Quality</strong> - RuboCop, Flog, Flay
+                              </li>
+                              <li style="padding: 10px; border-left: 4px solid #667eea; margin: 10px 0; padding-left: 20px;">
+                                  📚 <strong>Auto-Dokumentation</strong> - Plugins, PBS, Stats
+                              </li>
+                              <li style="padding: 10px; border-left: 4px solid #667eea; margin: 10px 0; padding-left: 20px;">
+                                  ✉️ <strong>Notifications</strong> - Discord & Slack Support
+                              </li>
+                          </ul>
+                      </div>
+                      
+                      <h2 style="text-align: center; color: #667eea; margin: 40px 0;">📚 Dokumentation</h2>
+                      
+                      <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin: 30px 0;">
+                          <a href="https://github.com/99Problemsx/test-stuff/blob/main/README.md" class="download-btn" style="background: #28a745;">📖 README</a>
+                          <a href="https://github.com/99Problemsx/test-stuff/blob/main/AUTOMATION_SETUP.md" class="download-btn" style="background: #17a2b8;">⚙️ Setup Guide</a>
+                          <a href="https://github.com/99Problemsx/test-stuff/blob/main/PLUGINS.md" class="download-btn" style="background: #ffc107; color: #333;">🔌 Plugins</a>
+                          <a href="https://github.com/99Problemsx/test-stuff/blob/main/STATS.md" class="download-btn" style="background: #6f42c1;">📊 Stats</a>
+                      </div>
+                  </div>
+                  
+                  <footer>
+                      <p>Made with ❤️ using Pokemon Essentials v21.1</p>
+                      <p style="margin-top: 10px;">
+                          <a href="https://github.com/99Problemsx/test-stuff" style="color: #667eea; text-decoration: none;">View on GitHub</a>
+                      </p>
+                  </footer>
+              </div>
+          </body>
+          </html>
+          EOF
+          
+          # Kopiere Dokumentation
+          cp README.md _site/ || true
+          cp AUTOMATION_SETUP.md _site/ || true
+          cp PLUGINS.md _site/ 2>/dev/null || echo "# Plugins\nWill be generated on next run" > _site/PLUGINS.md
+          cp PBS_DOCS.md _site/ 2>/dev/null || echo "# PBS Documentation\nWill be generated on next run" > _site/PBS_DOCS.md
+          cp STATS.md _site/ 2>/dev/null || echo "# Statistics\nWill be generated on next run" > _site/STATS.md
+          
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+  
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

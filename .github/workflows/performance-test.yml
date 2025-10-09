@@ -1,0 +1,129 @@
+name: Performance Test
+
+on:
+  push:
+    paths:
+      - 'Plugins/**/*.rb'
+  pull_request:
+    paths:
+      - 'Plugins/**/*.rb'
+  workflow_dispatch:
+
+jobs:
+  performance:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+      
+      - name: Install benchmark tools
+        run: |
+          gem install benchmark-ips
+          gem install memory_profiler
+      
+      - name: Analyze Code Performance
+        run: |
+          echo "Creating performance test..."
+          
+          cat > test_performance.rb << 'RUBY'
+          require 'benchmark'
+          require 'benchmark/ips'
+          
+          puts "=== Ruby Performance Analysis ==="
+          puts ""
+          
+          # Test 1: String operations
+          Benchmark.ips do |x|
+            x.config(time: 2, warmup: 1)
+            
+            x.report("String concatenation") { "Hello" + " " + "World" }
+            x.report("String interpolation") { "Hello #{'World'}" }
+            x.compare!
+          end
+          
+          puts ""
+          puts "=== Plugin Load Time Simulation ==="
+          
+          plugin_count = 0
+          total_time = Benchmark.measure do
+            Dir.glob('Plugins/**/meta.txt').each do |meta|
+              plugin_count += 1
+              # Simuliere Plugin-Laden
+              File.read(meta)
+            end
+          end
+          
+          puts "Plugins found: #{plugin_count}"
+          puts "Estimated load time: #{total_time.real.round(3)}s"
+          
+          if total_time.real > 1.0
+            puts "⚠️  Warning: Slow plugin load time"
+          else
+            puts "✅ Plugin load time OK"
+          end
+          RUBY
+          
+          ruby test_performance.rb
+      
+      - name: Check Plugin Complexity
+        run: |
+          echo "=== Plugin Complexity Analysis ===" > performance-report.txt
+          echo "" >> performance-report.txt
+          
+          for plugin in Plugins/*/; do
+            PLUGIN_NAME=$(basename "$plugin")
+            echo "Plugin: $PLUGIN_NAME" >> performance-report.txt
+            
+            # Count methods
+            METHOD_COUNT=$(find "$plugin" -name "*.rb" -exec grep -c "def " {} + 2>/dev/null | awk '{sum+=$1} END {print sum}' || echo "0")
+            echo "  Methods: $METHOD_COUNT" >> performance-report.txt
+            
+            # Count classes
+            CLASS_COUNT=$(find "$plugin" -name "*.rb" -exec grep -c "class " {} + 2>/dev/null | awk '{sum+=$1} END {print sum}' || echo "0")
+            echo "  Classes: $CLASS_COUNT" >> performance-report.txt
+            
+            # File size
+            TOTAL_SIZE=$(du -sh "$plugin" | cut -f1)
+            echo "  Size: $TOTAL_SIZE" >> performance-report.txt
+            echo "" >> performance-report.txt
+          done
+          
+          cat performance-report.txt
+      
+      - name: Memory Usage Estimate
+        run: |
+          echo "=== Memory Usage Estimate ===" >> performance-report.txt
+          echo "" >> performance-report.txt
+          
+          # Geschätzte Ruby Memory
+          RUBY_FILES=$(find Plugins -name "*.rb" | wc -l)
+          EST_MEMORY=$((RUBY_FILES * 100))  # ~100KB pro Datei
+          
+          echo "Ruby files: $RUBY_FILES" >> performance-report.txt
+          echo "Estimated memory: ~${EST_MEMORY}KB" >> performance-report.txt
+          
+          # PBS Files
+          PBS_SIZE=$(du -sk PBS 2>/dev/null | cut -f1 || echo "0")
+          echo "PBS data: ${PBS_SIZE}KB" >> performance-report.txt
+          
+          cat performance-report.txt
+      
+      - name: Generate Performance Summary
+        if: always()
+        run: |
+          echo "## Performance Test Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          cat performance-report.txt >> $GITHUB_STEP_SUMMARY
+      
+      - name: Upload Performance Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: performance-report
+          path: performance-report.txt
+          retention-days: 30

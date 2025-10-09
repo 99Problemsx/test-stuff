@@ -1,0 +1,67 @@
+name: Semantic Release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Semantic Release
+        run: |
+          npm install -g semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/github
+      
+      - name: Create Release Config
+        run: |
+          cat > .releaserc.json << 'EOF'
+          {
+            "branches": ["main"],
+            "plugins": [
+              "@semantic-release/commit-analyzer",
+              "@semantic-release/release-notes-generator",
+              ["@semantic-release/changelog", {
+                "changelogFile": "CHANGELOG_SEMANTIC.md"
+              }],
+              ["@semantic-release/git", {
+                "assets": ["CHANGELOG_SEMANTIC.md"],
+                "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+              }],
+              "@semantic-release/github"
+            ]
+          }
+          EOF
+      
+      - name: Run Semantic Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
+      
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Semantic Release" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Automatic versioning based on commit messages:" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- \`fix:\` → Patch release (1.0.X)" >> $GITHUB_STEP_SUMMARY
+          echo "- \`feat:\` → Minor release (1.X.0)" >> $GITHUB_STEP_SUMMARY
+          echo "- \`BREAKING CHANGE:\` → Major release (X.0.0)" >> $GITHUB_STEP_SUMMARY

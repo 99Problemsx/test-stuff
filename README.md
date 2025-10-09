@@ -1,7 +1,13 @@
 # Pokemon Essentials v21.1 - Custom Build
 
 ![Ruby Syntax Check](https://github.com/99Problemsx/test-stuff/actions/workflows/ruby-syntax-check.yml/badge.svg)
+![PBS Validation](https://github.com/99Problemsx/test-stuff/actions/workflows/validate-pbs.yml/badge.svg)
+![Code Quality](https://github.com/99Problemsx/test-stuff/actions/workflows/code-quality.yml/badge.svg)
+![Security Scan](https://github.com/99Problemsx/test-stuff/actions/workflows/security-scan.yml/badge.svg)
 ![Backup](https://github.com/99Problemsx/test-stuff/actions/workflows/backup.yml/badge.svg)
+![GitHub Pages](https://github.com/99Problemsx/test-stuff/actions/workflows/deploy-pages.yml/badge.svg)
+
+🌐 **[Live Documentation](https://99problemsx.github.io/test-stuff/)**
 
 ## 🎮 Über dieses Projekt
 
@@ -22,7 +28,7 @@ Dieses Repository enthält ein vollständiges Pokemon Essentials v21.1 Projekt m
 
 ### Automatisierung
 - 🤖 **Automatische Releases** bei neuen Tags (inkl. ZIP-Erstellung)
-- 📝 **Auto-generiertes Changelog** aus Commits
+- 📝 **Semantic Versioning** - Automatische Versionierung basierend auf Commits
 - 💾 **Wöchentliche Backups** (jeden Sonntag, 90 Tage Aufbewahrung)
 - ✅ **Ruby Syntax Checks** bei jedem Push zu Plugins
 - 🏷️ **Automatische Issue Labels** basierend auf Keywords
@@ -32,6 +38,10 @@ Dieses Repository enthält ein vollständiges Pokemon Essentials v21.1 Projekt m
 - 🧪 **Plugin Load Order Testing**
 - ✉️ **Discord/Slack Benachrichtigungen** (optional)
 - ✔️ **PBS File Validation** (UTF-8, BOM, Encoding)
+- 🔒 **Security Scanning** (Trivy, TruffleHog)
+- ⚡ **Performance Testing** mit Benchmark Tools
+- 🌐 **GitHub Pages** - Automatisches Deployment
+- 🗑️ **Stale Bot** - Auto-Close inaktiver Issues/PRs
 
 ## 🚀 Installation
 
@@ -106,17 +116,30 @@ ruby -c Plugins/**/*.rb
 ![PBS Validation](https://github.com/99Problemsx/test-stuff/actions/workflows/validate-pbs.yml/badge.svg)
 ![Plugin Tests](https://github.com/99Problemsx/test-stuff/actions/workflows/test-plugins.yml/badge.svg)
 ![Code Quality](https://github.com/99Problemsx/test-stuff/actions/workflows/code-quality.yml/badge.svg)
+![Security Scan](https://github.com/99Problemsx/test-stuff/actions/workflows/security-scan.yml/badge.svg)
+![Performance Test](https://github.com/99Problemsx/test-stuff/actions/workflows/performance-test.yml/badge.svg)
 ![Backup](https://github.com/99Problemsx/test-stuff/actions/workflows/backup.yml/badge.svg)
 
 - **Ruby Version**: 3.1+
 - **Essentials Version**: v21.1
 - **Hotfixes Version**: 1.0.4
+- **Total Workflows**: 18+ Automation Pipelines
 - **Letztes Update**: Automatisch über GitHub Actions
 - **Download Stats**: Siehe [STATS.md](STATS.md)
+- **Live Docs**: [GitHub Pages](https://99problemsx.github.io/test-stuff/)
 
 ## 🤝 Beiträge
 
-Dieses ist ein privates Projekt. Issues und Pull Requests sind willkommen!
+Beiträge sind willkommen! Bitte lies die [Contributing Guidelines](CONTRIBUTING.md) vor dem ersten PR.
+
+### Quick Start
+1. Fork das Repository
+2. Erstelle einen Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit deine Änderungen (`git commit -m 'feat: Add AmazingFeature'`)
+4. Push zum Branch (`git push origin feature/AmazingFeature`)
+5. Öffne einen Pull Request
+
+**Hinweis**: Wir verwenden [Conventional Commits](https://www.conventionalcommits.org/) für automatisches Versioning!
 
 ## 📄 Lizenz
 

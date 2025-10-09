@@ -1,0 +1,94 @@
+name: Security Scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 0 * * 1'  # Jeden Montag
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+      
+      - name: Upload Trivy results to GitHub Security
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: 'trivy-results.sarif'
+      
+      - name: Check for secrets in code
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: ./
+          base: ${{ github.event.repository.default_branch }}
+          head: HEAD
+      
+      - name: Scan for sensitive files
+        run: |
+          echo "Scanning for sensitive files..."
+          
+          SENSITIVE_PATTERNS=(
+            "*.pem"
+            "*.key"
+            "*.p12"
+            "*.pfx"
+            "*password*"
+            "*secret*"
+            "*.env"
+            ".env.*"
+          )
+          
+          FOUND=0
+          
+          for pattern in "${SENSITIVE_PATTERNS[@]}"; do
+            FILES=$(find . -name "$pattern" -not -path "./.git/*" 2>/dev/null || true)
+            if [ ! -z "$FILES" ]; then
+              echo "⚠️  Found sensitive files matching $pattern:"
+              echo "$FILES"
+              FOUND=1
+            fi
+          done
+          
+          if [ $FOUND -eq 0 ]; then
+            echo "✅ No sensitive files found"
+          fi
+      
+      - name: Check file permissions
+        run: |
+          echo "Checking file permissions..."
+          
+          # Prüfe auf ausführbare Skripte
+          find . -type f -executable -not -path "./.git/*" -not -name "*.exe" -not -name "*.dll" | while read file; do
+            echo "ℹ️  Executable: $file"
+          done
+      
+      - name: Generate Security Report
+        if: always()
+        run: |
+          echo "## Security Scan Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Scans Performed" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Trivy vulnerability scanner" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ TruffleHog secret detection" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Sensitive file scan" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ File permission check" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "View detailed results in the Security tab" >> $GITHUB_STEP_SUMMARY
