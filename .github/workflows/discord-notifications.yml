@@ -1,0 +1,90 @@
+name: Discord Notifications
+
+on:
+  push:
+    branches: [main]
+    tags:
+      - 'v*.*.*'
+  release:
+    types: [published]
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened, closed]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Send Discord Notification - Push
+        if: github.event_name == 'push' && !startsWith(github.ref, 'refs/tags/')
+        uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          title: "📝 New Push to main"
+          description: |
+            **Commit**: `${{ github.event.head_commit.message }}`
+            **Author**: ${{ github.event.head_commit.author.name }}
+            [View Changes](${{ github.event.head_commit.url }})
+          color: 0x3498db
+          username: GitHub Bot
+          avatar_url: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+
+      - name: Send Discord Notification - Release
+        if: github.event_name == 'release'
+        uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          title: "🎉 New Release: ${{ github.event.release.name }}"
+          description: |
+            ${{ github.event.release.body }}
+            
+            [Download Release](${{ github.event.release.html_url }})
+          color: 0x2ecc71
+          username: GitHub Bot
+          avatar_url: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+
+      - name: Send Discord Notification - Tag
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          title: "🏷️ New Tag: ${{ github.ref_name }}"
+          description: |
+            A new version tag has been created!
+            Release will be created shortly...
+          color: 0x9b59b6
+          username: GitHub Bot
+          avatar_url: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+
+      - name: Send Discord Notification - Issue
+        if: github.event_name == 'issues'
+        uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          title: "🐛 New Issue: ${{ github.event.issue.title }}"
+          description: |
+            **Created by**: ${{ github.event.issue.user.login }}
+            
+            ${{ github.event.issue.body }}
+            
+            [View Issue](${{ github.event.issue.html_url }})
+          color: 0xe74c3c
+          username: GitHub Bot
+          avatar_url: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+
+      - name: Send Discord Notification - PR
+        if: github.event_name == 'pull_request'
+        uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          title: "🔀 Pull Request ${{ github.event.action }}: ${{ github.event.pull_request.title }}"
+          description: |
+            **Created by**: ${{ github.event.pull_request.user.login }}
+            **Status**: ${{ github.event.action }}
+            
+            [View PR](${{ github.event.pull_request.html_url }})
+          color: 0xf39c12
+          username: GitHub Bot
+          avatar_url: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png

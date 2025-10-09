@@ -1,0 +1,113 @@
+name: Code Quality Analysis
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Plugins/**/*.rb'
+  pull_request:
+    paths:
+      - 'Plugins/**/*.rb'
+  schedule:
+    - cron: '0 0 * * 0'  # Wöchentlich am Sonntag
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+      
+      - name: Install Analysis Tools
+        run: |
+          gem install rubocop
+          gem install flog
+          gem install flay
+      
+      - name: Run RuboCop (Style Check)
+        continue-on-error: true
+        run: |
+          echo "Running RuboCop style analysis..."
+          rubocop Plugins --format json --out rubocop-report.json || true
+          rubocop Plugins --format simple || true
+      
+      - name: Analyze Code Complexity (Flog)
+        continue-on-error: true
+        run: |
+          echo "Analyzing code complexity..."
+          flog Plugins -a -g > flog-report.txt || true
+          cat flog-report.txt
+      
+      - name: Check for Code Duplication (Flay)
+        continue-on-error: true
+        run: |
+          echo "Checking for duplicate code..."
+          flay Plugins > flay-report.txt || true
+          cat flay-report.txt
+      
+      - name: Count Lines of Code
+        run: |
+          echo "Counting lines of code..."
+          
+          echo "## Code Statistics" > code-stats.md
+          echo "" >> code-stats.md
+          
+          # Ruby Dateien
+          RUBY_FILES=$(find Plugins -name "*.rb" | wc -l)
+          RUBY_LINES=$(find Plugins -name "*.rb" -exec wc -l {} + | tail -1 | awk '{print $1}')
+          
+          echo "- Ruby Files: $RUBY_FILES" >> code-stats.md
+          echo "- Ruby Lines: $RUBY_LINES" >> code-stats.md
+          
+          # PBS Dateien
+          PBS_FILES=$(find PBS -name "*.txt" | wc -l)
+          PBS_LINES=$(find PBS -name "*.txt" -exec wc -l {} + | tail -1 | awk '{print $1}')
+          
+          echo "- PBS Files: $PBS_FILES" >> code-stats.md
+          echo "- PBS Lines: $PBS_LINES" >> code-stats.md
+          
+          cat code-stats.md
+      
+      - name: Generate Quality Report
+        if: always()
+        run: |
+          echo "## Code Quality Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # RuboCop Summary
+          if [ -f rubocop-report.json ]; then
+            echo "### Style Issues (RuboCop)" >> $GITHUB_STEP_SUMMARY
+            OFFENSES=$(jq '.summary.offense_count' rubocop-report.json)
+            echo "- Total offenses: $OFFENSES" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          # Complexity Summary
+          if [ -f flog-report.txt ]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### Top 5 Most Complex Methods" >> $GITHUB_STEP_SUMMARY
+            head -20 flog-report.txt >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          # Stats
+          if [ -f code-stats.md ]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            cat code-stats.md >> $GITHUB_STEP_SUMMARY
+          fi
+      
+      - name: Upload Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: code-quality-reports
+          path: |
+            rubocop-report.json
+            flog-report.txt
+            flay-report.txt
+            code-stats.md
+          retention-days: 30

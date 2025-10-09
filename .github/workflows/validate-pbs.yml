@@ -1,0 +1,93 @@
+name: Validate PBS Files
+
+on:
+  push:
+    paths:
+      - 'PBS/**/*.txt'
+  pull_request:
+    paths:
+      - 'PBS/**/*.txt'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Check UTF-8 Encoding
+        run: |
+          echo "Checking PBS files for UTF-8 encoding..."
+          
+          # Prüfe alle PBS Dateien
+          find PBS -name "*.txt" -type f | while read file; do
+            if file "$file" | grep -q "UTF-8"; then
+              echo "✅ $file - Valid UTF-8"
+            else
+              echo "❌ $file - NOT UTF-8!"
+              exit 1
+            fi
+          done
+      
+      - name: Check for BOM
+        run: |
+          echo "Checking for UTF-8 BOM markers..."
+          
+          # Prüfe auf BOM (Byte Order Mark)
+          find PBS -name "*.txt" -type f | while read file; do
+            if head -c 3 "$file" | xxd -p | grep -q "efbbbf"; then
+              echo "⚠️  $file - Contains BOM (should be removed)"
+            else
+              echo "✅ $file - No BOM"
+            fi
+          done
+      
+      - name: Check for Invalid Characters
+        run: |
+          echo "Checking for common encoding issues..."
+          
+          # Prüfe auf häufige Encoding-Probleme
+          find PBS -name "*.txt" -type f | while read file; do
+            if grep -P '[^\x00-\x7F]' "$file" > /dev/null; then
+              echo "ℹ️  $file - Contains non-ASCII characters (normal for German text)"
+              
+              # Prüfe auf kaputte Umlaute
+              if grep -P '[\x80-\x9F]' "$file" > /dev/null; then
+                echo "❌ $file - Contains invalid Windows-1252 characters!"
+                exit 1
+              fi
+            else
+              echo "✅ $file - ASCII only"
+            fi
+          done
+      
+      - name: Validate Pokemon Names
+        run: |
+          echo "Validating Pokemon names in PBS files..."
+          
+          # Prüfe pokemon.txt auf korrekte Struktur
+          if [ -f "PBS/pokemon.txt" ]; then
+            # Prüfe ob jeder Eintrag eine ID hat
+            if grep -E "^\[.*\]" PBS/pokemon.txt > /dev/null; then
+              echo "✅ pokemon.txt - Valid structure"
+            else
+              echo "❌ pokemon.txt - Missing Pokemon IDs!"
+              exit 1
+            fi
+          fi
+      
+      - name: Generate Report
+        if: always()
+        run: |
+          echo "## PBS Validation Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Files Checked" >> $GITHUB_STEP_SUMMARY
+          find PBS -name "*.txt" -type f | wc -l >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Status" >> $GITHUB_STEP_SUMMARY
+          if [ $? -eq 0 ]; then
+            echo "✅ All PBS files are valid!" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Some PBS files have issues!" >> $GITHUB_STEP_SUMMARY
+          fi

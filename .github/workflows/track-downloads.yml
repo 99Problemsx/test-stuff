@@ -1,0 +1,85 @@
+name: Track Downloads
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Täglich um Mitternacht
+  workflow_dispatch:
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Get Release Stats
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            
+            // Hole alle Releases
+            const releases = await github.rest.repos.listReleases({
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+            
+            let stats = '# Download Statistics\n\n';
+            stats += `Last updated: ${new Date().toISOString()}\n\n`;
+            stats += '| Release | Downloads | Assets |\n';
+            stats += '|---------|-----------|--------|\n';
+            
+            let totalDownloads = 0;
+            
+            for (const release of releases.data) {
+              let releaseDownloads = 0;
+              const assets = [];
+              
+              for (const asset of release.assets) {
+                releaseDownloads += asset.download_count;
+                assets.push(`${asset.name} (${asset.download_count})`);
+                totalDownloads += asset.download_count;
+              }
+              
+              stats += `| ${release.name || release.tag_name} | ${releaseDownloads} | ${assets.join(', ')} |\n`;
+            }
+            
+            stats += `\n**Total Downloads**: ${totalDownloads}\n`;
+            
+            // Repository Stats
+            const repo = await github.rest.repos.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+            
+            stats += '\n## Repository Stats\n\n';
+            stats += `- ⭐ Stars: ${repo.data.stargazers_count}\n`;
+            stats += `- 👁️ Watchers: ${repo.data.watchers_count}\n`;
+            stats += `- 🍴 Forks: ${repo.data.forks_count}\n`;
+            stats += `- 📦 Size: ${(repo.data.size / 1024).toFixed(2)} MB\n`;
+            
+            // Traffic Stats (requires push access)
+            try {
+              const views = await github.rest.repos.getViews({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                per: 'week'
+              });
+              
+              stats += `- 👀 Views (last 14 days): ${views.data.count}\n`;
+              stats += `- 👤 Unique visitors: ${views.data.uniques}\n`;
+            } catch (error) {
+              stats += '- Traffic stats: Not available\n';
+            }
+            
+            // Speichere Stats
+            fs.writeFileSync('STATS.md', stats);
+            
+            console.log(stats);
+      
+      - name: Commit Stats
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs: Update download statistics"
+          file_pattern: STATS.md

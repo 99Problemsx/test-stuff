@@ -1,0 +1,146 @@
+name: Generate Documentation
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Generate Plugin Documentation
+        run: |
+          echo "# Plugin Documentation" > PLUGINS.md
+          echo "" >> PLUGINS.md
+          echo "Auto-generated documentation for all installed plugins." >> PLUGINS.md
+          echo "" >> PLUGINS.md
+          echo "Last updated: $(date)" >> PLUGINS.md
+          echo "" >> PLUGINS.md
+          
+          find Plugins -mindepth 1 -maxdepth 1 -type d | sort | while read plugin_dir; do
+            PLUGIN_NAME=$(basename "$plugin_dir")
+            echo "" >> PLUGINS.md
+            echo "---" >> PLUGINS.md
+            echo "" >> PLUGINS.md
+            echo "## $PLUGIN_NAME" >> PLUGINS.md
+            echo "" >> PLUGINS.md
+            
+            # Lese meta.txt
+            if [ -f "$plugin_dir/meta.txt" ]; then
+              NAME=$(grep "^Name" "$plugin_dir/meta.txt" | cut -d'=' -f2 | xargs || echo "N/A")
+              VERSION=$(grep "^Version" "$plugin_dir/meta.txt" | cut -d'=' -f2 | xargs || echo "N/A")
+              AUTHOR=$(grep "^Author" "$plugin_dir/meta.txt" | cut -d'=' -f2 | xargs || echo "Unknown")
+              LINK=$(grep "^Link" "$plugin_dir/meta.txt" | cut -d'=' -f2 | xargs || echo "")
+              
+              echo "**Name**: $NAME" >> PLUGINS.md
+              echo "" >> PLUGINS.md
+              echo "**Version**: $VERSION" >> PLUGINS.md
+              echo "" >> PLUGINS.md
+              echo "**Author**: $AUTHOR" >> PLUGINS.md
+              echo "" >> PLUGINS.md
+              
+              if [ -n "$LINK" ]; then
+                echo "**Link**: $LINK" >> PLUGINS.md
+                echo "" >> PLUGINS.md
+              fi
+              
+              # Requires
+              if grep -q "^Requires" "$plugin_dir/meta.txt"; then
+                echo "**Dependencies**:" >> PLUGINS.md
+                grep "^Requires" "$plugin_dir/meta.txt" | cut -d'=' -f2 | tr ',' '\n' | while read req; do
+                  echo "- $req" >> PLUGINS.md
+                done
+                echo "" >> PLUGINS.md
+              fi
+            fi
+            
+            # Count files
+            RB_COUNT=$(find "$plugin_dir" -name "*.rb" | wc -l)
+            echo "**Files**: $RB_COUNT Ruby files" >> PLUGINS.md
+            echo "" >> PLUGINS.md
+            
+            # Check for README or CHANGELOG
+            if [ -f "$plugin_dir/README.md" ]; then
+              echo "### Description" >> PLUGINS.md
+              echo "" >> PLUGINS.md
+              cat "$plugin_dir/README.md" >> PLUGINS.md
+              echo "" >> PLUGINS.md
+            fi
+            
+            if [ -f "$plugin_dir/CHANGELOG.md" ]; then
+              echo "### Changelog" >> PLUGINS.md
+              echo "" >> PLUGINS.md
+              head -50 "$plugin_dir/CHANGELOG.md" >> PLUGINS.md
+              echo "" >> PLUGINS.md
+            fi
+          done
+      
+      - name: Generate PBS Documentation
+        run: |
+          echo "# PBS Files Documentation" > PBS_DOCS.md
+          echo "" >> PBS_DOCS.md
+          echo "Overview of all PBS (Pokemon Script) files in this project." >> PBS_DOCS.md
+          echo "" >> PBS_DOCS.md
+          echo "Last updated: $(date)" >> PBS_DOCS.md
+          echo "" >> PBS_DOCS.md
+          
+          echo "| File | Lines | Size | Encoding |" >> PBS_DOCS.md
+          echo "|------|-------|------|----------|" >> PBS_DOCS.md
+          
+          find PBS -name "*.txt" | sort | while read pbs_file; do
+            FILENAME=$(basename "$pbs_file")
+            LINES=$(wc -l < "$pbs_file")
+            SIZE=$(du -h "$pbs_file" | cut -f1)
+            ENCODING=$(file -b --mime-encoding "$pbs_file")
+            
+            echo "| $FILENAME | $LINES | $SIZE | $ENCODING |" >> PBS_DOCS.md
+          done
+      
+      - name: Create Project Overview
+        run: |
+          echo "# Project Overview" > PROJECT_OVERVIEW.md
+          echo "" >> PROJECT_OVERVIEW.md
+          echo "## Statistics" >> PROJECT_OVERVIEW.md
+          echo "" >> PROJECT_OVERVIEW.md
+          
+          # Plugins
+          PLUGIN_COUNT=$(find Plugins -mindepth 1 -maxdepth 1 -type d | wc -l)
+          echo "- **Plugins**: $PLUGIN_COUNT" >> PROJECT_OVERVIEW.md
+          
+          # Ruby files
+          RB_FILES=$(find Plugins -name "*.rb" | wc -l)
+          RB_LINES=$(find Plugins -name "*.rb" -exec wc -l {} + | tail -1 | awk '{print $1}')
+          echo "- **Ruby Files**: $RB_FILES ($RB_LINES lines)" >> PROJECT_OVERVIEW.md
+          
+          # PBS files
+          PBS_FILES=$(find PBS -name "*.txt" | wc -l)
+          PBS_LINES=$(find PBS -name "*.txt" -exec wc -l {} + | tail -1 | awk '{print $1}')
+          echo "- **PBS Files**: $PBS_FILES ($PBS_LINES lines)" >> PROJECT_OVERVIEW.md
+          
+          # Graphics
+          PNG_FILES=$(find Graphics -name "*.png" 2>/dev/null | wc -l || echo "0")
+          echo "- **Graphics**: $PNG_FILES PNG files" >> PROJECT_OVERVIEW.md
+          
+          # Audio
+          AUDIO_FILES=$(find Audio -type f 2>/dev/null | wc -l || echo "0")
+          echo "- **Audio**: $AUDIO_FILES files" >> PROJECT_OVERVIEW.md
+          
+          echo "" >> PROJECT_OVERVIEW.md
+          echo "## Quick Links" >> PROJECT_OVERVIEW.md
+          echo "" >> PROJECT_OVERVIEW.md
+          echo "- [Plugin Documentation](PLUGINS.md)" >> PROJECT_OVERVIEW.md
+          echo "- [PBS Documentation](PBS_DOCS.md)" >> PROJECT_OVERVIEW.md
+          echo "- [Changelog](Plugins/[DBK_003.1]%20Raid%20Battles%20Hotfixes/CHANGELOG.md)" >> PROJECT_OVERVIEW.md
+      
+      - name: Commit Documentation
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs: Auto-generate project documentation"
+          file_pattern: "*.md"

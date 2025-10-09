@@ -1,0 +1,128 @@
+name: Test Plugins
+
+on:
+  push:
+    paths:
+      - 'Plugins/**/*.rb'
+  pull_request:
+    paths:
+      - 'Plugins/**/*.rb'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+      
+      - name: Test Plugin Load Order
+        run: |
+          echo "Testing plugin load order..."
+          
+          # Sammle alle meta.txt Dateien
+          find Plugins -name "meta.txt" | while read meta; do
+            echo "Processing: $meta"
+            PLUGIN_DIR=$(dirname "$meta")
+            PLUGIN_NAME=$(basename "$PLUGIN_DIR")
+            
+            # Extrahiere Name und Version
+            NAME=$(grep "^Name" "$meta" | cut -d'=' -f2 | xargs)
+            VERSION=$(grep "^Version" "$meta" | cut -d'=' -f2 | xargs)
+            
+            echo "  Plugin: $NAME (v$VERSION)"
+            
+            # Prüfe auf Requires
+            if grep -q "^Requires" "$meta"; then
+              REQUIRES=$(grep "^Requires" "$meta" | cut -d'=' -f2 | xargs)
+              echo "  Requires: $REQUIRES"
+            fi
+          done
+      
+      - name: Check for Common Errors
+        run: |
+          echo "Checking for common plugin errors..."
+          
+          # Prüfe auf häufige Fehler
+          ERRORS=0
+          
+          # 1. hasType? vs pbHasType?
+          if grep -r "\.hasType?" Plugins --include="*.rb"; then
+            echo "⚠️  Warning: Found .hasType? - should be .pbHasType? in Battle context"
+            ERRORS=$((ERRORS + 1))
+          fi
+          
+          # 2. Fehlende UTF-8 Encoding Deklaration
+          find Plugins -name "*.rb" | while read file; do
+            if head -1 "$file" | grep -q "# encoding"; then
+              :
+            else
+              if grep -q "[äöüÄÖÜß]" "$file"; then
+                echo "⚠️  $file: Contains umlauts but no encoding declaration"
+                ERRORS=$((ERRORS + 1))
+              fi
+            fi
+          done
+          
+          # 3. Prüfe auf Debug-Ausgaben
+          if grep -r "puts\|p\s" Plugins --include="*.rb" | grep -v "pbDisplay\|pbMessage"; then
+            echo "ℹ️  Info: Found debug output statements (puts/p)"
+          fi
+          
+          echo "Total potential issues: $ERRORS"
+      
+      - name: Validate Plugin Structure
+        run: |
+          echo "Validating plugin structure..."
+          
+          # Prüfe ob alle Plugins ein meta.txt haben
+          find Plugins -mindepth 1 -maxdepth 1 -type d | while read plugin_dir; do
+            PLUGIN_NAME=$(basename "$plugin_dir")
+            
+            if [ ! -f "$plugin_dir/meta.txt" ]; then
+              echo "❌ $PLUGIN_NAME: Missing meta.txt"
+            else
+              echo "✅ $PLUGIN_NAME: Has meta.txt"
+              
+              # Prüfe erforderliche Felder
+              for field in Name Version; do
+                if ! grep -q "^$field" "$plugin_dir/meta.txt"; then
+                  echo "  ⚠️  Missing field: $field"
+                fi
+              done
+            fi
+          done
+      
+      - name: Generate Test Report
+        if: always()
+        run: |
+          echo "## Plugin Test Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Count plugins
+          PLUGIN_COUNT=$(find Plugins -mindepth 1 -maxdepth 1 -type d | wc -l)
+          echo "**Total Plugins**: $PLUGIN_COUNT" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # List all plugins with versions
+          echo "### Plugin List" >> $GITHUB_STEP_SUMMARY
+          echo "| Plugin | Version | Has Requires |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|---------|--------------|" >> $GITHUB_STEP_SUMMARY
+          
+          find Plugins -name "meta.txt" | sort | while read meta; do
+            NAME=$(grep "^Name" "$meta" | cut -d'=' -f2 | xargs || echo "Unknown")
+            VERSION=$(grep "^Version" "$meta" | cut -d'=' -f2 | xargs || echo "?.?")
+            
+            if grep -q "^Requires" "$meta"; then
+              REQUIRES="✅"
+            else
+              REQUIRES="❌"
+            fi
+            
+            echo "| $NAME | $VERSION | $REQUIRES |" >> $GITHUB_STEP_SUMMARY
+          done
