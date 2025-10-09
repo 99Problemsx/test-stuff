@@ -1,0 +1,44 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'  # Wird ausgelöst bei Tags wie v1.0.4, v1.1.0, etc.
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Create Release Archive
+        run: |
+          # Erstelle ZIP ohne .git Ordner
+          zip -r pokemon-essentials-release.zip . -x "*.git*" -x "*.rxdata" -x "*Save*.rxdata"
+      
+      - name: Extract version from tag
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+      
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Pokemon Essentials ${{ steps.get_version.outputs.VERSION }}
+          body: |
+            ## Changes in this version
+            - Bug fixes and improvements
+            - See CHANGELOG.md for details
+            
+            ### Installation
+            1. Download `pokemon-essentials-release.zip`
+            2. Extract to desired location
+            3. Run `Game.exe`
+          files: pokemon-essentials-release.zip
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

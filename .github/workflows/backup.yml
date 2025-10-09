@@ -1,0 +1,39 @@
+name: Backup Project
+
+on:
+  schedule:
+    - cron: '0 2 * * 0'  # Jeden Sonntag um 2 Uhr morgens
+  workflow_dispatch:  # Oder manuell starten
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Create backup archive
+        run: |
+          DATE=$(date +%Y-%m-%d)
+          zip -r "backup-pokemon-essentials-$DATE.zip" . -x "*.git*" -x "*.rxdata"
+      
+      - name: Upload to Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-backup
+          path: backup-*.zip
+          retention-days: 90  # Behält Backup für 90 Tage
+      
+      - name: Create Release as Backup Point
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: backup-${{ github.run_number }}
+          name: Automated Backup
+          body: |
+            Automated weekly backup created on $(date)
+          files: backup-*.zip
+          draft: false
+          prerelease: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

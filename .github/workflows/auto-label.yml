@@ -1,0 +1,59 @@
+name: Auto Label Issues
+
+on:
+  issues:
+    types: [opened, edited]
+  pull_request:
+    types: [opened, edited]
+
+jobs:
+  auto-label:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    
+    steps:
+      - name: Auto label by content
+        uses: actions/labeler@v5
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Label based on keywords
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue || context.payload.pull_request;
+            const body = issue.body.toLowerCase();
+            const title = issue.title.toLowerCase();
+            
+            const labels = [];
+            
+            // Auto-detect issue type
+            if (body.includes('bug') || title.includes('bug') || body.includes('error')) {
+              labels.push('bug');
+            }
+            if (body.includes('feature') || title.includes('feature') || body.includes('enhancement')) {
+              labels.push('enhancement');
+            }
+            if (body.includes('plugin') || title.includes('plugin')) {
+              labels.push('plugin');
+            }
+            if (body.includes('raid') || title.includes('raid')) {
+              labels.push('raid-battles');
+            }
+            if (body.includes('dynamax') || title.includes('dynamax')) {
+              labels.push('dynamax');
+            }
+            if (body.includes('terastal') || title.includes('tera')) {
+              labels.push('terastallization');
+            }
+            
+            if (labels.length > 0) {
+              await github.rest.issues.addLabels({
+                issue_number: issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                labels: labels
+              });
+            }

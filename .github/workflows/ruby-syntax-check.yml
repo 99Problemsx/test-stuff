@@ -1,0 +1,47 @@
+name: Ruby Syntax Check
+
+on:
+  push:
+    paths:
+      - 'Plugins/**/*.rb'
+      - 'Data/Scripts/**/*.rb'
+  pull_request:
+    paths:
+      - 'Plugins/**/*.rb'
+      - 'Data/Scripts/**/*.rb'
+
+jobs:
+  syntax-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+      
+      - name: Check Ruby Syntax in Plugins
+        run: |
+          echo "Checking Ruby syntax in all plugin files..."
+          find Plugins -name "*.rb" -type f -exec ruby -c {} \; | tee syntax-check.log
+          
+          if grep -q "Syntax OK" syntax-check.log; then
+            echo "✅ All Ruby files have valid syntax!"
+          else
+            echo "❌ Syntax errors found!"
+            exit 1
+          fi
+      
+      - name: Report Results
+        if: always()
+        run: |
+          echo "## Ruby Syntax Check Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ $? -eq 0 ]; then
+            echo "✅ All Ruby files passed syntax check" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Some Ruby files have syntax errors" >> $GITHUB_STEP_SUMMARY
+          fi

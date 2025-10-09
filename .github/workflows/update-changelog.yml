@@ -1,0 +1,38 @@
+name: Update Changelog
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # Erlaubt manuellen Start
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Komplette Historie für Changelog
+      
+      - name: Generate Changelog
+        id: changelog
+        uses: metcalfc/changelog-generator@v4.3.1
+        with:
+          myToken: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Update CHANGELOG.md
+        run: |
+          echo "# Changelog" > CHANGELOG_AUTO.md
+          echo "" >> CHANGELOG_AUTO.md
+          echo "${{ steps.changelog.outputs.changelog }}" >> CHANGELOG_AUTO.md
+      
+      - name: Commit Changelog
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs: Update auto-generated changelog"
+          file_pattern: CHANGELOG_AUTO.md
