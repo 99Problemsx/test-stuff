@@ -1,13 +1,30 @@
-# Pokemon Essentials v21.1 - Custom Build
+<div align="center">
 
-![Ruby Syntax Check](https://github.com/99Problemsx/test-stuff/actions/workflows/ruby-syntax-check.yml/badge.svg)
-![PBS Validation](https://github.com/99Problemsx/test-stuff/actions/workflows/validate-pbs.yml/badge.svg)
-![Code Quality](https://github.com/99Problemsx/test-stuff/actions/workflows/code-quality.yml/badge.svg)
-![Security Scan](https://github.com/99Problemsx/test-stuff/actions/workflows/security-scan.yml/badge.svg)
-![Backup](https://github.com/99Problemsx/test-stuff/actions/workflows/backup.yml/badge.svg)
-![GitHub Pages](https://github.com/99Problemsx/test-stuff/actions/workflows/deploy-pages.yml/badge.svg)
+# 🎮 Pokemon Essentials v21.1 - Custom Build
 
-🌐 **[Live Documentation](https://99problemsx.github.io/test-stuff/)**
+[![Ruby Syntax Check](https://github.com/99Problemsx/test-stuff/actions/workflows/ruby-syntax-check.yml/badge.svg)](https://github.com/99Problemsx/test-stuff/actions/workflows/ruby-syntax-check.yml)
+[![PBS Validation](https://github.com/99Problemsx/test-stuff/actions/workflows/validate-pbs.yml/badge.svg)](https://github.com/99Problemsx/test-stuff/actions/workflows/validate-pbs.yml)
+[![Code Quality](https://github.com/99Problemsx/test-stuff/actions/workflows/code-quality.yml/badge.svg)](https://github.com/99Problemsx/test-stuff/actions/workflows/code-quality.yml)
+[![Security Scan](https://github.com/99Problemsx/test-stuff/actions/workflows/security-scan.yml/badge.svg)](https://github.com/99Problemsx/test-stuff/actions/workflows/security-scan.yml)
+[![Auto-Merge](https://github.com/99Problemsx/test-stuff/actions/workflows/dependabot-auto-merge.yml/badge.svg)](https://github.com/99Problemsx/test-stuff/actions/workflows/dependabot-auto-merge.yml)
+[![GitHub Pages](https://github.com/99Problemsx/test-stuff/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/99Problemsx/test-stuff/actions/workflows/deploy-pages.yml)
+
+### 🌐 **[Live Documentation](https://99problemsx.github.io/test-stuff/)** | 📥 **[Latest Release](https://github.com/99Problemsx/test-stuff/releases/latest)** | 📝 **[Changelog](CHANGELOG_AUTO.md)**
+
+*Ein vollautomatisiertes Pokemon Essentials Projekt mit modernster CI/CD Pipeline*
+
+</div>
+
+---
+
+## ✨ Highlights
+
+- 🎯 **Automatisierung First** - Über 17 GitHub Actions Workflows für alles
+- 🤖 **Dependabot Auto-Merge** - Dependencies werden automatisch aktualisiert
+- 🔒 **Security First** - Automatische Scans und Branch Protection
+- 📊 **Quality Metrics** - Code Quality, Performance und Coverage Reports
+- 🌐 **Live Docs** - Immer aktuelle Dokumentation auf GitHub Pages
+- 📦 **One-Click Releases** - Tag pushen, fertig!
 
 ## 🎮 Über dieses Projekt
 
@@ -26,28 +43,55 @@ Dieses Repository enthält ein vollständiges Pokemon Essentials v21.1 Projekt m
 - **Deutsche Lokalisierung** mit UTF-8 Support
 - **Custom PBS Einträge** für spezielle Pokémon
 
-### Automatisierung
-- 🤖 **Automatische Releases** bei neuen Tags (inkl. ZIP-Erstellung)
+### 🔄 CI/CD Pipeline
+- 🤖 **Dependabot Auto-Merge** - Automatische Dependency Updates (Patch & Minor)
 - 📝 **Semantic Versioning** - Automatische Versionierung basierend auf Commits
 - 💾 **Wöchentliche Backups** (jeden Sonntag, 90 Tage Aufbewahrung)
 - ✅ **Ruby Syntax Checks** bei jedem Push zu Plugins
-- 🏷️ **Automatische Issue Labels** basierend auf Keywords
+- 🏷️ **Auto-Label PRs** basierend auf geänderten Dateien
 - 📊 **Download Statistiken** (täglich aktualisiert)
 - 🔍 **Code Quality Analysis** (RuboCop, Flog, Flay)
 - 📚 **Auto-Dokumentation** für Plugins und PBS Files
 - 🧪 **Plugin Load Order Testing**
-- ✉️ **Discord/Slack Benachrichtigungen** (optional)
+- ✉️ **Discord Benachrichtigungen** (optional)
 - ✔️ **PBS File Validation** (UTF-8, BOM, Encoding)
 - 🔒 **Security Scanning** (Trivy, TruffleHog)
 - ⚡ **Performance Testing** mit Benchmark Tools
 - 🌐 **GitHub Pages** - Automatisches Deployment
 - 🗑️ **Stale Bot** - Auto-Close inaktiver Issues/PRs
+- 📦 **Automatic Releases** bei neuen Tags (inkl. ZIP-Erstellung)
 
-## 🚀 Installation
+## 🚀 Quick Start
 
-1. **Download**: Lade die neueste Release-Version herunter
-2. **Entpacken**: Extrahiere alle Dateien
-3. **Spielen**: Starte `Game.exe`
+### 📥 Download & Play
+1. **Download**: Hole dir die [neueste Release-Version](https://github.com/99Problemsx/test-stuff/releases/latest)
+2. **Entpacken**: Extrahiere alle Dateien in einen Ordner
+3. **Spielen**: Starte `Game.exe` und hab Spaß!
+
+### 👨‍💻 Für Entwickler
+
+```bash
+# Repository klonen
+git clone https://github.com/99Problemsx/test-stuff.git
+cd test-stuff
+
+# Neue Version erstellen (automatisches Release!)
+git tag v1.0.5
+git push origin v1.0.5
+
+# Workflows manuell triggern
+# Gehe zu: Actions → [Workflow Name] → Run workflow
+```
+
+### 🔧 Lokale Tests
+
+```bash
+# Ruby Syntax Check
+ruby -c Plugins/**/*.rb
+
+# PBS Dateien validieren
+# (wird automatisch von GitHub Actions gemacht)
+```
 
 ## 📝 Changelog
 
