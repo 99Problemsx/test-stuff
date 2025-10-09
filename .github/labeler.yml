@@ -1,0 +1,55 @@
+# Label PRs based on file paths
+# https://github.com/actions/labeler
+
+# Workflow changes
+'ci/cd':
+  - changed-files:
+    - any-glob-to-any-file: '.github/workflows/**'
+
+# Documentation changes
+'documentation':
+  - changed-files:
+    - any-glob-to-any-file: 
+      - '*.md'
+      - 'docs/**'
+
+# PBS data files
+'game-data':
+  - changed-files:
+    - any-glob-to-any-file: 'PBS/**'
+
+# Plugin changes
+'plugins':
+  - changed-files:
+    - any-glob-to-any-file: 'Plugins/**'
+
+# Ruby scripts
+'scripts':
+  - changed-files:
+    - any-glob-to-any-file:
+      - '*.rb'
+      - 'Plugins/**/*.rb'
+
+# Dependencies
+'dependencies':
+  - changed-files:
+    - any-glob-to-any-file:
+      - '.github/dependabot.yml'
+      - '**/package.json'
+      - '**/Gemfile'
+
+# Graphics/Audio
+'assets':
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'Graphics/**'
+      - 'Audio/**'
+
+# Configuration files
+'config':
+  - changed-files:
+    - any-glob-to-any-file:
+      - '*.json'
+      - '*.ini'
+      - '*.yml'
+      - '*.yaml'
