@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Generate Plugin Documentation
         run: |
@@ -142,5 +144,7 @@ jobs:
       - name: Commit Documentation
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "docs: Auto-generate project documentation"
+          commit_message: "docs: Auto-generate project documentation [skip ci]"
           file_pattern: "*.md"
+          commit_user_name: github-actions[bot]
+          commit_user_email: github-actions[bot]@users.noreply.github.com

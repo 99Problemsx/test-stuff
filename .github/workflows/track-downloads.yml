@@ -81,5 +81,7 @@ jobs:
       - name: Commit Stats
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "docs: Update download statistics"
+          commit_message: "docs: Update download statistics [skip ci]"
           file_pattern: STATS.md
+          commit_user_name: github-actions[bot]
+          commit_user_email: github-actions[bot]@users.noreply.github.com
