@@ -142,7 +142,7 @@ jobs:
           echo "- [Changelog](Plugins/[DBK_003.1]%20Raid%20Battles%20Hotfixes/CHANGELOG.md)" >> PROJECT_OVERVIEW.md
       
       - name: Commit Documentation
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "docs: Auto-generate project documentation [skip ci]"
           file_pattern: "*.md"
