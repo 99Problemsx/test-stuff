@@ -284,7 +284,7 @@ jobs:
           cp STATS.md _site/ 2>/dev/null || echo "# Statistics\nWill be generated on next run" > _site/STATS.md
           
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
   
   deploy:
     environment:
