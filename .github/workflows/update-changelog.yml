@@ -34,7 +34,7 @@ jobs:
           echo "${{ steps.changelog.outputs.changelog }}" >> CHANGELOG_AUTO.md
       
       - name: Commit Changelog
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "docs: Update auto-generated changelog [skip ci]"
           file_pattern: CHANGELOG_AUTO.md

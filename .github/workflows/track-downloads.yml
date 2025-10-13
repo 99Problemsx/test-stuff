@@ -79,7 +79,7 @@ jobs:
             console.log(stats);
       
       - name: Commit Stats
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "docs: Update download statistics [skip ci]"
           file_pattern: STATS.md
