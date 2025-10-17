@@ -313,3 +313,25 @@ Backtrace:
 999_Main.rb:31:in `mainFunctionDebug'
 999_Main.rb:18:in `block in mainFunction'
 003_Errors.rb:80:in `pbCriticalCode'
+
+=================
+
+[2025-10-17 10:48:38 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Error in Plugin: [Raid Battles Hotfixes]
+Exception: NameError
+Message: undefined method `generate_raid_foe' for class `RaidBattle'
+
+Backtrace:
+[Raid Battles Hotfixes] [012] Ultra Adventure Z-Crystal Fix.rb:127:in `<class:RaidBattle>'
+[Raid Battles Hotfixes] [012] Ultra Adventure Z-Crystal Fix.rb:126:in `<main>'
+005_PluginManager.rb:635:in `eval'
+005_PluginManager.rb:635:in `block (2 levels) in runPlugins'
+005_PluginManager.rb:625:in `each'
+005_PluginManager.rb:625:in `block in runPlugins'
+005_PluginManager.rb:616:in `each'
+005_PluginManager.rb:616:in `runPlugins'
+999_Main.rb:28:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
