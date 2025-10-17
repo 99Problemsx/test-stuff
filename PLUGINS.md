@@ -2,7 +2,7 @@
 
 Auto-generated documentation for all installed plugins.
 
-Last updated: Thu Oct  9 21:34:10 UTC 2025
+Last updated: Fri Oct 17 01:29:57 UTC 2025
 
 
 ---
@@ -207,6 +207,19 @@ Last updated: Thu Oct  9 21:34:10 UTC 2025
 
 ---
 
+## Battle Speed Control
+
+**Name**: Battle Speed Control
+
+**Version**: 1.2
+
+**Author**: 
+
+**Files**: 1 Ruby files
+
+
+---
+
 ## Beach Water Bubbles
 
 **Name**: Beach Water Bubble Effect
@@ -332,23 +345,6 @@ Free to use and modify for non-commercial Pokémon fan games.
 **Link**: https://reliccastle.com/resources/1389/
 
 **Files**: 51 Ruby files
-
-
----
-
-## Combate Estilo EBDX
-
-**Name**: Combate Estilo EBDX
-
-**Version**: 1.0.4
-
-**Author**: 
-
-**Dependencies**:
-- [DBK] Enhanced Battle UI
-- 2.0
-
-**Files**: 4 Ruby files
 
 
 ---
@@ -1502,7 +1498,7 @@ Rename the file to `.txt` to import them all!
 
 **Name**: Raid Battles Hotfixes
 
-**Version**: 1.0.5
+**Version**: 1.0.7
 
 **Author**: 
 
@@ -1510,7 +1506,60 @@ Rename the file to `.txt` to import them all!
 - [DBK] Raid Battles
 - 1.0
 
-**Files**: 10 Ruby files
+**Files**: 11 Ruby files
+
+### Changelog
+
+# Raid Battles Hotfixes - Changelog
+
+## Version 1.0.4 (2025-10-13)
+
+### Bug Fixes
+
+#### [008] Ditto Raid Fix (Extended)
+- **Fixed**: Ditto in Tera Raids using Struggle (no compatible moves)
+- **Fixed**: Wobbuffet and other Pokémon without damaging moves in raids
+- **Fixed**: Ditto causing `baseMoves` error during raid battles
+- **Root Cause**: 
+  - Ditto only learns Transform, which cannot be Tera-typed
+  - Some Pokémon lack damaging moves matching raid requirements
+  - The `baseMoves` attribute may not exist for transformed Pokémon
+- **Solution**: 
+  - **Moveset Failsafe System**: Automatically assigns appropriate moves when no viable moves are found:
+    - **Tera Raids**: Tera Blast (works with any Tera type)
+    - **Ultra/Max Raids**: Type-appropriate powerful moves (e.g., Flamethrower for Fire-types)
+    - **Basic Raids**: Universal moves (Tackle, Body Slam, etc.)
+  - **Shield Damage Fix**: Added safety checks for `baseMoves` attribute in Ultra and Max raid styles
+  - Applies to all Pokémon with empty or non-damaging movesets
+
+---
+
+## Version 1.0.3
+
+### Bug Fixes
+
+#### [007] Unown Raid Fix
+- **Fixed**: Unown not triggering raid shield
+- **Fixed**: Unown giving no rewards after raid battles
+- **Root Cause**: Unown only learns Hidden Power, which is banned in raid battles, resulting in an empty moveset
+- **Solution**: Unown now receives a set of Psychic-type moves for raid battles (Psychic, Psyshock, Psybeam, Stored Power, Confusion, Zen Headbutt, Calm Mind, Amnesia)
+
+#### [008] Ditto Raid Fix
+- **Fixed**: Ditto causing `baseMoves` error during raid battles
+- **Fixed**: Error message appearing but not crashing the game when Ditto attacks
+- **Root Cause**: The `baseMoves` attribute may not exist or be nil for transformed Pokémon
+- **Solution**: Added proper safety checks before accessing `baseMoves` in shield damage calculation for Ultra and Max raid styles
+
+---
+
+## Version 1.0.2
+
+### Bug Fixes
+
+#### [001] Z-Crystal Compatibility
+- Fixed Z-Crystal compatibility issues
+
+#### [002] Adventure Outcome Fix
 
 
 ---

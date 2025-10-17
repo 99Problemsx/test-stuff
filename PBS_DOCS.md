@@ -2,7 +2,7 @@
 
 Overview of all PBS (Pokemon Script) files in this project.
 
-Last updated: Thu Oct  9 21:34:11 UTC 2025
+Last updated: Fri Oct 17 01:29:59 UTC 2025
 
 | File | Lines | Size | Encoding |
 |------|-------|------|----------|
@@ -60,7 +60,7 @@ Last updated: Thu Oct  9 21:34:11 UTC 2025
 | cup_poke_trainers.txt | 1601 | 44K | utf-8 |
 | dungeon_parameters.txt | 30 | 4.0K | utf-8 |
 | dungeon_tilesets.txt | 28 | 4.0K | utf-8 |
-| encounters.txt | 311 | 8.0K | utf-8 |
+| encounters.txt | 315 | 8.0K | utf-8 |
 | items.txt | 6619 | 184K | utf-8 |
 | items_Gen_9_Pack.txt | 525 | 16K | utf-8 |
 | items_custom.txt | 360 | 12K | utf-8 |
@@ -71,7 +71,7 @@ Last updated: Thu Oct  9 21:34:11 UTC 2025
 | items_terastal.txt | 216 | 8.0K | utf-8 |
 | items_zpower.txt | 429 | 16K | utf-8 |
 | map_connections.txt | 40 | 4.0K | utf-8 |
-| map_metadata.txt | 398 | 12K | utf-8 |
+| map_metadata.txt | 405 | 12K | utf-8 |
 | metadata.txt | 33 | 4.0K | utf-8 |
 | moves.txt | 8836 | 244K | utf-8 |
 | moves_Gen_9_Pack.txt | 1134 | 32K | utf-8 |

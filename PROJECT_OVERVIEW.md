@@ -3,9 +3,9 @@
 ## Statistics
 
 - **Plugins**: 80
-- **Ruby Files**: 587 (144176 lines)
-- **PBS Files**: 94 (96648 lines)
-- **Graphics**: 19499 PNG files
+- **Ruby Files**: 585 (143407 lines)
+- **PBS Files**: 94 (96659 lines)
+- **Graphics**: 21273 PNG files
 - **Audio**: 1475 files
 
 ## Quick Links
