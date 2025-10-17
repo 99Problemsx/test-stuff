@@ -1,0 +1,315 @@
+
+=================
+
+[2025-10-17 02:15:43 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `pbCalcType' for #<Battle::Move::None>
+
+Backtrace:
+169_170_011_Battle &gt; 005_AI &gt; 011_AIMove.rb:33:in `rough_type'
+169_170_011_Battle &gt; 005_AI &gt; 011_AIMove.rb:13:in `set_up'
+163_164_011_Battle &gt; 005_AI &gt; 005_AI_ChooseMove.rb:155:in `set_up_move_check'
+[Deluxe Battle Kit] [003] Command Menu Refactor.rb:496:in `block in pbGetMoveScores'
+[Deluxe Battle Kit] [003] Command Menu Refactor.rb:481:in `each'
+[Deluxe Battle Kit] [003] Command Menu Refactor.rb:481:in `each_with_index'
+[Deluxe Battle Kit] [003] Command Menu Refactor.rb:481:in `pbGetMoveScores'
+[Deluxe Battle Kit] [003] Command Menu Refactor.rb:463:in `pbDefaultChooseEnemyCommand'
+124_125_011_Battle &gt; 001_Battle &gt; 009_Battle_CommandPhase.rb:215:in `block in pbCommandPhaseLoop'
+124_125_011_Battle &gt; 001_Battle &gt; 009_Battle_CommandPhase.rb:203:in `loop'
+
+=================
+
+[2025-10-17 02:15:48 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `pbCalcType' for #<Battle::Move::HitTwoToFiveTimes>
+
+Backtrace:
+[M.A.G (Moves & Abilities Galore)] Battler_UseMove.rb:66:in `pbUseMove'
+[Charms Compilation] Heart_Charm.rb:53:in `block in pbProcessTurn'
+002_003_001_Technical &gt; 001_Debugging &gt; 001_PBDebug.rb:6:in `logonerr'
+[Charms Compilation] Heart_Charm.rb:53:in `pbProcessTurn'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:128:in `block (2 levels) in pbAttackPhaseMoves'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `each'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `block in pbAttackPhaseMoves'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `loop'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `pbAttackPhaseMoves'
+[Deluxe Battle Kit] [003] Command Menu Refactor.rb:409:in `pbAttackPhase'
+
+=================
+
+[2025-10-17 02:15:51 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `pbCalcType' for #<Battle::Move::HitTwoToFiveTimes>
+
+Backtrace:
+[M.A.G (Moves & Abilities Galore)] Battler_UseMove.rb:66:in `pbUseMove'
+[Charms Compilation] Heart_Charm.rb:53:in `block in pbProcessTurn'
+002_003_001_Technical &gt; 001_Debugging &gt; 001_PBDebug.rb:6:in `logonerr'
+[Charms Compilation] Heart_Charm.rb:53:in `pbProcessTurn'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:128:in `block (2 levels) in pbAttackPhaseMoves'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `each'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `block in pbAttackPhaseMoves'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `loop'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `pbAttackPhaseMoves'
+[Deluxe Battle Kit] [003] Command Menu Refactor.rb:409:in `pbAttackPhase'
+
+=================
+
+[2025-10-17 02:15:53 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `pbCalcType' for #<Battle::Move::HitTwoToFiveTimes>
+
+Backtrace:
+[M.A.G (Moves & Abilities Galore)] Battler_UseMove.rb:66:in `pbUseMove'
+[Charms Compilation] Heart_Charm.rb:53:in `block in pbProcessTurn'
+002_003_001_Technical &gt; 001_Debugging &gt; 001_PBDebug.rb:6:in `logonerr'
+[Charms Compilation] Heart_Charm.rb:53:in `pbProcessTurn'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:128:in `block (2 levels) in pbAttackPhaseMoves'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `each'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `block in pbAttackPhaseMoves'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `loop'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `pbAttackPhaseMoves'
+[Deluxe Battle Kit] [003] Command Menu Refactor.rb:409:in `pbAttackPhase'
+
+=================
+
+[2025-10-17 02:15:54 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `pbCalcType' for #<Battle::Move::HitTwoToFiveTimes>
+
+Backtrace:
+[M.A.G (Moves & Abilities Galore)] Battler_UseMove.rb:66:in `pbUseMove'
+[Charms Compilation] Heart_Charm.rb:53:in `block in pbProcessTurn'
+002_003_001_Technical &gt; 001_Debugging &gt; 001_PBDebug.rb:6:in `logonerr'
+[Charms Compilation] Heart_Charm.rb:53:in `pbProcessTurn'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:128:in `block (2 levels) in pbAttackPhaseMoves'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `each'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `block in pbAttackPhaseMoves'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `loop'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `pbAttackPhaseMoves'
+[Deluxe Battle Kit] [003] Command Menu Refactor.rb:409:in `pbAttackPhase'
+
+=================
+
+[2025-10-17 02:15:55 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `pbCalcType' for #<Battle::Move::HitTwoToFiveTimes>
+
+Backtrace:
+[M.A.G (Moves & Abilities Galore)] Battler_UseMove.rb:66:in `pbUseMove'
+[Charms Compilation] Heart_Charm.rb:53:in `block in pbProcessTurn'
+002_003_001_Technical &gt; 001_Debugging &gt; 001_PBDebug.rb:6:in `logonerr'
+[Charms Compilation] Heart_Charm.rb:53:in `pbProcessTurn'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:128:in `block (2 levels) in pbAttackPhaseMoves'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `each'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `block in pbAttackPhaseMoves'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `loop'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `pbAttackPhaseMoves'
+[Deluxe Battle Kit] [003] Command Menu Refactor.rb:409:in `pbAttackPhase'
+
+=================
+
+[2025-10-17 02:15:55 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `pbCalcType' for #<Battle::Move::HitTwoToFiveTimes>
+
+Backtrace:
+[M.A.G (Moves & Abilities Galore)] Battler_UseMove.rb:66:in `pbUseMove'
+[Charms Compilation] Heart_Charm.rb:53:in `block in pbProcessTurn'
+002_003_001_Technical &gt; 001_Debugging &gt; 001_PBDebug.rb:6:in `logonerr'
+[Charms Compilation] Heart_Charm.rb:53:in `pbProcessTurn'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:128:in `block (2 levels) in pbAttackPhaseMoves'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `each'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `block in pbAttackPhaseMoves'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `loop'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `pbAttackPhaseMoves'
+[Deluxe Battle Kit] [003] Command Menu Refactor.rb:409:in `pbAttackPhase'
+
+=================
+
+[2025-10-17 02:15:56 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `pbCalcType' for #<Battle::Move::HitTwoToFiveTimes>
+
+Backtrace:
+[M.A.G (Moves & Abilities Galore)] Battler_UseMove.rb:66:in `pbUseMove'
+[Charms Compilation] Heart_Charm.rb:53:in `block in pbProcessTurn'
+002_003_001_Technical &gt; 001_Debugging &gt; 001_PBDebug.rb:6:in `logonerr'
+[Charms Compilation] Heart_Charm.rb:53:in `pbProcessTurn'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:128:in `block (2 levels) in pbAttackPhaseMoves'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `each'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `block in pbAttackPhaseMoves'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `loop'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `pbAttackPhaseMoves'
+[Deluxe Battle Kit] [003] Command Menu Refactor.rb:409:in `pbAttackPhase'
+
+=================
+
+[2025-10-17 02:16:23 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `pbCalcType' for #<Battle::Move::HitTwoToFiveTimes>
+
+Backtrace:
+[M.A.G (Moves & Abilities Galore)] Battler_UseMove.rb:66:in `pbUseMove'
+[Charms Compilation] Heart_Charm.rb:53:in `block in pbProcessTurn'
+002_003_001_Technical &gt; 001_Debugging &gt; 001_PBDebug.rb:6:in `logonerr'
+[Charms Compilation] Heart_Charm.rb:53:in `pbProcessTurn'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:128:in `block (2 levels) in pbAttackPhaseMoves'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `each'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `block in pbAttackPhaseMoves'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `loop'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `pbAttackPhaseMoves'
+[Deluxe Battle Kit] [003] Command Menu Refactor.rb:409:in `pbAttackPhase'
+
+=================
+
+[2025-10-17 02:16:25 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `pbCalcType' for #<Battle::Move::HitTwoToFiveTimes>
+
+Backtrace:
+[M.A.G (Moves & Abilities Galore)] Battler_UseMove.rb:66:in `pbUseMove'
+[Charms Compilation] Heart_Charm.rb:53:in `block in pbProcessTurn'
+002_003_001_Technical &gt; 001_Debugging &gt; 001_PBDebug.rb:6:in `logonerr'
+[Charms Compilation] Heart_Charm.rb:53:in `pbProcessTurn'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:128:in `block (2 levels) in pbAttackPhaseMoves'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `each'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `block in pbAttackPhaseMoves'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `loop'
+125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `pbAttackPhaseMoves'
+[Deluxe Battle Kit] [003] Command Menu Refactor.rb:409:in `pbAttackPhase'
+
+=================
+
+[2025-10-17 02:26:17 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: ArgumentError
+Message: undefined class/module ControlConfig
+
+Backtrace:
+<internal:marshal>:34:in `load'
+001_SaveData.rb:28:in `load'
+001_SaveData.rb:28:in `block in get_data_from_file'
+001_SaveData.rb:27:in `open'
+001_SaveData.rb:27:in `get_data_from_file'
+001_SaveData.rb:45:in `read_from_file'
+[Auto Multi Save] Auto Multi Save.rb:121:in `block in get_newest_save_slot'
+[Auto Multi Save] Auto Multi Save.rb:81:in `block in each_slot'
+[Auto Multi Save] Auto Multi Save.rb:81:in `each'
+[Auto Multi Save] Auto Multi Save.rb:81:in `each_slot'
+
+=================
+
+[2025-10-17 02:27:04 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: ArgumentError
+Message: undefined class/module ControlConfig
+
+Backtrace:
+<internal:marshal>:34:in `load'
+001_SaveData.rb:28:in `load'
+001_SaveData.rb:28:in `block in get_data_from_file'
+001_SaveData.rb:27:in `open'
+001_SaveData.rb:27:in `get_data_from_file'
+001_SaveData.rb:45:in `read_from_file'
+[Auto Multi Save] Auto Multi Save.rb:121:in `block in get_newest_save_slot'
+[Auto Multi Save] Auto Multi Save.rb:81:in `block in each_slot'
+[Auto Multi Save] Auto Multi Save.rb:81:in `each'
+[Auto Multi Save] Auto Multi Save.rb:81:in `each_slot'
+
+=================
+
+[2025-10-17 02:28:03 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: ArgumentError
+Message: undefined class/module ControlConfig
+
+Backtrace:
+<internal:marshal>:34:in `load'
+001_SaveData.rb:28:in `load'
+001_SaveData.rb:28:in `block in get_data_from_file'
+001_SaveData.rb:27:in `open'
+001_SaveData.rb:27:in `get_data_from_file'
+001_SaveData.rb:45:in `read_from_file'
+[Auto Multi Save] Auto Multi Save.rb:121:in `block in get_newest_save_slot'
+[Auto Multi Save] Auto Multi Save.rb:81:in `block in each_slot'
+[Auto Multi Save] Auto Multi Save.rb:81:in `each'
+[Auto Multi Save] Auto Multi Save.rb:81:in `each_slot'
+
+=================
+
+[2025-10-17 02:29:14 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: ArgumentError
+Message: undefined class/module ControlConfig
+
+Backtrace:
+<internal:marshal>:34:in `load'
+001_SaveData.rb:28:in `load'
+001_SaveData.rb:28:in `block in get_data_from_file'
+001_SaveData.rb:27:in `open'
+001_SaveData.rb:27:in `get_data_from_file'
+001_SaveData.rb:45:in `read_from_file'
+[Auto Multi Save] Auto Multi Save.rb:121:in `block in get_newest_save_slot'
+[Auto Multi Save] Auto Multi Save.rb:81:in `block in each_slot'
+[Auto Multi Save] Auto Multi Save.rb:81:in `each'
+[Auto Multi Save] Auto Multi Save.rb:81:in `each_slot'
+
+=================
+
+[2025-10-17 02:29:49 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: ArgumentError
+Message: undefined class/module ControlConfig
+
+Backtrace:
+<internal:marshal>:34:in `load'
+001_SaveData.rb:28:in `load'
+001_SaveData.rb:28:in `block in get_data_from_file'
+001_SaveData.rb:27:in `open'
+001_SaveData.rb:27:in `get_data_from_file'
+001_SaveData.rb:45:in `read_from_file'
+[Auto Multi Save] Auto Multi Save.rb:519:in `set_up_system'
+999_Main.rb:31:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+003_Errors.rb:80:in `pbCriticalCode'

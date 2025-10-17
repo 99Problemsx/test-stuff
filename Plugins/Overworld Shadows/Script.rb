@@ -22,6 +22,7 @@ class Sprite_Character < RPG::Sprite
     #  List of event name inclusions that will not render a shadow
     #    underneath the event/character sprite.
     BLACKLIST = [
+      "Campfire",
       "CutTree",
       "Door",
       "Stairs",

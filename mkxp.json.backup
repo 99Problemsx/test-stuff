@@ -1,0 +1,133 @@
+{
+    // ============================================================================
+    // MKXP-Z Configuration für Pokémon Essentials v21.1
+    // Optimiert für Performance und Kompatibilität
+    // ============================================================================
+
+    // RGSS Version (1 = RGSS1/XP, das verwendet Essentials)
+    "rgssVersion": 1,
+
+    // ============================================================================
+    // DISPLAY SETTINGS
+    // ============================================================================
+
+    // FPS Anzeige im Fenstertitel (F2 zum Toggle zur Laufzeit)
+    "displayFPS": false,
+
+    // Fenster ist skalierbar
+    "winResizable": true,
+
+    // Startet im Vollbildmodus (Alt+Enter zum Toggle)
+    "fullscreen": false,
+
+    // Seitenverhältnis beibehalten (wichtig für Pixel-Art!)
+    "fixedAspectRatio": true,
+
+    // Skalierungs-Modus (0 = Nearest-Neighbor, ideal für Pixel-Art)
+    // 0: Nearest-Neighbor (scharf, pixelig - EMPFOHLEN für Pokémon!)
+    // 1: Bilinear (weich)
+    // 2: Bicubic (sehr weich)
+    // 3: Lanczos3 (hochqualitativ)
+    // 4: xBRZ (spezielle Pixel-Art Skalierung)
+    "smoothScaling": 0,
+    "smoothScalingDown": 0,
+    "bitmapSmoothScaling": 0,
+    "bitmapSmoothScalingDown": 0,
+
+    // VSync aktivieren (verhindert Screen Tearing)
+    "vsync": true,
+
+    // Standard Fenster-Auflösung
+    // Pokémon Essentials v21 verwendet 512x384 (4:3 Format)
+    "defScreenW": 512,
+    "defScreenH": 384,
+
+    // Fenster-Titel (optional überschreiben)
+    // "windowTitle": "Pokémon Illusion",
+
+    // ============================================================================
+    // PERFORMANCE SETTINGS
+    // ============================================================================
+
+    // Fixed Framerate (40 FPS ist Standard für Pokémon Essentials)
+    "fixedFramerate": 40,
+
+    // Frame Skip aktivieren (verbessert Performance)
+    "frameSkip": true,
+
+    // Sync to Refresh Rate (normalerweise aus für Essentials)
+    "syncToRefreshrate": false,
+
+    // Path Cache aktivieren (schnelleres Laden)
+    "pathCache": true,
+
+    // ============================================================================
+    // COMPATIBILITY SETTINGS
+    // ============================================================================
+
+    // Solid Fonts (kann bei Textproblemen helfen)
+    "solidFonts": false,
+
+    // Sub-Image Fix (bei Grafik-Glitches aktivieren)
+    "subImageFix": false,
+
+    // Blitting aktivieren (bessere Performance)
+    "enableBlitting": true,
+
+    // Max Texture Size (0 = automatisch)
+    "maxTextureSize": 0,
+
+    // ============================================================================
+    // AUDIO SETTINGS
+    // ============================================================================
+
+    // Sound Effect Quellen (Standard: 6)
+    "SE.sourceCount": 6,
+
+    // Lautstärke (0-100)
+    "BGM.volume": 100,
+    "SE.volume": 100,
+
+    // MIDI Settings (nur wenn du MIDI verwendest)
+    "midi.soundFont": "",
+    "midi.chorus": false,
+    "midi.reverb": false,
+
+    // ============================================================================
+    // ADVANCED SETTINGS
+    // ============================================================================
+
+    // Game Folder (. = aktuelles Verzeichnis)
+    "gameFolder": ".",
+
+    // Alt+Enter für Fullscreen Toggle
+    "anyAltToggleFS": false,
+
+    // F12 Reset aktivieren
+    "enableReset": true,
+
+    // Symlinks erlauben (normalerweise aus)
+    "allowSymlinks": false,
+
+    // Executable Name (für Save-Daten Pfad)
+    "execName": "Game",
+
+    // Script Namen verwenden (Debug-Feature)
+    "useScriptNames": false,
+
+    // Custom Script laden (optional)
+    "customScript": "",
+
+    // Data Paths (normalerweise leer lassen)
+    "dataPathOrg": "",
+    "dataPathApp": "",
+
+    // Icon Path (optional)
+    "iconPath": "",
+
+    // Title Language (leer = automatisch)
+    "titleLanguage": "",
+
+    // RTP Paths (Essentials braucht normalerweise keine RTPs)
+    "RTP": []
+}

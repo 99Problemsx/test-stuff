@@ -5,7 +5,6 @@
 # Root Cause: Unown only learns Hidden Power, which is banned from raids
 #             This results in an empty moveset, causing various issues
 # Fix Approach: Ban Unown from appearing in raids entirely
-# Note: Author feedback - prefers banning over giving fake moves
 #===============================================================================
 
 #===============================================================================
