@@ -1,0 +1,259 @@
+name: Auto Release
+
+on:
+  push:
+    branches:
+      - main
+      - release
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  create-release:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Get full history for version detection
+
+      - name: Get latest tag
+        id: get_tag
+        run: |
+          # Get the latest tag, or default to v1.0.0
+          $latestTag = git describe --tags --abbrev=0 2>$null
+          if (-not $latestTag) {
+            $latestTag = "v1.0.0"
+          }
+
+          # Remove 'v' prefix for version manipulation
+          $version = $latestTag -replace '^v', ''
+          $versionParts = $version -split '\.'
+          $major = [int]$versionParts[0]
+          $minor = [int]$versionParts[1]
+          $patch = [int]$versionParts[2]
+
+          # Check recent commits for conventional commit types
+          $commits = git log --pretty=format:"%s" HEAD~5..HEAD 2>$null
+          $hasFeat = $commits | Select-String -Pattern "^feat:" -Quiet
+          $hasFix = $commits | Select-String -Pattern "^fix:" -Quiet
+
+          # Bump version based on commit type
+          if ($hasFeat) {
+            # Feature commit: bump minor version (1.0.0 -> 1.1.0)
+            $minor++
+            $patch = 0
+          } elseif ($hasFix) {
+            # Fix commit: bump patch version (1.0.0 -> 1.0.1)
+            $patch++
+          } else {
+            # No conventional commit: bump patch by default
+            $patch++
+          }
+
+          $newVersion = "$major.$minor.$patch"
+          $newTag = "v$newVersion"
+
+          Write-Host "Previous version: $latestTag"
+          Write-Host "New version: $newTag"
+
+          echo "version=$newVersion" >> $env:GITHUB_OUTPUT
+          echo "tag=$newTag" >> $env:GITHUB_OUTPUT
+        shell: pwsh
+
+      - name: Create version file
+        run: |
+          $version = "${{ steps.get_tag.outputs.version }}"
+          Set-Content -Path "VERSION.txt" -Value $version
+          Write-Host "Created VERSION.txt with version $version"
+        shell: pwsh
+
+      - name: Create game package
+        run: |
+          Write-Host "Creating game package..."
+
+          # Create temporary directory for the release
+          $tempDir = "Zorua-Release"
+          New-Item -ItemType Directory -Force -Path $tempDir
+
+          # Copy game files (exclude development files)
+          $includeDirs = @(
+            "Audio",
+            "Data",
+            "Fonts",
+            "Graphics",
+            "PBS",
+            "Plugins",
+            "Text_deutsch_core",
+            "Text_deutsch_game",
+            "Text_english_core"
+          )
+
+          $includeFiles = @(
+            "Game.exe",
+            "Game.ini",
+            "mkxp.json",
+            "soundfont.sf2",
+            "VERSION.txt",
+            "*.dll"
+          )
+
+          # Copy directories
+          foreach ($dir in $includeDirs) {
+            if (Test-Path $dir) {
+              Write-Host "Copying $dir..."
+              Copy-Item -Path $dir -Destination "$tempDir\$dir" -Recurse -Force
+            }
+          }
+
+          # Copy DLL files
+          Get-ChildItem -Path "." -Filter "*.dll" | ForEach-Object {
+            Write-Host "Copying $($_.Name)..."
+            Copy-Item -Path $_.FullName -Destination "$tempDir\$($_.Name)" -Force
+          }
+
+          # Copy other files
+          $singleFiles = @("Game.exe", "Game.ini", "mkxp.json", "soundfont.sf2", "VERSION.txt")
+          foreach ($file in $singleFiles) {
+            if (Test-Path $file) {
+              Write-Host "Copying $file..."
+              Copy-Item -Path $file -Destination "$tempDir\$file" -Force
+            }
+          }
+
+          # Create ZIP
+          $zipName = "Zorua-The-Divine-Deception-${{ steps.get_tag.outputs.tag }}-Windows.zip"
+          Write-Host "Creating $zipName..."
+          Compress-Archive -Path "$tempDir\*" -DestinationPath $zipName -Force
+
+          # Cleanup
+          Remove-Item -Path $tempDir -Recurse -Force
+
+          Write-Host "Package created: $zipName"
+          echo "package_name=$zipName" >> $env:GITHUB_OUTPUT
+        id: package
+        shell: pwsh
+
+      - name: Generate Changelog
+        id: changelog
+        run: |
+          $tag = "${{ steps.get_tag.outputs.tag }}"
+          $previousTag = git describe --tags --abbrev=0 HEAD~1 2>$null
+          if (-not $previousTag) {
+            $previousTag = $(git rev-list --max-parents=0 HEAD)
+          }
+
+          Write-Host "Generating changelog from $previousTag to $tag"
+
+          # Get commits since last tag
+          $commits = git log --pretty=format:"%s|%h|%an" "$previousTag..HEAD" 2>$null
+
+          # Parse commits into categories
+          $features = @()
+          $fixes = @()
+          $other = @()
+
+          foreach ($commit in $commits) {
+            if ($commit) {
+              $parts = $commit -split '\|'
+              $message = $parts[0]
+              $hash = $parts[1]
+              $author = $parts[2]
+
+              if ($message -match "^feat(\(.+\))?:\s*(.+)") {
+                $features += "- $($matches[2]) (``$hash``)"
+              } elseif ($message -match "^fix(\(.+\))?:\s*(.+)") {
+                $fixes += "- $($matches[2]) (``$hash``)"
+              } else {
+                $other += "- $message (``$hash``)"
+              }
+            }
+          }
+
+          # Build changelog
+          $changelog = "## Zorua: The Divine Deception $tag`n`n"
+
+          if ($features.Count -gt 0) {
+            $changelog += "### ✨ New Features`n"
+            $changelog += ($features -join "`n") + "`n`n"
+          }
+
+          if ($fixes.Count -gt 0) {
+            $changelog += "### 🐛 Bug Fixes`n"
+            $changelog += ($fixes -join "`n") + "`n`n"
+          }
+
+          if ($other.Count -gt 0) {
+            $changelog += "### 🔧 Other Changes`n"
+            $changelog += ($other -join "`n") + "`n`n"
+          }
+
+          # Add installation instructions
+          $changelog += "### 📦 Installation`n"
+          $changelog += "1. Download ``Zorua-The-Divine-Deception-$tag-Windows.zip```n"
+          $changelog += "2. Extract the ZIP file`n"
+          $changelog += "3. Run ``Game.exe```n`n"
+
+          $changelog += "---`n`n"
+          $changelog += "**Full Changelog**: https://github.com/${{ github.repository }}/compare/$previousTag...$tag"
+
+          # Save changelog
+          $changelog | Out-File -FilePath "CHANGELOG.md" -Encoding UTF8
+
+          # Also create JSON format for launcher
+          $changelogJson = @{
+            version = $tag
+            date = (Get-Date -Format "yyyy-MM-dd")
+            features = $features
+            fixes = $fixes
+            other = $other
+          } | ConvertTo-Json -Compress
+
+          $changelogJson | Out-File -FilePath "changelog.json" -Encoding UTF8
+
+          # Output for next steps
+          echo "changelog<<EOF" >> $env:GITHUB_OUTPUT
+          echo "$changelog" >> $env:GITHUB_OUTPUT
+          echo "EOF" >> $env:GITHUB_OUTPUT
+
+          Write-Host "Changelog generated successfully!"
+        shell: pwsh
+
+      - name: Create Release and Upload Assets
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          $tag = "${{ steps.get_tag.outputs.tag }}"
+          $packageName = "${{ steps.package.outputs.package_name }}"
+
+          # Create release with GitHub CLI
+          Write-Host "Creating release $tag..."
+          gh release create $tag `
+            --title "Zorua: The Divine Deception $tag" `
+            --notes-file "CHANGELOG.md" `
+            $packageName `
+            "changelog.json"
+
+          Write-Host "Release created successfully!"
+        shell: pwsh
+
+      - name: Release Summary
+        run: |
+          $tag = "${{ steps.get_tag.outputs.tag }}"
+          $packageName = "${{ steps.package.outputs.package_name }}"
+
+          Write-Host "========================================" -ForegroundColor Green
+          Write-Host "  Release Created Successfully!" -ForegroundColor Green
+          Write-Host "========================================" -ForegroundColor Green
+          Write-Host ""
+          Write-Host "Version: $tag" -ForegroundColor Cyan
+          Write-Host "Package: $packageName" -ForegroundColor Cyan
+          Write-Host "Release URL: https://github.com/${{ github.repository }}/releases/tag/$tag" -ForegroundColor Cyan
+          Write-Host ""
+          Write-Host "The Mirrorbytes launcher can now download this release!" -ForegroundColor Yellow
+        shell: pwsh
