@@ -1,17 +1,22 @@
 # Download Statistics
 
-Last updated: 2025-10-17T00:15:13.917Z
+Last updated: 2025-10-18T00:14:06.045Z
 
 | Release | Downloads | Assets |
 |---------|-----------|--------|
+| Zorua: The Divine Deception v1.2.0 | 2 | changelog.json (1), Zorua-The-Divine-Deception-v1.2.0-Windows.zip (1) |
+| Zorua: The Divine Deception v1.1.0 | 2 | changelog.json (1), Zorua-The-Divine-Deception-v1.1.0-Windows.zip (1) |
+| Pokemon Essentials v1.0.1 | 2 | pokemon-essentials-release.zip (2) |
+| Zorua: The Divine Deception v1.0 | 0 |  |
+| launcher config | 0 |  |
 | Automated Backup | 0 | backup-pokemon-essentials-2025-10-12.zip (0) |
 
-**Total Downloads**: 0
+**Total Downloads**: 6
 
 ## Repository Stats
 
 - ⭐ Stars: 0
 - 👁️ Watchers: 0
 - 🍴 Forks: 0
-- 📦 Size: 248.96 MB
+- 📦 Size: 282.68 MB
 - Traffic stats: Not available
