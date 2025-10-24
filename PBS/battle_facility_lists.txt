@@ -12,7 +12,7 @@ Challenges = pokecupsingle,pokecupdouble
 [TrainerList]
 Trainers = cup_little_trainers.txt
 Pokemon = cup_little_pkmn.txt
-Challenges = littlecupsingle,littlecupdouble,factorydoubleopen
+Challenges = littlecupsingle,littlecupdouble
 #-------------------------------
 [TrainerList]
 Trainers = cup_pika_trainers.txt

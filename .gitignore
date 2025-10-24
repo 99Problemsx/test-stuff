@@ -1,0 +1,39 @@
+# Encryption-related files - DO NOT COMMIT!
+*.backup
+*.backup_*
+*.old_encryption
+ENCRYPTION_KEY.txt
+ENCRYPTION_KEY.bin
+ENCRYPTION_KEY_HEX.txt
+encryption_key.txt
+
+# Release folders
+Zorua_Release/
+Zorua_Release_Encrypted/
+
+# Encryption tools (optional - you may want to keep these in repo)
+# decrypt_tool.rb
+# encrypt_everything.rb
+# encrypt_scripts_now.rb
+# count_scripts.rb
+
+# Development files
+errorlog.txt
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+temp-test-stuff/
+
+# Save files (optional - if you don't want to commit saves)
+*.rxdata
+!Data/*.rxdata
+Game.rxdata
+Auto*.rxdata
+File*.rxdata

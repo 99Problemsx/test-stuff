@@ -1,0 +1,4 @@
+Name         = Better Bitmaps (Marin)
+Version      = 1.1
+Link         = https://reliccastle.com/resources/169/
+Credits      = Marin

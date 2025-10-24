@@ -1,332 +1,14 @@
 
 =================
 
-[2025-10-17 02:15:43 +0200]
+[2025-10-19 08:18:09 +0200]
 [Pokémon Essentials version 21.1]
-[v21.1 Hotfixes 1.0.9]
 
-Exception: NoMethodError
-Message: undefined method `pbCalcType' for #<Battle::Move::None>
+Error in Plugin: [v21.1 Hotfixes]
+Exception: SyntaxError
+Message: [v21.1 Hotfixes] Battle bug fixes.rbe:1: invalid multibyte char (UTF-8)
 
 Backtrace:
-169_170_011_Battle &gt; 005_AI &gt; 011_AIMove.rb:33:in `rough_type'
-169_170_011_Battle &gt; 005_AI &gt; 011_AIMove.rb:13:in `set_up'
-163_164_011_Battle &gt; 005_AI &gt; 005_AI_ChooseMove.rb:155:in `set_up_move_check'
-[Deluxe Battle Kit] [003] Command Menu Refactor.rb:496:in `block in pbGetMoveScores'
-[Deluxe Battle Kit] [003] Command Menu Refactor.rb:481:in `each'
-[Deluxe Battle Kit] [003] Command Menu Refactor.rb:481:in `each_with_index'
-[Deluxe Battle Kit] [003] Command Menu Refactor.rb:481:in `pbGetMoveScores'
-[Deluxe Battle Kit] [003] Command Menu Refactor.rb:463:in `pbDefaultChooseEnemyCommand'
-124_125_011_Battle &gt; 001_Battle &gt; 009_Battle_CommandPhase.rb:215:in `block in pbCommandPhaseLoop'
-124_125_011_Battle &gt; 001_Battle &gt; 009_Battle_CommandPhase.rb:203:in `loop'
-
-=================
-
-[2025-10-17 02:15:48 +0200]
-[Pokémon Essentials version 21.1]
-[v21.1 Hotfixes 1.0.9]
-
-Exception: NoMethodError
-Message: undefined method `pbCalcType' for #<Battle::Move::HitTwoToFiveTimes>
-
-Backtrace:
-[M.A.G (Moves & Abilities Galore)] Battler_UseMove.rb:66:in `pbUseMove'
-[Charms Compilation] Heart_Charm.rb:53:in `block in pbProcessTurn'
-002_003_001_Technical &gt; 001_Debugging &gt; 001_PBDebug.rb:6:in `logonerr'
-[Charms Compilation] Heart_Charm.rb:53:in `pbProcessTurn'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:128:in `block (2 levels) in pbAttackPhaseMoves'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `each'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `block in pbAttackPhaseMoves'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `loop'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `pbAttackPhaseMoves'
-[Deluxe Battle Kit] [003] Command Menu Refactor.rb:409:in `pbAttackPhase'
-
-=================
-
-[2025-10-17 02:15:51 +0200]
-[Pokémon Essentials version 21.1]
-[v21.1 Hotfixes 1.0.9]
-
-Exception: NoMethodError
-Message: undefined method `pbCalcType' for #<Battle::Move::HitTwoToFiveTimes>
-
-Backtrace:
-[M.A.G (Moves & Abilities Galore)] Battler_UseMove.rb:66:in `pbUseMove'
-[Charms Compilation] Heart_Charm.rb:53:in `block in pbProcessTurn'
-002_003_001_Technical &gt; 001_Debugging &gt; 001_PBDebug.rb:6:in `logonerr'
-[Charms Compilation] Heart_Charm.rb:53:in `pbProcessTurn'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:128:in `block (2 levels) in pbAttackPhaseMoves'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `each'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `block in pbAttackPhaseMoves'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `loop'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `pbAttackPhaseMoves'
-[Deluxe Battle Kit] [003] Command Menu Refactor.rb:409:in `pbAttackPhase'
-
-=================
-
-[2025-10-17 02:15:53 +0200]
-[Pokémon Essentials version 21.1]
-[v21.1 Hotfixes 1.0.9]
-
-Exception: NoMethodError
-Message: undefined method `pbCalcType' for #<Battle::Move::HitTwoToFiveTimes>
-
-Backtrace:
-[M.A.G (Moves & Abilities Galore)] Battler_UseMove.rb:66:in `pbUseMove'
-[Charms Compilation] Heart_Charm.rb:53:in `block in pbProcessTurn'
-002_003_001_Technical &gt; 001_Debugging &gt; 001_PBDebug.rb:6:in `logonerr'
-[Charms Compilation] Heart_Charm.rb:53:in `pbProcessTurn'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:128:in `block (2 levels) in pbAttackPhaseMoves'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `each'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `block in pbAttackPhaseMoves'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `loop'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `pbAttackPhaseMoves'
-[Deluxe Battle Kit] [003] Command Menu Refactor.rb:409:in `pbAttackPhase'
-
-=================
-
-[2025-10-17 02:15:54 +0200]
-[Pokémon Essentials version 21.1]
-[v21.1 Hotfixes 1.0.9]
-
-Exception: NoMethodError
-Message: undefined method `pbCalcType' for #<Battle::Move::HitTwoToFiveTimes>
-
-Backtrace:
-[M.A.G (Moves & Abilities Galore)] Battler_UseMove.rb:66:in `pbUseMove'
-[Charms Compilation] Heart_Charm.rb:53:in `block in pbProcessTurn'
-002_003_001_Technical &gt; 001_Debugging &gt; 001_PBDebug.rb:6:in `logonerr'
-[Charms Compilation] Heart_Charm.rb:53:in `pbProcessTurn'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:128:in `block (2 levels) in pbAttackPhaseMoves'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `each'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `block in pbAttackPhaseMoves'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `loop'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `pbAttackPhaseMoves'
-[Deluxe Battle Kit] [003] Command Menu Refactor.rb:409:in `pbAttackPhase'
-
-=================
-
-[2025-10-17 02:15:55 +0200]
-[Pokémon Essentials version 21.1]
-[v21.1 Hotfixes 1.0.9]
-
-Exception: NoMethodError
-Message: undefined method `pbCalcType' for #<Battle::Move::HitTwoToFiveTimes>
-
-Backtrace:
-[M.A.G (Moves & Abilities Galore)] Battler_UseMove.rb:66:in `pbUseMove'
-[Charms Compilation] Heart_Charm.rb:53:in `block in pbProcessTurn'
-002_003_001_Technical &gt; 001_Debugging &gt; 001_PBDebug.rb:6:in `logonerr'
-[Charms Compilation] Heart_Charm.rb:53:in `pbProcessTurn'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:128:in `block (2 levels) in pbAttackPhaseMoves'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `each'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `block in pbAttackPhaseMoves'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `loop'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `pbAttackPhaseMoves'
-[Deluxe Battle Kit] [003] Command Menu Refactor.rb:409:in `pbAttackPhase'
-
-=================
-
-[2025-10-17 02:15:55 +0200]
-[Pokémon Essentials version 21.1]
-[v21.1 Hotfixes 1.0.9]
-
-Exception: NoMethodError
-Message: undefined method `pbCalcType' for #<Battle::Move::HitTwoToFiveTimes>
-
-Backtrace:
-[M.A.G (Moves & Abilities Galore)] Battler_UseMove.rb:66:in `pbUseMove'
-[Charms Compilation] Heart_Charm.rb:53:in `block in pbProcessTurn'
-002_003_001_Technical &gt; 001_Debugging &gt; 001_PBDebug.rb:6:in `logonerr'
-[Charms Compilation] Heart_Charm.rb:53:in `pbProcessTurn'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:128:in `block (2 levels) in pbAttackPhaseMoves'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `each'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `block in pbAttackPhaseMoves'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `loop'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `pbAttackPhaseMoves'
-[Deluxe Battle Kit] [003] Command Menu Refactor.rb:409:in `pbAttackPhase'
-
-=================
-
-[2025-10-17 02:15:56 +0200]
-[Pokémon Essentials version 21.1]
-[v21.1 Hotfixes 1.0.9]
-
-Exception: NoMethodError
-Message: undefined method `pbCalcType' for #<Battle::Move::HitTwoToFiveTimes>
-
-Backtrace:
-[M.A.G (Moves & Abilities Galore)] Battler_UseMove.rb:66:in `pbUseMove'
-[Charms Compilation] Heart_Charm.rb:53:in `block in pbProcessTurn'
-002_003_001_Technical &gt; 001_Debugging &gt; 001_PBDebug.rb:6:in `logonerr'
-[Charms Compilation] Heart_Charm.rb:53:in `pbProcessTurn'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:128:in `block (2 levels) in pbAttackPhaseMoves'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `each'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `block in pbAttackPhaseMoves'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `loop'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `pbAttackPhaseMoves'
-[Deluxe Battle Kit] [003] Command Menu Refactor.rb:409:in `pbAttackPhase'
-
-=================
-
-[2025-10-17 02:16:23 +0200]
-[Pokémon Essentials version 21.1]
-[v21.1 Hotfixes 1.0.9]
-
-Exception: NoMethodError
-Message: undefined method `pbCalcType' for #<Battle::Move::HitTwoToFiveTimes>
-
-Backtrace:
-[M.A.G (Moves & Abilities Galore)] Battler_UseMove.rb:66:in `pbUseMove'
-[Charms Compilation] Heart_Charm.rb:53:in `block in pbProcessTurn'
-002_003_001_Technical &gt; 001_Debugging &gt; 001_PBDebug.rb:6:in `logonerr'
-[Charms Compilation] Heart_Charm.rb:53:in `pbProcessTurn'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:128:in `block (2 levels) in pbAttackPhaseMoves'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `each'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `block in pbAttackPhaseMoves'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `loop'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `pbAttackPhaseMoves'
-[Deluxe Battle Kit] [003] Command Menu Refactor.rb:409:in `pbAttackPhase'
-
-=================
-
-[2025-10-17 02:16:25 +0200]
-[Pokémon Essentials version 21.1]
-[v21.1 Hotfixes 1.0.9]
-
-Exception: NoMethodError
-Message: undefined method `pbCalcType' for #<Battle::Move::HitTwoToFiveTimes>
-
-Backtrace:
-[M.A.G (Moves & Abilities Galore)] Battler_UseMove.rb:66:in `pbUseMove'
-[Charms Compilation] Heart_Charm.rb:53:in `block in pbProcessTurn'
-002_003_001_Technical &gt; 001_Debugging &gt; 001_PBDebug.rb:6:in `logonerr'
-[Charms Compilation] Heart_Charm.rb:53:in `pbProcessTurn'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:128:in `block (2 levels) in pbAttackPhaseMoves'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `each'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:124:in `block in pbAttackPhaseMoves'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `loop'
-125_126_011_Battle &gt; 001_Battle &gt; 010_Battle_AttackPhase.rb:110:in `pbAttackPhaseMoves'
-[Deluxe Battle Kit] [003] Command Menu Refactor.rb:409:in `pbAttackPhase'
-
-=================
-
-[2025-10-17 02:26:17 +0200]
-[Pokémon Essentials version 21.1]
-[v21.1 Hotfixes 1.0.9]
-
-Exception: ArgumentError
-Message: undefined class/module ControlConfig
-
-Backtrace:
-<internal:marshal>:34:in `load'
-001_SaveData.rb:28:in `load'
-001_SaveData.rb:28:in `block in get_data_from_file'
-001_SaveData.rb:27:in `open'
-001_SaveData.rb:27:in `get_data_from_file'
-001_SaveData.rb:45:in `read_from_file'
-[Auto Multi Save] Auto Multi Save.rb:121:in `block in get_newest_save_slot'
-[Auto Multi Save] Auto Multi Save.rb:81:in `block in each_slot'
-[Auto Multi Save] Auto Multi Save.rb:81:in `each'
-[Auto Multi Save] Auto Multi Save.rb:81:in `each_slot'
-
-=================
-
-[2025-10-17 02:27:04 +0200]
-[Pokémon Essentials version 21.1]
-[v21.1 Hotfixes 1.0.9]
-
-Exception: ArgumentError
-Message: undefined class/module ControlConfig
-
-Backtrace:
-<internal:marshal>:34:in `load'
-001_SaveData.rb:28:in `load'
-001_SaveData.rb:28:in `block in get_data_from_file'
-001_SaveData.rb:27:in `open'
-001_SaveData.rb:27:in `get_data_from_file'
-001_SaveData.rb:45:in `read_from_file'
-[Auto Multi Save] Auto Multi Save.rb:121:in `block in get_newest_save_slot'
-[Auto Multi Save] Auto Multi Save.rb:81:in `block in each_slot'
-[Auto Multi Save] Auto Multi Save.rb:81:in `each'
-[Auto Multi Save] Auto Multi Save.rb:81:in `each_slot'
-
-=================
-
-[2025-10-17 02:28:03 +0200]
-[Pokémon Essentials version 21.1]
-[v21.1 Hotfixes 1.0.9]
-
-Exception: ArgumentError
-Message: undefined class/module ControlConfig
-
-Backtrace:
-<internal:marshal>:34:in `load'
-001_SaveData.rb:28:in `load'
-001_SaveData.rb:28:in `block in get_data_from_file'
-001_SaveData.rb:27:in `open'
-001_SaveData.rb:27:in `get_data_from_file'
-001_SaveData.rb:45:in `read_from_file'
-[Auto Multi Save] Auto Multi Save.rb:121:in `block in get_newest_save_slot'
-[Auto Multi Save] Auto Multi Save.rb:81:in `block in each_slot'
-[Auto Multi Save] Auto Multi Save.rb:81:in `each'
-[Auto Multi Save] Auto Multi Save.rb:81:in `each_slot'
-
-=================
-
-[2025-10-17 02:29:14 +0200]
-[Pokémon Essentials version 21.1]
-[v21.1 Hotfixes 1.0.9]
-
-Exception: ArgumentError
-Message: undefined class/module ControlConfig
-
-Backtrace:
-<internal:marshal>:34:in `load'
-001_SaveData.rb:28:in `load'
-001_SaveData.rb:28:in `block in get_data_from_file'
-001_SaveData.rb:27:in `open'
-001_SaveData.rb:27:in `get_data_from_file'
-001_SaveData.rb:45:in `read_from_file'
-[Auto Multi Save] Auto Multi Save.rb:121:in `block in get_newest_save_slot'
-[Auto Multi Save] Auto Multi Save.rb:81:in `block in each_slot'
-[Auto Multi Save] Auto Multi Save.rb:81:in `each'
-[Auto Multi Save] Auto Multi Save.rb:81:in `each_slot'
-
-=================
-
-[2025-10-17 02:29:49 +0200]
-[Pokémon Essentials version 21.1]
-[v21.1 Hotfixes 1.0.9]
-
-Exception: ArgumentError
-Message: undefined class/module ControlConfig
-
-Backtrace:
-<internal:marshal>:34:in `load'
-001_SaveData.rb:28:in `load'
-001_SaveData.rb:28:in `block in get_data_from_file'
-001_SaveData.rb:27:in `open'
-001_SaveData.rb:27:in `get_data_from_file'
-001_SaveData.rb:45:in `read_from_file'
-[Auto Multi Save] Auto Multi Save.rb:519:in `set_up_system'
-999_Main.rb:31:in `mainFunctionDebug'
-999_Main.rb:18:in `block in mainFunction'
-003_Errors.rb:80:in `pbCriticalCode'
-
-=================
-
-[2025-10-17 10:48:38 +0200]
-[Pokémon Essentials version 21.1]
-[v21.1 Hotfixes 1.0.9]
-
-Error in Plugin: [Raid Battles Hotfixes]
-Exception: NameError
-Message: undefined method `generate_raid_foe' for class `RaidBattle'
-
-Backtrace:
-[Raid Battles Hotfixes] [012] Ultra Adventure Z-Crystal Fix.rb:127:in `<class:RaidBattle>'
-[Raid Battles Hotfixes] [012] Ultra Adventure Z-Crystal Fix.rb:126:in `<main>'
 005_PluginManager.rb:635:in `eval'
 005_PluginManager.rb:635:in `block (2 levels) in runPlugins'
 005_PluginManager.rb:625:in `each'
@@ -335,3 +17,1042 @@ Backtrace:
 005_PluginManager.rb:616:in `runPlugins'
 999_Main.rb:28:in `mainFunctionDebug'
 999_Main.rb:18:in `block in mainFunction'
+003_Errors.rb:80:in `pbCriticalCode'
+999_Main.rb:18:in `mainFunction'
+
+=================
+
+[2025-10-19 08:19:15 +0200]
+[Pokémon Essentials version 21.1]
+
+Error in Plugin: [v21.1 Hotfixes]
+Exception: SyntaxError
+Message: [v21.1 Hotfixes] Battle bug fixes.rbe:1: invalid multibyte char (UTF-8)
+
+Backtrace:
+005_PluginManager.rb:635:in `eval'
+005_PluginManager.rb:635:in `block (2 levels) in runPlugins'
+005_PluginManager.rb:625:in `each'
+005_PluginManager.rb:625:in `block in runPlugins'
+005_PluginManager.rb:616:in `each'
+005_PluginManager.rb:616:in `runPlugins'
+999_Main.rb:28:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+003_Errors.rb:80:in `pbCriticalCode'
+999_Main.rb:18:in `mainFunction'
+
+=================
+
+[2025-10-19 08:20:00 +0200]
+[Pokémon Essentials version 21.1]
+
+Error in Plugin: [v21.1 Hotfixes]
+Exception: SyntaxError
+Message: [v21.1 Hotfixes] Battle bug fixes.rbe:1: invalid multibyte char (UTF-8)
+
+Backtrace:
+005_PluginManager.rb:635:in `eval'
+005_PluginManager.rb:635:in `block (2 levels) in runPlugins'
+005_PluginManager.rb:625:in `each'
+005_PluginManager.rb:625:in `block in runPlugins'
+005_PluginManager.rb:616:in `each'
+005_PluginManager.rb:616:in `runPlugins'
+999_Main.rb:28:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+003_Errors.rb:80:in `pbCriticalCode'
+999_Main.rb:18:in `mainFunction'
+
+=================
+
+[2025-10-19 08:20:16 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: SystemStackError
+Message: stack level too deep
+
+Backtrace:
+[Modular UI Scenes] UI Module.rb:83:in `register'
+[Modular UI Scenes] UI Module.rb:83:in `register'
+[Modular UI Scenes] UI Module.rb:83:in `register'
+[Modular UI Scenes] UI Module.rb:83:in `register'
+[Modular UI Scenes] UI Module.rb:83:in `register'
+[Modular UI Scenes] UI Module.rb:83:in `register'
+[Modular UI Scenes] UI Module.rb:83:in `register'
+[Modular UI Scenes] UI Module.rb:83:in `register'
+[Modular UI Scenes] UI Module.rb:83:in `register'
+[Modular UI Scenes] UI Module.rb:83:in `register'
+
+=================
+
+[2025-10-19 08:21:09 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: SystemStackError
+Message: stack level too deep
+
+Backtrace:
+[Modular UI Scenes] UI Module.rb:86:in `register'
+[Modular UI Scenes] UI Module.rb:86:in `register'
+[Modular UI Scenes] UI Module.rb:86:in `register'
+[Modular UI Scenes] UI Module.rb:86:in `register'
+[Modular UI Scenes] UI Module.rb:86:in `register'
+[Modular UI Scenes] UI Module.rb:86:in `register'
+[Modular UI Scenes] UI Module.rb:86:in `register'
+[Modular UI Scenes] UI Module.rb:86:in `register'
+[Modular UI Scenes] UI Module.rb:86:in `register'
+[Modular UI Scenes] UI Module.rb:86:in `register'
+
+=================
+
+[2025-10-19 10:55:47 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `echo_dot' for Console:Module
+
+Backtrace:
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:87:in `block in build_package'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:86:in `each'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:86:in `each_with_index'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:86:in `build_package'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:40:in `block in build_all'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:39:in `each'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:39:in `build_all'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:263:in `block in <main>'
+006_Event_HandlerCollections.rb:121:in `call'
+001_Debug_Menus.rb:138:in `block in pbDebugMenu'
+
+=================
+
+[2025-10-19 10:58:07 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: ArgumentError
+Message: wrong number of arguments (given 0, expected 1)
+
+Backtrace:
+002_DebugConsole.rb:122:in `echo_done'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:138:in `build_package'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:40:in `block in build_all'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:39:in `each'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:39:in `build_all'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:263:in `block in <main>'
+006_Event_HandlerCollections.rb:121:in `call'
+001_Debug_Menus.rb:138:in `block in pbDebugMenu'
+001_Debug_Menus.rb:100:in `loop'
+001_Debug_Menus.rb:100:in `pbDebugMenu'
+
+=================
+
+[2025-10-19 11:00:36 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: Errno::ENOENT
+Message: File temp_bitmap.png not found.
+
+Backtrace:
+[Asset Encryption System (FPK)] [003] FPK_Loader.rb:24:in `initialize'
+[Asset Encryption System (FPK)] [003] FPK_Loader.rb:24:in `new'
+[Asset Encryption System (FPK)] [003] FPK_Loader.rb:24:in `load_bitmap'
+[Asset Encryption System (FPK)] [003] FPK_Loader.rb:122:in `initialize'
+009_Planes.rb:47:in `new'
+009_Planes.rb:47:in `setBitmap'
+002_MessageConfig.rb:767:in `addBackgroundOrColoredPlane'
+013_UI_Load.rb:106:in `pbStartScene'
+[Auto Multi Save] Auto Multi Save.rb:284:in `block in pbStartLoadScreen'
+[Auto Multi Save] Auto Multi Save.rb:254:in `loop'
+
+=================
+
+[2025-10-19 11:01:25 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `bitmap' for #<Bitmap>
+
+Backtrace:
+008_AnimatedBitmap.rb:26:in `bitmap'
+009_Planes.rb:48:in `setBitmap'
+002_MessageConfig.rb:767:in `addBackgroundOrColoredPlane'
+013_UI_Load.rb:106:in `pbStartScene'
+[Auto Multi Save] Auto Multi Save.rb:284:in `block in pbStartLoadScreen'
+[Auto Multi Save] Auto Multi Save.rb:254:in `loop'
+[Auto Multi Save] Auto Multi Save.rb:254:in `pbStartLoadScreen'
+[Challenge Modes] 003_Start and End.rb:7:in `pbStartLoadScreen'
+999_Main.rb:6:in `main'
+999_Main.rb:35:in `mainFunctionDebug'
+
+=================
+
+[2025-10-19 11:04:18 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: ArgumentError
+Message: wrong number of arguments (given 0, expected 1)
+
+Backtrace:
+002_DebugConsole.rb:122:in `echo_done'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:48:in `build_all'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:263:in `block in <main>'
+006_Event_HandlerCollections.rb:121:in `call'
+001_Debug_Menus.rb:138:in `block in pbDebugMenu'
+001_Debug_Menus.rb:100:in `loop'
+001_Debug_Menus.rb:100:in `pbDebugMenu'
+[Challenge Modes] 005_Capture Rules.rb:215:in `pbDebugMenu'
+002_Scene_Map.rb:118:in `block in call_debug'
+002_MessageConfig.rb:575:in `pbFadeOutIn'
+
+=================
+
+[2025-10-19 11:12:52 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NameError
+Message: uninitialized constant FPKBuilder::FileUtils
+
+Backtrace:
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:81:in `block in build_all'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:74:in `each'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:74:in `build_all'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:302:in `block in <main>'
+006_Event_HandlerCollections.rb:121:in `call'
+001_Debug_Menus.rb:138:in `block in pbDebugMenu'
+001_Debug_Menus.rb:100:in `loop'
+001_Debug_Menus.rb:100:in `pbDebugMenu'
+[Challenge Modes] 005_Capture Rules.rb:215:in `pbDebugMenu'
+002_Scene_Map.rb:118:in `block in call_debug'
+
+=================
+
+[2025-10-19 11:24:34 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NameError
+Message: uninitialized constant FPKBuilder::FileUtils
+
+Backtrace:
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:81:in `block in build_all'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:74:in `each'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:74:in `build_all'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:315:in `block in <main>'
+006_Event_HandlerCollections.rb:121:in `call'
+001_Debug_Menus.rb:138:in `block in pbDebugMenu'
+001_Debug_Menus.rb:100:in `loop'
+001_Debug_Menus.rb:100:in `pbDebugMenu'
+[Challenge Modes] 005_Capture Rules.rb:215:in `pbDebugMenu'
+002_Scene_Map.rb:118:in `block in call_debug'
+
+=================
+
+[2025-10-19 11:25:25 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Error in Plugin: [Asset Encryption System (FPK)]
+Exception: LoadError
+Message: cannot load such file -- fileutils
+
+Backtrace:
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:7:in `require'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:7:in `<main>'
+005_PluginManager.rb:635:in `eval'
+005_PluginManager.rb:635:in `block (2 levels) in runPlugins'
+005_PluginManager.rb:625:in `each'
+005_PluginManager.rb:625:in `block in runPlugins'
+005_PluginManager.rb:616:in `each'
+005_PluginManager.rb:616:in `runPlugins'
+999_Main.rb:28:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+
+=================
+
+[2025-10-19 11:29:39 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Error in Plugin: [Asset Encryption System (FPK)]
+Exception: LoadError
+Message: cannot load such file -- fileutils
+
+Backtrace:
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:7:in `require'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:7:in `<main>'
+005_PluginManager.rb:635:in `eval'
+005_PluginManager.rb:635:in `block (2 levels) in runPlugins'
+005_PluginManager.rb:625:in `each'
+005_PluginManager.rb:625:in `block in runPlugins'
+005_PluginManager.rb:616:in `each'
+005_PluginManager.rb:616:in `runPlugins'
+999_Main.rb:28:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+
+=================
+
+[2025-10-19 11:36:10 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: ArgumentError
+Message: incomplete format specifier; use %% (double %) instead
+
+Backtrace:
+002_DebugConsole.rb:39:in `printf'
+002_DebugConsole.rb:39:in `echo'
+002_DebugConsole.rb:81:in `echo_li'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:121:in `build_all'
+[Asset Encryption System (FPK)] [004] FPK_Builder.rb:346:in `block in <main>'
+006_Event_HandlerCollections.rb:121:in `call'
+001_Debug_Menus.rb:138:in `block in pbDebugMenu'
+001_Debug_Menus.rb:100:in `loop'
+001_Debug_Menus.rb:100:in `pbDebugMenu'
+[Challenge Modes] 005_Capture Rules.rb:215:in `pbDebugMenu'
+
+=================
+
+[2025-10-19 17:36:08 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `map_renderer' for #<Spriteset_Global>
+
+Backtrace:
+[Dynamic Lighting System] [003] Scene_Integration.rb:9:in `createSpritesets'
+002_Scene_Map.rb:233:in `main'
+999_Main.rb:35:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+003_Errors.rb:80:in `pbCriticalCode'
+999_Main.rb:18:in `mainFunction'
+999_Main.rb:45:in `block (2 levels) in load_scripts_from_folder'
+999_Main.rb:44:in `loop'
+999_Main.rb:44:in `block in load_scripts_from_folder'
+002:Main:35:in `eval'
+
+=================
+
+[2025-10-19 17:45:16 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `getViewport' for #<Spriteset_Map>
+
+Backtrace:
+[Dynamic Lighting System] [003] Scene_Integration.rb:13:in `createSpritesets'
+002_Scene_Map.rb:233:in `main'
+999_Main.rb:35:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+003_Errors.rb:80:in `pbCriticalCode'
+999_Main.rb:18:in `mainFunction'
+999_Main.rb:45:in `block (2 levels) in load_scripts_from_folder'
+999_Main.rb:44:in `loop'
+999_Main.rb:44:in `block in load_scripts_from_folder'
+002:Main:35:in `eval'
+
+=================
+
+[2025-10-19 17:48:19 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: ArgumentError
+Message: wrong number of arguments (given 1, expected 0)
+
+Backtrace:
+[UTS] Script.rb:247:in `getTone'
+[Dynamic Lighting System] [002] Lighting_Core.rb:111:in `refresh_tone'
+[Dynamic Lighting System] [002] Lighting_Core.rb:222:in `refresh_all'
+[Dynamic Lighting System] [002] Lighting_Core.rb:213:in `update'
+[Dynamic Lighting System] [002] Lighting_Core.rb:34:in `initialize'
+[Dynamic Lighting System] [003] Scene_Integration.rb:11:in `new'
+[Dynamic Lighting System] [003] Scene_Integration.rb:11:in `createSpritesets'
+002_Scene_Map.rb:233:in `main'
+999_Main.rb:35:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+
+=================
+
+[2025-10-20 22:17:22 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NameError
+Message: uninitialized constant Input::I
+
+Backtrace:
+[Dynamic Lighting System] [005] Debug_Tools.rb:116:in `block in <main>'
+005_Event_Handlers.rb:89:in `block in trigger'
+005_Event_Handlers.rb:89:in `each_value'
+005_Event_Handlers.rb:89:in `trigger'
+006_Event_HandlerCollections.rb:63:in `trigger'
+002_Scene_Map.rb:162:in `updateSpritesets'
+[Advanced Items - Field Moves] 10_Overwrites.rb:43:in `update'
+002_Scene_Map.rb:238:in `block in main'
+002_Scene_Map.rb:235:in `loop'
+002_Scene_Map.rb:235:in `main'
+
+=================
+
+[2025-10-20 23:13:55 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Error in Plugin: [Dynamic Lighting System]
+Exception: TypeError
+Message: Cache is not a class
+eval:2: previous definition of Cache was here
+
+Backtrace:
+[Dynamic Lighting System] [006] Night_Tilesets.rb:19:in `<module:RPG>'
+[Dynamic Lighting System] [006] Night_Tilesets.rb:18:in `<main>'
+005_PluginManager.rb:635:in `eval'
+005_PluginManager.rb:635:in `block (2 levels) in runPlugins'
+005_PluginManager.rb:625:in `each'
+005_PluginManager.rb:625:in `block in runPlugins'
+005_PluginManager.rb:616:in `each'
+005_PluginManager.rb:616:in `runPlugins'
+999_Main.rb:28:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+
+=================
+
+[2025-10-20 23:16:14 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Error in Plugin: [Dynamic Lighting System]
+Exception: NameError
+Message: undefined method `update_character_bitmap' for class `Sprite_Character'
+
+Backtrace:
+[Dynamic Lighting System] [006] Night_Tilesets.rb:91:in `<class:Sprite_Character>'
+[Dynamic Lighting System] [006] Night_Tilesets.rb:90:in `<main>'
+005_PluginManager.rb:635:in `eval'
+005_PluginManager.rb:635:in `block (2 levels) in runPlugins'
+005_PluginManager.rb:625:in `each'
+005_PluginManager.rb:625:in `block in runPlugins'
+005_PluginManager.rb:616:in `each'
+005_PluginManager.rb:616:in `runPlugins'
+999_Main.rb:28:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+
+=================
+
+[2025-10-20 23:28:12 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: ArgumentError
+Message: wrong number of arguments (given 2, expected 0..1)
+
+Backtrace:
+[Event Indicators] 001_Script.rb:116:in `initialize'
+[Dynamic Lighting System] [006] Night_Tilesets.rb:149:in `initialize'
+002_Scene_Map.rb:23:in `new'
+002_Scene_Map.rb:23:in `block in createSpritesets'
+002_Scene_Map.rb:22:in `each'
+002_Scene_Map.rb:22:in `createSpritesets'
+[Dynamic Lighting System] [003] Scene_Integration.rb:8:in `createSpritesets'
+002_Scene_Map.rb:233:in `main'
+999_Main.rb:35:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+
+=================
+
+[2025-10-21 00:32:44 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Error in Plugin: [Chimney Smoke System]
+Exception: SyntaxError
+Message: [Chimney Smoke System] [004] Smoke_Definitions.rb:55: syntax error, unexpected integer literal, expecting ')'
+...purple_house_smoke, 43, 270 470, "Object_Smoke_Chimney", tru...
+...                            ^~~
+
+
+Backtrace:
+005_PluginManager.rb:635:in `eval'
+005_PluginManager.rb:635:in `block (2 levels) in runPlugins'
+005_PluginManager.rb:625:in `each'
+005_PluginManager.rb:625:in `block in runPlugins'
+005_PluginManager.rb:616:in `each'
+005_PluginManager.rb:616:in `runPlugins'
+999_Main.rb:28:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+003_Errors.rb:80:in `pbCriticalCode'
+999_Main.rb:18:in `mainFunction'
+
+=================
+
+[2025-10-21 00:34:50 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Error in Plugin: [Chimney Smoke System]
+Exception: SyntaxError
+Message: [Chimney Smoke System] [004] Smoke_Definitions.rb:55: syntax error, unexpected string literal, expecting ')'
+...purple_house_smoke, 43, 265465"Object_Smoke_Chimney", true, {
+...                              ^
+[Chimney Smoke System] [004] Smoke_Definitions.rb:55: syntax error, unexpected ',', expecting end-of-input
+..., 265465"Object_Smoke_Chimney", true, {
+...                              ^
+
+
+Backtrace:
+005_PluginManager.rb:635:in `eval'
+005_PluginManager.rb:635:in `block (2 levels) in runPlugins'
+005_PluginManager.rb:625:in `each'
+005_PluginManager.rb:625:in `block in runPlugins'
+005_PluginManager.rb:616:in `each'
+005_PluginManager.rb:616:in `runPlugins'
+999_Main.rb:28:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+003_Errors.rb:80:in `pbCriticalCode'
+999_Main.rb:18:in `mainFunction'
+
+=================
+
+[2025-10-21 00:35:19 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Error in Plugin: [Chimney Smoke System]
+Exception: SyntaxError
+Message: [Chimney Smoke System] [004] Smoke_Definitions.rb:55: syntax error, unexpected string literal, expecting ')'
+...purple_house_smoke, 43, 265,65"Object_Smoke_Chimney", true, {
+...                              ^
+[Chimney Smoke System] [004] Smoke_Definitions.rb:55: syntax error, unexpected ',', expecting end-of-input
+..., 265,65"Object_Smoke_Chimney", true, {
+...                              ^
+
+
+Backtrace:
+005_PluginManager.rb:635:in `eval'
+005_PluginManager.rb:635:in `block (2 levels) in runPlugins'
+005_PluginManager.rb:625:in `each'
+005_PluginManager.rb:625:in `block in runPlugins'
+005_PluginManager.rb:616:in `each'
+005_PluginManager.rb:616:in `runPlugins'
+999_Main.rb:28:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+003_Errors.rb:80:in `pbCriticalCode'
+999_Main.rb:18:in `mainFunction'
+
+=================
+
+[2025-10-21 19:10:41 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Error in Plugin: [Animated Wind System]
+Exception: SyntaxError
+Message: [Animated Wind System] [001] Wind_Core.rb:266: syntax error, unexpected `end', expecting end-of-input
+
+Backtrace:
+005_PluginManager.rb:635:in `eval'
+005_PluginManager.rb:635:in `block (2 levels) in runPlugins'
+005_PluginManager.rb:625:in `each'
+005_PluginManager.rb:625:in `block in runPlugins'
+005_PluginManager.rb:616:in `each'
+005_PluginManager.rb:616:in `runPlugins'
+999_Main.rb:28:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+003_Errors.rb:80:in `pbCriticalCode'
+999_Main.rb:18:in `mainFunction'
+
+=================
+
+[2025-10-21 19:20:39 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `spriteset_global' for #<Game_Map>
+
+Backtrace:
+[Animated Wind System] [004] Debug_Tools.rb:15:in `block in <main>'
+005_Event_Handlers.rb:89:in `block in trigger'
+005_Event_Handlers.rb:89:in `each_value'
+005_Event_Handlers.rb:89:in `trigger'
+006_Event_HandlerCollections.rb:63:in `trigger'
+002_Scene_Map.rb:162:in `updateSpritesets'
+[Advanced Items - Field Moves] 10_Overwrites.rb:43:in `update'
+002_Scene_Map.rb:238:in `block in main'
+002_Scene_Map.rb:235:in `loop'
+002_Scene_Map.rb:235:in `main'
+
+=================
+
+[2025-10-21 19:21:31 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `getSpriteset' for #<Spriteset_Map>
+
+Backtrace:
+[Animated Wind System] [004] Debug_Tools.rb:15:in `block in <main>'
+005_Event_Handlers.rb:89:in `block in trigger'
+005_Event_Handlers.rb:89:in `each_value'
+005_Event_Handlers.rb:89:in `trigger'
+006_Event_HandlerCollections.rb:63:in `trigger'
+002_Scene_Map.rb:162:in `updateSpritesets'
+[Advanced Items - Field Moves] 10_Overwrites.rb:43:in `update'
+002_Scene_Map.rb:238:in `block in main'
+002_Scene_Map.rb:235:in `loop'
+002_Scene_Map.rb:235:in `main'
+
+=================
+
+[2025-10-21 19:42:58 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Error in Plugin: [Wind System]
+Exception: NoMethodError
+Message: undefined method `pbAddWindEffect' for main:Object
+
+Backtrace:
+[Wind System] [004] Wind_Definitions.rb:5:in `<main>'
+005_PluginManager.rb:635:in `eval'
+005_PluginManager.rb:635:in `block (2 levels) in runPlugins'
+005_PluginManager.rb:625:in `each'
+005_PluginManager.rb:625:in `block in runPlugins'
+005_PluginManager.rb:616:in `each'
+005_PluginManager.rb:616:in `runPlugins'
+999_Main.rb:28:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+003_Errors.rb:80:in `pbCriticalCode'
+
+=================
+
+[2025-10-21 20:09:10 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Error in Plugin: [Wind Animation System]
+Exception: NameError
+Message: undefined method `create_sprites' for class `Scene_Map'
+
+Backtrace:
+[Wind Animation System] [002] Map_Integration.rb:45:in `<class:Scene_Map>'
+[Wind Animation System] [002] Map_Integration.rb:44:in `<main>'
+005_PluginManager.rb:635:in `eval'
+005_PluginManager.rb:635:in `block (2 levels) in runPlugins'
+005_PluginManager.rb:625:in `each'
+005_PluginManager.rb:625:in `block in runPlugins'
+005_PluginManager.rb:616:in `each'
+005_PluginManager.rb:616:in `runPlugins'
+999_Main.rb:28:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+
+=================
+
+[2025-10-21 20:09:47 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Error in Plugin: [Wind Animation System]
+Exception: NameError
+Message: undefined method `create_sprites' for class `Scene_Map'
+
+Backtrace:
+[Wind Animation System] [002] Map_Integration.rb:45:in `<class:Scene_Map>'
+[Wind Animation System] [002] Map_Integration.rb:44:in `<main>'
+005_PluginManager.rb:635:in `eval'
+005_PluginManager.rb:635:in `block (2 levels) in runPlugins'
+005_PluginManager.rb:625:in `each'
+005_PluginManager.rb:625:in `block in runPlugins'
+005_PluginManager.rb:616:in `each'
+005_PluginManager.rb:616:in `runPlugins'
+999_Main.rb:28:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+
+=================
+
+[2025-10-21 20:54:30 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Error in Plugin: [Wind Animation System]
+Exception: SyntaxError
+Message: [Wind Animation System] [001] WindSprite_Core.rb:317: syntax error, unexpected `end', expecting end-of-input
+
+Backtrace:
+005_PluginManager.rb:635:in `eval'
+005_PluginManager.rb:635:in `block (2 levels) in runPlugins'
+005_PluginManager.rb:625:in `each'
+005_PluginManager.rb:625:in `block in runPlugins'
+005_PluginManager.rb:616:in `each'
+005_PluginManager.rb:616:in `runPlugins'
+999_Main.rb:28:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+003_Errors.rb:80:in `pbCriticalCode'
+999_Main.rb:18:in `mainFunction'
+
+=================
+
+[2025-10-21 20:55:40 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Error in Plugin: [Wind Animation System]
+Exception: SyntaxError
+Message: [Wind Animation System] [001] WindSprite_Core.rb:317: syntax error, unexpected `end', expecting end-of-input
+
+Backtrace:
+005_PluginManager.rb:635:in `eval'
+005_PluginManager.rb:635:in `block (2 levels) in runPlugins'
+005_PluginManager.rb:625:in `each'
+005_PluginManager.rb:625:in `block in runPlugins'
+005_PluginManager.rb:616:in `each'
+005_PluginManager.rb:616:in `runPlugins'
+999_Main.rb:28:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+003_Errors.rb:80:in `pbCriticalCode'
+999_Main.rb:18:in `mainFunction'
+
+=================
+
+[2025-10-21 20:59:30 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Error in Plugin: [Wind Animation System]
+Exception: SyntaxError
+Message: [Wind Animation System] [002] Map_Integration.rb:206: syntax error, unexpected `end', expecting end-of-input
+  end
+  ^~~
+
+
+Backtrace:
+005_PluginManager.rb:635:in `eval'
+005_PluginManager.rb:635:in `block (2 levels) in runPlugins'
+005_PluginManager.rb:625:in `each'
+005_PluginManager.rb:625:in `block in runPlugins'
+005_PluginManager.rb:616:in `each'
+005_PluginManager.rb:616:in `runPlugins'
+999_Main.rb:28:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+003_Errors.rb:80:in `pbCriticalCode'
+999_Main.rb:18:in `mainFunction'
+
+=================
+
+[2025-10-21 22:25:07 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `map_positions' for WindAnimationSystem:Module
+
+Backtrace:
+[Wind Animation System] [002] Map_Integration.rb:82:in `setup_wind_system'
+[Wind Animation System] [002] Map_Integration.rb:58:in `createSpritesets'
+[Chimney Smoke System] [002] Scene_Integration.rb:24:in `createSpritesets'
+[Dynamic Lighting System] [003] Scene_Integration.rb:8:in `createSpritesets'
+002_Scene_Map.rb:233:in `main'
+999_Main.rb:35:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+003_Errors.rb:80:in `pbCriticalCode'
+999_Main.rb:18:in `mainFunction'
+999_Main.rb:45:in `block (2 levels) in load_scripts_from_folder'
+
+=================
+
+[2025-10-21 23:33:02 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `>' for []:Array
+
+Backtrace:
+[Wind Animation System] WindManager.rb:33:in `update'
+[Wind Animation System] Integration.rb:22:in `update'
+[Boon's Phenomena] 002_EventHandlers.rb:95:in `update'
+002_Scene_Map.rb:151:in `block in updateSpritesets'
+002_Scene_Map.rb:149:in `each'
+002_Scene_Map.rb:149:in `updateSpritesets'
+002_Scene_Map.rb:26:in `createSpritesets'
+[Chimney Smoke System] [002] Scene_Integration.rb:24:in `createSpritesets'
+[Dynamic Lighting System] [003] Scene_Integration.rb:8:in `createSpritesets'
+002_Scene_Map.rb:233:in `main'
+
+=================
+
+[2025-10-21 23:45:30 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NameError
+Message: uninitialized constant Events::Animations::WindManager::Wind
+
+Backtrace:
+[Wind Animation System] WindManager.rb:51:in `spawn_particle'
+[Wind Animation System] WindManager.rb:42:in `update'
+[Wind Animation System] Integration.rb:25:in `update'
+[Boon's Phenomena] 002_EventHandlers.rb:95:in `update'
+002_Scene_Map.rb:151:in `block in updateSpritesets'
+002_Scene_Map.rb:149:in `each'
+002_Scene_Map.rb:149:in `updateSpritesets'
+[Advanced Items - Field Moves] 10_Overwrites.rb:43:in `update'
+002_Scene_Map.rb:238:in `block in main'
+002_Scene_Map.rb:235:in `loop'
+
+=================
+
+[2025-10-22 00:14:56 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NameError
+Message: uninitialized constant Events::Animations::Wind
+
+Backtrace:
+[Wind Animation System] WindManager.rb:37:in `spawn_particle'
+[Wind Animation System] WindManager.rb:28:in `update'
+[Wind Animation System] Integration.rb:19:in `update'
+[Boon's Phenomena] 002_EventHandlers.rb:95:in `update'
+002_Scene_Map.rb:151:in `block in updateSpritesets'
+002_Scene_Map.rb:149:in `each'
+002_Scene_Map.rb:149:in `updateSpritesets'
+[Advanced Items - Field Moves] 10_Overwrites.rb:43:in `update'
+002_Scene_Map.rb:238:in `block in main'
+002_Scene_Map.rb:235:in `loop'
+
+=================
+
+[2025-10-22 00:15:51 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Error in Plugin: [Wind Animation System]
+Exception: SyntaxError
+Message: [Wind Animation System] Wind.rb:17: syntax error, unexpected local variable or method, expecting `end'
+...  SPEED = 12      attr_accessor :y
+...                  ^~~~~~~~~~~~~
+[Wind Animation System] Wind.rb:39: syntax error, unexpected `def', expecting `end'
+...     attr_accessor :ey      def initialize(viewport)
+...                            ^~~
+[Wind Animation System] Wind.rb:43: syntax error, unexpected instance variable, expecting `end'
+...cessor :opacity        @sprites = SpriteHash.new(viewport)
+...                       ^~~~~~~~
+[Wind Animation System] Wind.rb:53: syntax error, unexpected instance variable, expecting `end'
+...teHash.new(viewport)        @ey = 0
+...                            ^~~
+[Wind Animation System] Wind.rb:55: syntax error, unexpected instance variable, expecting `end'
+        @x = 0        @opacity = 255
+                      ^~~~~~~~
+[Wind Animation System] Wind.rb:59: syntax error, unexpected local variable or method, expecting `end'
+        @z = 0        sprites.add(0, bitmap: 'Graphics/Ani...
+                      ^~~~~~~
+[Wind Animation System] Wind.rb:61: syntax error, unexpected local variable or method, expecting `end'
+        @ex = 0          s.src_rect.width = 0
+                         ^
+[Wind Animation System] Wind.rb:63: syntax error, unexpected local variable or method, expecting `end'
+        @ey = 0          s.src_rect.x = s.bitmap.width
+                         ^
+[Wind Animation System] Wind.rb:65: syntax error, unexpected local variable or method, expecting `end'
+...      @opacity = 255          s.oy = s.bitmap.height
+...                              ^
+[Wind Animation System] Wind.rb:71: syntax error, unexpected local variable or method, expecting `end'
+...s.src_rect.width = 0          s.src_rect.height = 0
+...                              ^
+[Wind Animation System] Wind.rb:81: syntax error, unexpected local variable or method, expecting `end'
+....src_rect.height = 0          s.src_rect.height = 0
+...                              ^
+[Wind Animation System] Wind.rb:97: syntax error, unexpected `def', expecting `end'
+        end      def finished?
+                 ^~~
+[Wind Animation System] Wind.rb:99: syntax error, unexpected local variable or method, expecting `end'
+      end        sprites.each_sprite do |sprite|
+                 ^~~~~~~
+[Wind Animation System] Wind.rb:107: syntax error, unexpected `true', expecting ';' or '\n'
+      def finished?        true
+                           ^~~~
+[Wind Animation System] Wind.rb:117: syntax error, unexpected local variable or method, expecting `end'
+        true        sprites.dispose
+                    ^~~~~~~
+[Wind Animation System] Wind.rb:125: syntax error, unexpected `def', expecting ';' or '\n'
+      def dispose      def disposed?
+                       ^~~
+[Wind Animation System] Wind.rb:129: syntax error, unexpected `end', expecting end-of-input
+      end      end
+               ^~~
+
+
+Backtrace:
+005_PluginManager.rb:635:in `eval'
+005_PluginManager.rb:635:in `block (2 levels) in runPlugins'
+005_PluginManager.rb:625:in `each'
+005_PluginManager.rb:625:in `block in runPlugins'
+005_PluginManager.rb:616:in `each'
+005_PluginManager.rb:616:in `runPlugins'
+999_Main.rb:28:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+003_Errors.rb:80:in `pbCriticalCode'
+999_Main.rb:18:in `mainFunction'
+
+=================
+
+[2025-10-23 22:09:27 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Error in Plugin: [Wind Animation System]
+Exception: NameError
+Message: undefined method `update' for class `#<Class:Spriteset_Map>'
+
+Backtrace:
+[Wind Animation System] WindSystem.rb:9:in `singleton class'
+[Wind Animation System] WindSystem.rb:7:in `init'
+[Wind Animation System] WindSystem.rb:34:in `<module:WindSystem>'
+[Wind Animation System] WindSystem.rb:1:in `<main>'
+005_PluginManager.rb:635:in `eval'
+005_PluginManager.rb:635:in `block (2 levels) in runPlugins'
+005_PluginManager.rb:625:in `each'
+005_PluginManager.rb:625:in `block in runPlugins'
+005_PluginManager.rb:616:in `each'
+005_PluginManager.rb:616:in `runPlugins'
+
+=================
+
+[2025-10-23 22:10:07 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Error in Plugin: [Wind Animation System]
+Exception: SyntaxError
+Message: [Wind Animation System] WindSystem.rb:6: class definition in method body
+        class Spriteset_Map
+        ^~~~~~~~~~~~~~~~~~~
+
+
+Backtrace:
+005_PluginManager.rb:635:in `eval'
+005_PluginManager.rb:635:in `block (2 levels) in runPlugins'
+005_PluginManager.rb:625:in `each'
+005_PluginManager.rb:625:in `block in runPlugins'
+005_PluginManager.rb:616:in `each'
+005_PluginManager.rb:616:in `runPlugins'
+999_Main.rb:28:in `mainFunctionDebug'
+999_Main.rb:18:in `block in mainFunction'
+003_Errors.rb:80:in `pbCriticalCode'
+999_Main.rb:18:in `mainFunction'
+
+=================
+
+[2025-10-24 12:58:43 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `draw_hexagon_with_values' for #<Sprite>
+
+Backtrace:
+[[SV] Summary Screen] [002] Summary Rewrites.rb:693:in `drawPageThree'
+[[SV] Summary Screen] [DBK] Dynamax.rb:40:in `drawPageThree'
+[[SV] Summary Screen] [MUI] Enhanced Pokemon UI.rb:162:in `drawPageThree'
+[[SV] Summary Screen] [000] Summary Handlers.rb:30:in `block in <main>'
+[Modular UI Scenes] UI Module.rb:51:in `call'
+[[SV] Summary Screen] [002] Summary Rewrites.rb:384:in `drawPage'
+[[SV] Summary Screen] [DBK] Dynamax.rb:14:in `drawPage'
+[[SV] Summary Screen] [DBK] Terastallization.rb:10:in `drawPage'
+[[SV] Summary Screen] [MUI] Enhanced Pokemon UI.rb:11:in `drawPage'
+[[SV] Summary Screen] [002] Summary Rewrites.rb:1217:in `block in pbScene'
+
+=================
+
+[2025-10-24 12:59:32 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `draw_hexagon_with_values' for #<Sprite>
+
+Backtrace:
+[[SV] Summary Screen] [002] Summary Rewrites.rb:693:in `drawPageThree'
+[[SV] Summary Screen] [DBK] Dynamax.rb:40:in `drawPageThree'
+[[SV] Summary Screen] [MUI] Enhanced Pokemon UI.rb:162:in `drawPageThree'
+[[SV] Summary Screen] [000] Summary Handlers.rb:30:in `block in <main>'
+[Modular UI Scenes] UI Module.rb:51:in `call'
+[[SV] Summary Screen] [002] Summary Rewrites.rb:384:in `drawPage'
+[[SV] Summary Screen] [DBK] Dynamax.rb:14:in `drawPage'
+[[SV] Summary Screen] [DBK] Terastallization.rb:10:in `drawPage'
+[[SV] Summary Screen] [MUI] Enhanced Pokemon UI.rb:11:in `drawPage'
+[[SV] Summary Screen] [002] Summary Rewrites.rb:1217:in `block in pbScene'
+
+=================
+
+[2025-10-24 13:02:41 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `draw_hexagon_with_values' for #<Sprite>
+
+Backtrace:
+[[SV] Summary Screen] [002] Summary Rewrites.rb:693:in `drawPageThree'
+[[SV] Summary Screen] [DBK] Dynamax.rb:40:in `drawPageThree'
+[[SV] Summary Screen] [MUI] Enhanced Pokemon UI.rb:162:in `drawPageThree'
+[[SV] Summary Screen] [000] Summary Handlers.rb:30:in `block in <main>'
+[Modular UI Scenes] UI Module.rb:51:in `call'
+[[SV] Summary Screen] [002] Summary Rewrites.rb:384:in `drawPage'
+[[SV] Summary Screen] [DBK] Dynamax.rb:14:in `drawPage'
+[[SV] Summary Screen] [DBK] Terastallization.rb:10:in `drawPage'
+[[SV] Summary Screen] [MUI] Enhanced Pokemon UI.rb:11:in `drawPage'
+[[SV] Summary Screen] [002] Summary Rewrites.rb:1217:in `block in pbScene'
+
+=================
+
+[2025-10-24 13:05:32 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `draw_hexagon_with_values' for #<Sprite>
+
+Backtrace:
+[[SV] Summary Screen] [002] Summary Rewrites.rb:693:in `drawPageThree'
+[[SV] Summary Screen] [DBK] Dynamax.rb:40:in `drawPageThree'
+[[SV] Summary Screen] [MUI] Enhanced Pokemon UI.rb:162:in `drawPageThree'
+[[SV] Summary Screen] [000] Summary Handlers.rb:30:in `block in <main>'
+[Modular UI Scenes] UI Module.rb:51:in `call'
+[[SV] Summary Screen] [002] Summary Rewrites.rb:384:in `drawPage'
+[[SV] Summary Screen] [DBK] Dynamax.rb:14:in `drawPage'
+[[SV] Summary Screen] [DBK] Terastallization.rb:10:in `drawPage'
+[[SV] Summary Screen] [MUI] Enhanced Pokemon UI.rb:11:in `drawPage'
+[[SV] Summary Screen] [002] Summary Rewrites.rb:1217:in `block in pbScene'
+
+=================
+
+[2025-10-24 13:06:45 +0200]
+[Pokémon Essentials version 21.1]
+[v21.1 Hotfixes 1.0.9]
+
+Exception: NoMethodError
+Message: undefined method `draw_hexagon_with_values' for #<Sprite>
+
+Backtrace:
+[[SV] Summary Screen] [002] Summary Rewrites.rb:693:in `drawPageThree'
+[[SV] Summary Screen] [DBK] Dynamax.rb:40:in `drawPageThree'
+[[SV] Summary Screen] [MUI] Enhanced Pokemon UI.rb:162:in `drawPageThree'
+[[SV] Summary Screen] [000] Summary Handlers.rb:30:in `block in <main>'
+[Modular UI Scenes] UI Module.rb:51:in `call'
+[[SV] Summary Screen] [002] Summary Rewrites.rb:384:in `drawPage'
+[[SV] Summary Screen] [DBK] Dynamax.rb:14:in `drawPage'
+[[SV] Summary Screen] [DBK] Terastallization.rb:10:in `drawPage'
+[[SV] Summary Screen] [MUI] Enhanced Pokemon UI.rb:11:in `drawPage'
+[[SV] Summary Screen] [002] Summary Rewrites.rb:1217:in `block in pbScene'

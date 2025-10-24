@@ -1,0 +1,4 @@
+Name         = Wind Animation System
+Version      = 1.0
+Link         = no
+Credits      = Luka S.J., Nononever

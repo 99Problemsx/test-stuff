@@ -1,0 +1,43 @@
+Name         = Asset Encryption System (FPK)
+Version      = 1.0
+Essentials   = 21.1
+Website      = https://github.com/99Problemsx
+Credits      = {game_guy (JSON Encoder),DiviBurrito (JSON Whitespace),99Problemsx (FPK System)}
+#===============================================================================
+# Asset Encryption System (FPK - File Package)
+#===============================================================================
+# This plugin provides a complete asset encryption and packaging system
+# similar to Pokémon Flux. It allows you to package and encrypt all your
+# game assets (graphics, data, audio) into compressed .fpk files for release.
+#
+# Features:
+# - Compress and encrypt Graphics, Data, and Audio folders
+# - Transparent loading (auto-detects dev/release mode)
+# - Significantly reduces file size
+# - Protects assets from casual extraction
+# - JSON-based index for fast file lookup
+# - XOR encryption with custom key
+#
+# Usage:
+# 1. During development, work normally with regular files
+# 2. When ready for release, open Debug menu and select "Build FPK Packages"
+# 3. Packages will be created:
+#    - Graphics/Assets_0-.fpk
+#    - Data/Data_0-.fpk
+#    - Audio/Audio_0-.fpk
+# 4. (Optional) Use "Clean FPK Source Files" to remove original files
+# 5. Distribute the game with .fpk files instead of folder contents
+#
+# IMPORTANT:
+# - Change the ENCRYPTION_KEY in [002] FPK_Core.rb before release!
+# - Keep backups of your source files!
+# - Test the packages before cleaning source files!
+#
+# The system automatically detects if .fpk files exist and switches to
+# release mode. If not, it uses development mode with regular files.
+#
+# Debug Menu Options:
+# - Build FPK Packages: Create encrypted packages
+# - Clean FPK Source Files: Delete original files (CAUTION!)
+# - Toggle FPK Mode: Manually switch between dev/release mode for testing
+#===============================================================================

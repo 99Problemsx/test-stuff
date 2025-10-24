@@ -1,0 +1,5 @@
+Name         = Hidden Ability Encounters
+Version      = 1.0
+Essentials   = 21.1
+Website      = no
+Credits      = Nononever

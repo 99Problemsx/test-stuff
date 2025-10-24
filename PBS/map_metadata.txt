@@ -11,7 +11,7 @@ MapPosition = 0,13,12
 BattleBack = field
 #-------------------------------
 [003]   # Player's house
-Name = \PN's house
+Name = 99Problems's house
 HealingSpot = 2,8,8
 MapPosition = 0,13,12
 #-------------------------------
@@ -208,9 +208,6 @@ MapSize = 1,111
 [043]   # Eclipseburg
 Name = Eclipseburg
 Outdoor = true
-ShowArea = true
-Bicycle = true
-MapSize = 0,
 #-------------------------------
 [044]   # Route 6
 Name = Route 6
